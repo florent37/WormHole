@@ -27,7 +27,8 @@ class _UserManager implements UserManager {
     try {
       final _$_toReturn = await _bridge.invokeMethod("getUser");
       if (_$_toReturn is Map<dynamic, dynamic>) {
-        return User.fromJson(Map<String, dynamic>.from(_$_toReturn));
+        final map = Map<String, dynamic>.from(_$_toReturn);
+        return User.fromJson(map);
       }
     } catch (e) {
       print("error while calling getUser");

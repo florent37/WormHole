@@ -1,6 +1,7 @@
 package com.github.florent37.flutterbridge
 
-import com.google.gson.Gson
+import com.github.florent37.flutterbridge.gson.CustomizedObjectTypeAdapter
+import com.google.gson.*
 import com.google.gson.reflect.TypeToken
 
 import java.lang.reflect.Type
@@ -19,7 +20,13 @@ interface JsonSerialisation {
 }
 
 object SerialisationUtilsGSON : JsonSerialisation {
-    private var gson = Gson()
+
+    //this adapter prevent integer to be parsed to double
+    val adapter = CustomizedObjectTypeAdapter()
+    private var gson = GsonBuilder()
+            .registerTypeAdapter(Map::class.java, adapter)
+            .registerTypeAdapter(List::class.java, adapter)
+            .setPrettyPrinting().create()
 
     private fun Any.asJsonString() : String {
         return gson.toJson(this)
