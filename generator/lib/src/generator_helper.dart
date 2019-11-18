@@ -68,3 +68,7 @@ DartType getResponseInnerType(DartType type) {
 String futureOf(DartType type) {
   return "Future<${type.toString()}>";
 }
+
+bool isStream(DartType type) {
+  return type.name == "Stream";
+}

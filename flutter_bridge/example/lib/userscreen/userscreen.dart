@@ -24,13 +24,6 @@ class _UserScreenState extends State<UserScreen> {
     }
   }
 
-  _loadUser() async {
-    final user = await userManager.getUser();
-    setState(() {
-      _loadedUser = user;
-    });
-  }
-
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -57,21 +50,24 @@ class _UserScreenState extends State<UserScreen> {
           color: Colors.black,
           height: 1,
         ),
-        RaisedButton(
-          child: Text("load user"),
-          onPressed: () {
-            _loadUser();
+        StreamBuilder(
+          stream: userManager.getUser(),
+          builder: (context, snapshot) {
+            if(snapshot.hasData && snapshot.data != null){
+              final _user = snapshot.data;
+              return Column(
+                children: <Widget>[
+                  Text("loaded user :"),
+                  Text(_user.name),
+                  Text("user age"),
+                  Text(_user.age.toString())
+                ],
+              );
+            } else {
+              return CircularProgressIndicator();
+            }
           },
-        ),
-        if(_loadedUser != null)
-          Column(
-            children: <Widget>[
-              Text("loaded user :"),
-              Text(_loadedUser.name),
-              Text("user age"),
-              Text(_loadedUser.age.toString())
-            ],
-          )
+        )
       ],
     );
   }

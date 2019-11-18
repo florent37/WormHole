@@ -7,6 +7,7 @@ class FlutterBridgeManager {
   FlutterBridgeManager._();
 
   final bridgesManagers = Map<String, BridgeManager>();
+  final bridgesEventManagers = Map<String, BridgeEventManager>();
 
   BridgeManager findOrCreate(String channelName) {
     final bridgeManager = bridgesManagers[channelName];
@@ -15,6 +16,17 @@ class FlutterBridgeManager {
     } else {
       final newBridgeManager = BridgeManager.named(channelName);
       bridgesManagers[channelName] = newBridgeManager;
+      return newBridgeManager;
+    }
+  }
+
+  BridgeEventManager findOrCreateEvent(String channelName) {
+    final bridgeManager = bridgesEventManagers[channelName];
+    if (bridgeManager != null) {
+      return bridgeManager;
+    } else {
+      final newBridgeManager = BridgeEventManager.named(channelName);
+      bridgesEventManagers[channelName] = newBridgeManager;
       return newBridgeManager;
     }
   }
@@ -50,6 +62,25 @@ class BridgeManager {
     }).toList();
 
     return await waitAllAndReturnFirst(returnFutures);
+  }
+}
+
+typedef Future<dynamic> PlatformEventHandler(MethodCall call);
+
+class BridgeEventManager {
+  final EventChannel _eventChannel;
+
+  Stream _broadcastSubscription;
+
+  BridgeEventManager(this._eventChannel);
+
+  BridgeEventManager.named(String methodName) : this(EventChannel(methodName));
+
+  Stream getBroadcastSubscription([ dynamic arguments ]) {
+    if(_broadcastSubscription == null) {
+      _broadcastSubscription = _eventChannel.receiveBroadcastStream(arguments);
+    }
+    return _broadcastSubscription;
   }
 }
 

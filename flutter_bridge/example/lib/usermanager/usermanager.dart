@@ -8,7 +8,7 @@ part 'usermanager.g.dart';
 abstract class UserManager {
 
   @Call("getUser")
-  Future<User> getUser();
+  Stream<User> getUser();
 
   @Call("saveUser")
   Future<void> saveUser(User user);

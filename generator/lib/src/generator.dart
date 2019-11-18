@@ -14,10 +14,11 @@ class FlutterBridgeGenerator extends GeneratorForAnnotation<flutter_bridge.Flutt
   static const _waiters = "_waiters";
   static const _PlatformWaiter = "PlatformWaiter";
   static const _channelName = "channelName";
+  static const _eventChannel = "\$eventChannel\$\$";
   static const _handleMessage = "_bridge_handleMessage";
   static const _target = "_target";
-  static const _toReturn = "_\$_toReturn";
-  static const _input = "_\$_input";
+  static const _toReturn = "\$toReturn\$\$";
+  static const _input = "\$input\$\$";
 
   bool _showLogs = false;
 
@@ -231,6 +232,8 @@ class FlutterBridgeGenerator extends GeneratorForAnnotation<flutter_bridge.Flutt
     var returnType;
     if (m.returnType.isDartAsyncFuture) {
       returnType = refer(futureOf(getResponseType(m.returnType)));
+    } else if (isStream(m.returnType)) {
+      returnType = refer(m.returnType.toString());
     } else if (m.returnType.isVoid) {
       returnType = refer(m.returnType.toString());
     } else {
@@ -244,7 +247,7 @@ class FlutterBridgeGenerator extends GeneratorForAnnotation<flutter_bridge.Flutt
       mm
         ..name = m.displayName
         ..returns = returnType
-        ..modifier = MethodModifier.async
+        ..modifier = isStream(m.returnType) ? null : MethodModifier.async
         ..annotations = ListBuilder([CodeExpression(Code('override'))]);
 
       /// required parameters
@@ -300,43 +303,72 @@ class FlutterBridgeGenerator extends GeneratorForAnnotation<flutter_bridge.Flutt
     }
   }
 
-  Code _generateToBody(MethodElement method, String methodName) {
-    String methodCall;
+  Code _generateMapParameters(String mapName, MethodElement method){
+    final List<Code> codes = List();
+    codes.add(Code("final $mapName = Map<String, dynamic>();"));
 
-    if (method.parameters.isNotEmpty) {
-      if (method.parameters.length == 1) {
-        final parameter = method.parameters[0];
+    final List<String> parametersNames = List();
+    for (var i = 0; i < method.parameters.length; ++i) {
+      final parameter = method.parameters[i];
+      final parameterName = getAnnotationName(getParameterAnnotation(parameter, [flutter_bridge.Param])) ?? parameter.name;
+      parametersNames.add(parameterName);
 
-        methodCall = "$_bridge.invokeMethod(\"$methodName\", ${transformParameter(parameter)})";
-      } else {
-        final mapName = "_\$_map";
+      print("parameter.type.name: ${parameter.type.name}");
 
-        final List<Code> codes = List();
-        codes.add(Code("final $mapName = Map<String, dynamic>();"));
-
-        final List<String> parametersNames = List();
-        for (var i = 0; i < method.parameters.length; ++i) {
-          final parameter = method.parameters[i];
-          final parameterName = getAnnotationName(getParameterAnnotation(parameter, [flutter_bridge.Param])) ?? parameter.name;
-          parametersNames.add(parameterName);
-
-          print("parameter.type.name: ${parameter.type.name}");
-
-          codes.add(Code("$mapName[\"$parameterName\"] = ${transformParameter(parameter)};"));
-        }
-
-        methodCall = "$_bridge.invokeMethod(\"$methodName\", $mapName)";
-
-        return Block.of([
-          Block.of(codes),
-          generateToReturn(method, methodCall),
-        ]);
-      }
-    } else {
-      methodCall = "$_bridge.invokeMethod(\"$methodName\")";
+      codes.add(Code("$mapName[\"$parameterName\"] = ${transformParameter(parameter)};"));
     }
+    return Block.of(codes);
+  }
 
-    return generateToReturn(method, methodCall);
+  Code _generateToBody(MethodElement method, String methodName) {
+
+    final mapName = "_\$_map";
+
+    if (isStream(method.returnType)) {
+      final List<Code> codes = List();
+      codes.add(Code("final $_eventChannel = flutterBridge().findOrCreateEvent(\"\${this.channelName}/$methodName\");"));
+      codes.add(Code("try {"));
+      if (method.parameters.length == 0) {
+        codes.add(Code("return $_eventChannel.getBroadcastSubscription().map(($_input) {"));
+      } else if (method.parameters.length == 1) {
+        final parameter = method.parameters[0];
+        codes.add(Code("return $_eventChannel.getBroadcastSubscription(${transformParameter(parameter)}).map(($_input) {"));
+      } else {
+        codes.add(_generateMapParameters(mapName, method));
+        codes.add(Code("return $_eventChannel.getBroadcastSubscription(${mapName}).map(($_input) {"));
+      }
+      codes.add(Code("  return ${getResponseInnerType(method.returnType)}.fromJson(Map<String, dynamic>.from($_input));"));
+      codes.add(Code("});"));
+      codes.addAll([
+        Code("} catch (e) {"),
+        Code("print(\"error while calling $methodName\");"),
+        Code("print(e);"),
+        Code("return Stream.empty();"),
+        Code("}"),
+      ]);
+
+      return Block.of(codes);
+    } else {
+      String methodCall;
+      if (method.parameters.isNotEmpty) {
+        if (method.parameters.length == 1) {
+          final parameter = method.parameters[0];
+
+          methodCall = "$_bridge.invokeMethod(\"$methodName\", ${transformParameter(parameter)})";
+        } else {
+          methodCall = "$_bridge.invokeMethod(\"$methodName\", $mapName)";
+
+          return Block.of([
+            _generateMapParameters(mapName, method),
+            generateToReturn(method, methodCall),
+          ]);
+        }
+      } else {
+        methodCall = "$_bridge.invokeMethod(\"$methodName\")";
+      }
+
+      return generateToReturn(method, methodCall);
+    }
   }
 
   String transformParameter(ParameterElement parameter) {
@@ -596,12 +628,11 @@ class FlutterBridgeGenerator extends GeneratorForAnnotation<flutter_bridge.Flutt
     } else if (returnType.isDartAsyncFuture) {
       if (returnType is ParameterizedType && returnType.typeArguments.length > 0) {
         final innerReturnType = returnType.typeArguments[0];
-        if(innerReturnType.isVoid){
+        if (innerReturnType.isVoid) {
           return Block.of([
             Code("await $methodCall;"),
           ]);
-        }
-        else if (isPrimitiveType(innerReturnType)) {
+        } else if (isPrimitiveType(innerReturnType)) {
           return Block.of([
             Code("final $_toReturn = await $methodCall;"),
             Code("if($_toReturn is ${getResponseType(returnType)}){"),

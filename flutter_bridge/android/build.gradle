@@ -43,6 +43,10 @@ android {
         exclude 'META-INF/proguard/androidx-annotations.pro'
         exclude 'META-INF/proguard/coroutines.pro'
     }
+
+    testOptions {
+        unitTests.includeAndroidResources = true
+    }
 }
 
 dependencies {
@@ -53,4 +57,7 @@ dependencies {
     api 'com.google.code.gson:gson:2.8.5'
     api "org.jetbrains.kotlinx:kotlinx-coroutines-core:$kotlin_coroutines_version"
     api "org.jetbrains.kotlinx:kotlinx-coroutines-android:$kotlin_coroutines_version"
+
+    testImplementation 'junit:junit:4.12'
+    testImplementation "org.mockito:mockito-core:3.1.0"
 }

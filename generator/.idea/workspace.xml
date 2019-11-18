@@ -1,29 +1,43 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="26e3380e-23eb-484c-809d-29b1eacbbf48" name="Default Changelist" comment="" />
+    <list default="true" id="26e3380e-23eb-484c-809d-29b1eacbbf48" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/../flutter_bridge/android/src/test/java/com/github/florent37/flutterbridge/BridgeManagerTest.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../flutter_bridge/android/src/test/resources/mockito-extensions/org.mockito.plugins.MockMaker" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../flutter_bridge/android/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/../flutter_bridge/android/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../flutter_bridge/android/src/main/kotlin/com/github/florent37/flutterbridge/ArgumentTransformer.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../flutter_bridge/android/src/main/kotlin/com/github/florent37/flutterbridge/ArgumentTransformer.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../flutter_bridge/android/src/main/kotlin/com/github/florent37/flutterbridge/BridgeManager.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../flutter_bridge/android/src/main/kotlin/com/github/florent37/flutterbridge/BridgeManager.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../flutter_bridge/android/src/main/kotlin/com/github/florent37/flutterbridge/SerialisationUtilsGSON.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../flutter_bridge/android/src/main/kotlin/com/github/florent37/flutterbridge/SerialisationUtilsGSON.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../flutter_bridge/android/src/main/kotlin/com/github/florent37/flutterbridge/reflection/Reflection.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../flutter_bridge/android/src/main/kotlin/com/github/florent37/flutterbridge/reflection/Reflection.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../flutter_bridge/example/android/app/src/main/kotlin/com/github/florent37/flutter_bridge_example/usermanager/UserManager.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../flutter_bridge/example/android/app/src/main/kotlin/com/github/florent37/flutter_bridge_example/usermanager/UserManager.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../flutter_bridge/example/android/app/src/main/kotlin/com/github/florent37/flutter_bridge_example/usermanager/UserManagerShared.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../flutter_bridge/example/android/app/src/main/kotlin/com/github/florent37/flutter_bridge_example/usermanager/UserManagerShared.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../flutter_bridge/example/lib/usermanager/user.g.dart" beforeDir="false" afterPath="$PROJECT_DIR$/../flutter_bridge/example/lib/usermanager/user.g.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../flutter_bridge/example/lib/usermanager/usermanager.dart" beforeDir="false" afterPath="$PROJECT_DIR$/../flutter_bridge/example/lib/usermanager/usermanager.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../flutter_bridge/example/lib/usermanager/usermanager.g.dart" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../flutter_bridge/example/lib/userscreen/userscreen.dart" beforeDir="false" afterPath="$PROJECT_DIR$/../flutter_bridge/example/lib/userscreen/userscreen.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../flutter_bridge/lib/flutter_bridge.dart" beforeDir="false" afterPath="$PROJECT_DIR$/../flutter_bridge/lib/flutter_bridge.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/src/generator.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/generator.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/src/generator_helper.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/generator_helper.dart" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="DefaultGradleProjectSettings">
+    <option name="testRunner" value="GRADLE" />
+    <option name="delegatedBuild" value="true" />
+  </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/build.yaml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="150">
-              <caret line="10" selection-start-line="10" selection-end-line="10" />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/lib/src/generator.dart">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="190">
-              <caret line="600" column="39" selection-start-line="600" selection-start-column="39" selection-end-line="600" selection-end-column="39" />
+            <state relative-caret-position="133">
+              <caret line="328" column="116" selection-start-line="328" selection-start-column="116" selection-end-line="328" selection-end-column="116" />
               <folding>
                 <element signature="e#0#52#0" expanded="true" />
               </folding>
@@ -32,17 +46,33 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/lib/src/generator_helper.dart">
+        <entry file="file://$PROJECT_DIR$/../../flutter-sdk/.pub-cache/hosted/pub.dartlang.org/code_builder-3.2.1/lib/src/specs/method.dart">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="60">
-              <caret line="4" column="38" selection-start-line="4" selection-start-column="38" selection-end-line="4" selection-end-column="38" />
+            <state relative-caret-position="195">
+              <caret line="155" column="2" selection-start-line="155" selection-start-column="2" selection-end-line="155" selection-end-column="2" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/.packages">
-          <provider selected="true" editor-type-id="text-editor" />
+        <entry file="file://$PROJECT_DIR$/../../flutter-sdk/.pub-cache/hosted/pub.dartlang.org/code_builder-3.2.1/lib/src/specs/code.dart">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="490">
+              <caret line="64" lean-forward="true" selection-start-line="64" selection-end-line="64" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/lib/src/generator_helper.dart">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="765">
+              <caret line="55" column="29" selection-start-line="55" selection-start-column="9" selection-end-line="55" selection-end-column="29" />
+              <folding>
+                <element signature="e#0#52#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
@@ -81,7 +111,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/lib/builder.dart">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="45">
+            <state relative-caret-position="30">
               <caret line="3" column="28" selection-start-line="3" selection-start-column="8" selection-end-line="3" selection-end-column="28" />
               <folding>
                 <element signature="e#0#34#0" expanded="true" />
@@ -91,6 +121,19 @@
         </entry>
       </file>
     </leaf>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>future</find>
+      <find>isStre</find>
+      <find>fromJson</find>
+      <find>_generateToBody</find>
+      <find>_eventChannel</find>
+      <find>fromJs</find>
+    </findStrings>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
@@ -104,6 +147,7 @@
         <option value="$PROJECT_DIR$/lib/builder.dart" />
         <option value="$PROJECT_DIR$/build.yaml" />
         <option value="$PROJECT_DIR$/LICENSE" />
+        <option value="$PROJECT_DIR$/lib/src/generator_helper.dart" />
         <option value="$PROJECT_DIR$/lib/src/generator.dart" />
       </list>
     </option>
@@ -114,6 +158,7 @@
     <option name="width" value="1541" />
     <option name="height" value="1027" />
   </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
     <navigator currentView="ProjectPane" proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
@@ -146,6 +191,7 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="android.sdk.path" value="$USER_HOME$/Library/Android/sdk" />
     <property name="dart.analysis.tool.window.force.activate" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
@@ -182,7 +228,7 @@
     <editor active="true" />
     <layout>
       <window_info id="Captures" order="0" weight="0.25" />
-      <window_info active="true" content_ui="combo" id="Project" order="1" visible="true" weight="0.33822548" />
+      <window_info content_ui="combo" id="Project" order="1" visible="true" weight="0.34756505" />
       <window_info id="Structure" order="2" side_tool="true" />
       <window_info id="Image Layers" order="3" />
       <window_info id="Designer" order="4" />
@@ -193,7 +239,7 @@
       <window_info anchor="bottom" id="Run" order="1" />
       <window_info anchor="bottom" id="TODO" order="2" />
       <window_info anchor="bottom" id="Debug" order="3" />
-      <window_info anchor="bottom" id="Terminal" order="4" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="4" visible="true" weight="0.32894737" />
       <window_info anchor="bottom" id="Event Log" order="5" side_tool="true" />
       <window_info anchor="bottom" id="Flutter Performance" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Version Control" order="7" />
@@ -247,15 +293,18 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/lib/src/generator_helper.dart">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="4" column="38" selection-start-line="4" selection-start-column="38" selection-end-line="4" selection-end-column="38" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/.packages">
       <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/src/generator_helper.dart">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="765">
+          <caret line="55" column="29" selection-start-line="55" selection-start-column="9" selection-end-line="55" selection-end-column="29" />
+          <folding>
+            <element signature="e#0#52#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/.flutter-plugins">
       <provider selected="true" editor-type-id="text-editor" />
@@ -270,19 +319,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/analysis_options.yaml">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/lib/builder.dart">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="45">
-          <caret line="3" column="28" selection-start-line="3" selection-start-column="8" selection-end-line="3" selection-end-column="28" />
-          <folding>
-            <element signature="e#0#34#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/LICENSE">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="315">
@@ -290,10 +326,37 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/analysis_options.yaml">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/builder.dart">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="30">
+          <caret line="3" column="28" selection-start-line="3" selection-start-column="8" selection-end-line="3" selection-end-column="28" />
+          <folding>
+            <element signature="e#0#34#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../flutter-sdk/.pub-cache/hosted/pub.dartlang.org/code_builder-3.2.1/lib/src/specs/method.dart">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="195">
+          <caret line="155" column="2" selection-start-line="155" selection-start-column="2" selection-end-line="155" selection-end-column="2" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../flutter-sdk/.pub-cache/hosted/pub.dartlang.org/code_builder-3.2.1/lib/src/specs/code.dart">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="490">
+          <caret line="64" lean-forward="true" selection-start-line="64" selection-end-line="64" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/lib/src/generator.dart">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="190">
-          <caret line="600" column="39" selection-start-line="600" selection-start-column="39" selection-end-line="600" selection-end-column="39" />
+        <state relative-caret-position="133">
+          <caret line="328" column="116" selection-start-line="328" selection-start-column="116" selection-end-line="328" selection-end-column="116" />
           <folding>
             <element signature="e#0#52#0" expanded="true" />
           </folding>

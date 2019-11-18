@@ -21,7 +21,10 @@ interface JsonSerialisation {
 
 object SerialisationUtilsGSON : JsonSerialisation {
 
-    //this adapter prevent integer to be parsed to double
+    /**
+     * this adapter prevent integer to be parsed to double
+     * @see CustomizedObjectTypeAdapter
+     */
     val adapter = CustomizedObjectTypeAdapter()
     private var gson = GsonBuilder()
             .registerTypeAdapter(Map::class.java, adapter)

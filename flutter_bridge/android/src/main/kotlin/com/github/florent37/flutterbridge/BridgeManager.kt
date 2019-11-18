@@ -1,32 +1,33 @@
 package com.github.florent37.flutterbridge
 
 import android.util.Log
+import androidx.annotation.VisibleForTesting
 import com.github.florent37.flutterbridge.annotations.BridgeAnnotationHandler
 import com.github.florent37.flutterbridge.annotations.flutter.FlutterBridgeAnnotationHandler
 import com.github.florent37.flutterbridge.deferred.WaitingCall
 import com.github.florent37.flutterbridge.deferred.awaitWithContinuation
 import com.github.florent37.flutterbridge.reflection.*
 import io.flutter.plugin.common.BinaryMessenger
+import io.flutter.plugin.common.EventChannel
 import io.flutter.plugin.common.MethodChannel
 import kotlinx.coroutines.*
 import kotlinx.coroutines.channels.Channel
-import kotlinx.coroutines.flow.consumeAsFlow
-import kotlinx.coroutines.flow.filter
-import kotlinx.coroutines.flow.map
+import kotlinx.coroutines.flow.*
 import java.lang.ref.WeakReference
 import java.lang.reflect.InvocationHandler
 import java.lang.reflect.Method
 import java.lang.reflect.Proxy
 import java.lang.reflect.Type
-import kotlin.coroutines.suspendCoroutine
 
 
 @Suppress("UNCHECKED_CAST")
 @FlowPreview
 class BridgeManager(
-    private val channel: MethodChannel,
-    val annotationHandler: BridgeAnnotationHandler = FlutterBridgeAnnotationHandler(),
-    val jsonSerialisation: JsonSerialisation = SerialisationUtilsGSON
+        private val channelName: String,
+        private val binaryMessenger: BinaryMessenger,
+        private val channel: MethodChannel,
+        private val annotationHandler: BridgeAnnotationHandler = FlutterBridgeAnnotationHandler(),
+        private val jsonSerialisation: JsonSerialisation = SerialisationUtilsGSON
 ) {
 
     companion object {
@@ -48,15 +49,18 @@ class BridgeManager(
     }
 
     private constructor(binaryMessenger: BinaryMessenger, identifier: String) : this(
-        MethodChannel(
+            identifier,
             binaryMessenger,
-            identifier
-        )
+            MethodChannel(
+                    binaryMessenger,
+                    identifier
+            )
     )
 
     private val coroutineJob = SupervisorJob()
     private val coroutineViewScope = CoroutineScope(context = coroutineJob + Dispatchers.Main)
     private val argumentTransformer = ArgumentTransformer(jsonSerialisation)
+    private val eventChannels = mutableMapOf<String, EventChannel>()
 
     init {
         channel.setMethodCallHandler { methodCall, result ->
@@ -69,10 +73,11 @@ class BridgeManager(
 
     val output = Channel<FlutterEvent>()
 
-    private fun onMethodCalled(
-        name: String,
-        arg: Any?,
-        result: MethodChannel.Result
+    @VisibleForTesting
+    internal fun onMethodCalled(
+            name: String,
+            arg: Any?,
+            result: MethodChannel.Result
     ) {
 
         Log.d(TAG, "onMethodCalled $name $arg")
@@ -86,10 +91,10 @@ class BridgeManager(
         coroutineViewScope.launch {
             //refacto from activity.lifecycle
             output.send(
-                FlutterEvent(
-                    method = name,
-                    argument = arg
-                )
+                    FlutterEvent(
+                            method = name,
+                            argument = arg
+                    )
             )
         }
 
@@ -100,9 +105,9 @@ class BridgeManager(
 
     fun <T> buildBridge(protocol: Class<T>): T {
         val proxy = Proxy.newProxyInstance(
-            protocol.classLoader,
-            arrayOf<Class<*>>(protocol),
-            GeneratedProxyInvocationHandler()
+                protocol.classLoader,
+                arrayOf<Class<*>>(protocol),
+                GeneratedProxyInvocationHandler()
         )
         return proxy as T
     }
@@ -116,6 +121,49 @@ class BridgeManager(
      */
     fun expose(annotatedElement: Any) {
         bridges.addSafety(annotatedElement)
+        handleBindingFlows(annotatedElement)
+    }
+
+    private fun handleBindingFlows(annotatedElement: Any) {
+        val bindingMethodReturningFlow = annotatedElement.findBindingMethodReturningFlow(annotationHandler)
+        bindingMethodReturningFlow.forEach { method ->
+            val channelName = method.getBindAnnotationName(annotationHandler) ?: method.name
+            handleBindingChannel(annotatedElement, method, channelName)
+        }
+    }
+
+    private fun handleBindingChannel(annotatedElement: Any, method: Method, name: String) {
+        //1. create the EventChannel
+        val eventChannelName = "$channelName/$name"
+        val eventChannel = eventChannels.getOrPut(eventChannelName) {
+            EventChannel(binaryMessenger, eventChannelName)
+        }
+        //2. register with the method
+        eventChannel.setStreamHandler(object : EventChannel.StreamHandler {
+            override fun onListen(arg: Any?, eventSink: EventChannel.EventSink?) {
+                //handle params
+                val params = argumentTransformer.createArgumentsToCallMethod(
+                        method = method,
+                        annotationHandler = annotationHandler,
+                        receivedArg = arg
+                )
+                coroutineViewScope.launch {
+                    val methodResult = annotatedElement.invokeSuspend(method, params)
+                    if (methodResult is Flow<*>) {
+                        Log.d(TAG, "Flow/handleBindingChannel $methodResult")
+                        methodResult.collect {
+                            val valueToSend = argumentTransformer.transformArgToSend(it)
+                            Log.d(TAG, "Flow/sendValue : $valueToSend")
+                            eventSink?.success(valueToSend)
+                        }
+                    }
+                }
+            }
+
+            override fun onCancel(arg: Any?) {
+
+            }
+        })
     }
 
     private fun sendMessage(method: String, arg: Any) {
@@ -155,12 +203,12 @@ class BridgeManager(
             waitingCalls[methodName] = waitingCallsForName
         }
         waitingCallsForName.add(
-            WaitingCall(
-                methodName,
-                returnType,
-                argumentTransformer,
-                deferred
-            )
+                WaitingCall(
+                        methodName,
+                        returnType,
+                        argumentTransformer,
+                        deferred
+                )
         )
 
         return deferred
@@ -179,7 +227,7 @@ class BridgeManager(
 
         fun handleFrom(method: Method, args: Array<Any>?): Any? {
             var methodName =
-                annotationHandler.getFromAnnotationValue(method.getAnnotation(annotationHandler.fromAnnotation))
+                    annotationHandler.getFromAnnotationValue(method.getAnnotation(annotationHandler.fromAnnotation))
             if (methodName.isBlank()) {
                 methodName = method.name
             }
@@ -190,11 +238,11 @@ class BridgeManager(
                         val actualTypeArgument = method.continuationFlowType()
 
                         return output
-                            .consumeAsFlow()
-                            .filter { it.method == methodName }
-                            .map {
-                                argumentTransformer.transformeReceived(it, actualTypeArgument, null)
-                            }
+                                .consumeAsFlow()
+                                .filter { it.method == methodName }
+                                .map {
+                                    argumentTransformer.transformeReceived(it, actualTypeArgument, null)
+                                }
                     } else {
                         val continuation = args!!.getContinuation()
                         val actualTypeArgument = method.continuationType()
@@ -212,7 +260,7 @@ class BridgeManager(
 
         fun handleTo(method: Method, args: Array<Any>?): Any? {
             var methodName =
-                annotationHandler.getToAnnotationValue(method.getAnnotation(annotationHandler.toAnnotation))
+                    annotationHandler.getToAnnotationValue(method.getAnnotation(annotationHandler.toAnnotation))
             if (methodName.isBlank()) {
                 methodName = method.name
             }
@@ -226,15 +274,15 @@ class BridgeManager(
                     //method without arg, but continuation
                     if (method.parameterTypes.size == 1) { //1 because of continuation
                         return sendMessageAndReturnDeffered(
-                            methodName,
-                            emptyArray(),
-                            actualTypeArgument
+                                methodName,
+                                emptyArray(),
+                                actualTypeArgument
                         ).awaitWithContinuation(continuation)
                     } else if (method.parameterTypes.size == 2) { //2 because of continuation
                         return sendMessageAndReturnDeffered(
-                            methodName,
-                            args,
-                            actualTypeArgument
+                                methodName,
+                                args,
+                                actualTypeArgument
                         ).awaitWithContinuation(continuation)
                     } else {
                         throw BridgeError("ToFlutter only Works with 1 arg")
@@ -272,12 +320,12 @@ class BridgeManager(
 
             return when {
                 method.isAnnotationPresent(annotationHandler.fromAnnotation) -> handleFrom(
-                    method,
-                    args
+                        method,
+                        args
                 )
                 method.isAnnotationPresent(annotationHandler.toAnnotation) -> handleTo(
-                    method,
-                    args
+                        method,
+                        args
                 )
                 else -> null
             }
@@ -286,9 +334,9 @@ class BridgeManager(
     }
 
     private fun sendMessageAndReturnDeffered(
-        methodName: String,
-        args: Array<Any>?,
-        actualTypeArgument: Type
+            methodName: String,
+            args: Array<Any>?,
+            actualTypeArgument: Type
     ): CompletableDeferred<Any?> {
         val completableDeferred = CompletableDeferred<Any?>()
         val arg = args?.getOrNull(0)
@@ -306,127 +354,52 @@ class BridgeManager(
      * Used for bind / expose annotations
      */
     private fun Any.callMethodOnObject(
-        methodName: String,
-        arg: Any?,
-        channelResult: MethodChannel.Result
+            methodName: String,
+            arg: Any?,
+            channelResult: MethodChannel.Result
     ) {
         val element = this
 
         val methodsList = element.getBindAnnotatedMethodWithName(methodName, annotationHandler)
         for (method in methodsList) {
-            try {
-                /* only works with 0 or 1 arg (string)*/
-
-                val suspendMethod = method.isSuspendFunction()
-                val suspendArgCount = if (suspendMethod) 1 else 0
-
-                //handle params
-                val params: Array<Any?>
-
-                val realParameterCount = method.parameterTypes.size - suspendArgCount;
-                params = arrayOfNulls(realParameterCount) //for suspend & arg, 1 arg + continuation
-
-                if (arg == null && (realParameterCount == 0)) {
-                    //nothing to do here
-                } else if (arg != null) {
-                    //1 param -> do not need to transform to map
-                    if (realParameterCount == 1) {
-                        val parameterClass = method.parameterTypes[0]
-                        val genericParameterType = method.genericParameterTypes[0]
-
-                        params[0] = argumentTransformer.transformeReceived(arg, genericParameterType, parameterClass)
-                    } else if (arg is Map<*, *>) {  //multiple params -> json to map then call
-                        val map = arg as Map<String, *>
-                        val parameterAnnotations = method.parameterAnnotations
-
-                        //TODO handle only FlutterParameter
-                        if (parameterAnnotations.size != method.genericParameterTypes.size) {
-                            throw BridgeError("to handle multiple params for $methodName, please annotate your arguments with $ ")
-                        }
-
-                        val parameterName = method.parametersNames(annotationHandler)
-
-                        for (index in 0 until realParameterCount) {
-                            val thisParameterName = parameterName[index]
-                            val parameter = map[thisParameterName]
-                            val parameterClass = method.parameterTypes[index]
-                            val genericParameterType = method.genericParameterTypes[index]
-
-                            params[index] = argumentTransformer.transformeReceived(parameter, genericParameterType, parameterClass)
-                        }
-                    }
-
-                } else {
-                    Log.e(TAG, "binds methods can only have 0 or 1 argument (String/json)")
+            if (!method.isSuspendFlowFunction()) { //Flow is handle by `handleBindingsFlow`
+                val params = try {
+                    //handle params
+                    argumentTransformer.createArgumentsToCallMethod(
+                            method = method,
+                            annotationHandler = annotationHandler,
+                            receivedArg = arg
+                    )
+                } catch (e: Exception) {
+                    Log.e(TAG, "callMethodOnObject error while parsing parameters", e)
                     continue
                 }
 
-                //handle return
-                if (suspendMethod) {
-                    coroutineViewScope.launch {
-                        var handledDirectlyByMethod = false
-                        val methodResult = suspendCoroutine<Any?> { continuation ->
-                            //add the continuation
-                            val paramsWithContinuation = arrayOfNulls<Any>(params.size + 1)
+                coroutineViewScope.launch {
+                    //handle return
+                    try {
+                        val methodResult = element.invokeSuspend(method, params)
+                        Log.d(TAG, "callMethodOnObject $methodResult")
+                        handleCallMethodOnObjectReturn(
+                                element = element,
+                                method = method,
+                                methodResult = methodResult,
+                                channelResult = channelResult
+                        )
 
-                            params.forEachIndexed { index, element ->
-                                paramsWithContinuation[index] = element
-                            }
-                            paramsWithContinuation[paramsWithContinuation.size - 1] = continuation
-
-                            Log.d(TAG, "onMethodCalled invoke suspend method on ${element::class.java} $params")
-
-                            //found the method
-                            val result = method.invoke(element, *paramsWithContinuation)
-                            if(result != kotlin.coroutines.experimental.intrinsics.COROUTINE_SUSPENDED) {
-                                Log.d(TAG, "onMethodCalled invoked on ${element::class.java} $result")
-
-                                Log.d(TAG, "handleCallMethodOnObjectReturn")
-                                handleCallMethodOnObjectReturn(
-                                        element = element,
-                                        method = method,
-                                        methodResult = result,
-                                        channelResult = channelResult
-                                )
-
-                                handledDirectlyByMethod = true
-                                 //close
-                            }
-                        }
-
-                        if(!handledDirectlyByMethod) {
-                            Log.d(TAG, "!handledDirectlyByMethod handleCallMethodOnObjectReturn")
-
-                            handleCallMethodOnObjectReturn(
-                                    element = element,
-                                    method = method,
-                                    methodResult = methodResult,
-                                    channelResult = channelResult
-                            )
-                        }
-
+                    } catch (e: Exception) {
+                        Log.e(TAG, "callMethodOnObject error while invokating ${method.name}", e)
                     }
-                } else {
-                    val methodResult = method.invoke(element, *params)
-                    handleCallMethodOnObjectReturn(
-                        element = element,
-                        method = method,
-                        methodResult = methodResult,
-                        channelResult = channelResult
-                    )
                 }
-            } catch (e: Exception) {
-                Log.e(TAG, "callMethodOnObject error", e)
             }
-
         }
     }
 
     private fun handleCallMethodOnObjectReturn(
-        element: Any,
-        method: Method,
-        methodResult: Any?,
-        channelResult: MethodChannel.Result
+            element: Any,
+            method: Method,
+            methodResult: Any?,
+            channelResult: MethodChannel.Result
     ) {
         when {
             method.isVoid() -> return
