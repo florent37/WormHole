@@ -175,6 +175,7 @@ class BridgeManager(
         val transformArgToSend = argumentTransformer.transformArgToSend(arg)
         channel.invokeMethod(method, transformArgToSend, object : MethodChannel.Result {
             override fun notImplemented() {
+                Log.e(TAG, "$method is not implemented")
                 result(null, NotImplementedError())
             }
 

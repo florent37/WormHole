@@ -9,11 +9,7 @@ import com.github.florent37.flutterbridge.expose
 import com.github.florent37.flutterbridge.flutterBridge
 import io.flutter.app.FlutterActivity
 import io.flutter.plugins.GeneratedPluginRegistrant
-import kotlinx.coroutines.CoroutineScope
-import kotlinx.coroutines.MainScope
-import kotlinx.coroutines.cancel
-import kotlinx.coroutines.launch
-
+import kotlinx.coroutines.*
 
 
 class MainActivity : FlutterActivity(), CoroutineScope by MainScope() {
@@ -28,6 +24,7 @@ class MainActivity : FlutterActivity(), CoroutineScope by MainScope() {
         expose("user", userManager)
 
         launch {
+            delay(3000)
             val name = userBridge2.getUserName()
             Log.d("MainActivity", "$name")
         }

@@ -8,8 +8,8 @@ class UserManager2 {
   UserManager2(){}
 
   @Expose("user")
-  Future<String> getUserName(String name, int age) {
-    return Future.value("florent");
+  Future<String> getUserName() async {
+    return "florent";
   }
 
   UserManager2 bind(String channel) => Bridge_UserManager2(channel).bind(this);

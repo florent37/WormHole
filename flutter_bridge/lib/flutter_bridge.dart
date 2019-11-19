@@ -58,10 +58,11 @@ class BridgeManager {
 
   Future<dynamic> handler(MethodCall call) async {
     final List<Future<dynamic>> returnFutures = handlers.map((h) {
-      h(call);
+      return h(call);
     }).toList();
 
-    return await waitAllAndReturnFirst(returnFutures);
+    final valueToReturn =  await waitAllAndReturnFirst(returnFutures);
+    return valueToReturn;
   }
 }
 
