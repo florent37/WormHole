@@ -347,7 +347,8 @@ class BridgeManager(
             if (error != null) {
                 completableDeferred.completeExceptionally(error)
             } else {
-                completableDeferred.complete(argumentTransformer.transformeReceived(result, actualTypeArgument, null))
+                val transformed = argumentTransformer.transformeReceived(result, actualTypeArgument, null)
+                completableDeferred.complete(transformed)
             }
         }
         return completableDeferred

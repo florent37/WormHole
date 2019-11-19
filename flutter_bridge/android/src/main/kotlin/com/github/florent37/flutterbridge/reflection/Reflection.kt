@@ -14,11 +14,11 @@ import kotlin.coroutines.experimental.intrinsics.COROUTINE_SUSPENDED
 import kotlin.coroutines.resume
 
 internal fun Method.hasBindAnnotatedMethodAnnotationWithName(
-    name: String,
-    annotationHandler: BridgeAnnotationHandler
+        name: String,
+        annotationHandler: BridgeAnnotationHandler
 ): Boolean {
     return this.isAnnotationPresent(annotationHandler.bindAnnotation) && annotationHandler.getBindAnnotationValue(
-        this.getAnnotation(annotationHandler.bindAnnotation)
+            this.getAnnotation(annotationHandler.bindAnnotation)
     ) == name
 }
 
@@ -36,7 +36,7 @@ internal fun Method.getBindAnnotationName(
     }
 }
 
-private fun Any.classToLookupForReflection() : List<Class<*>> {
+private fun Any.classToLookupForReflection(): List<Class<*>> {
     val allClasses = mutableListOf<Class<*>>()
     val javaClass = this.javaClass
 
@@ -54,8 +54,8 @@ private fun Any.classToLookupForReflection() : List<Class<*>> {
 }
 
 internal fun Any.getBindAnnotatedMethodWithName(
-    name: String,
-    annotationHandler: BridgeAnnotationHandler
+        name: String,
+        annotationHandler: BridgeAnnotationHandler
 ): List<Method> {
     val allMethods = mutableListOf<Method>()
     this.classToLookupForReflection().forEach { inheritedClass ->
@@ -102,7 +102,7 @@ fun Method.isSuspendFunction(): Boolean {
 fun Method.isSuspendFlowFunction(): Boolean {
     val method = this
     val hasLastArgFlow = (((method.continuationType() as? ParameterizedType)?.rawType) as? Class<*>)?.isAssignableFrom(
-        Flow::class.java
+            Flow::class.java
     ) ?: false
     val returnAFlow = method.returnType?.isAssignableFrom(
             Flow::class.java
@@ -136,9 +136,16 @@ fun Method.parametersNames(annotationHandler: BridgeAnnotationHandler): List<Str
     return names
 }
 
-fun Type.parameterDoesNotRequireUnwrapping(): Boolean {
-    return false //TODO
-}
+fun Type.parameterDoesNotRequireUnwrapping(): Boolean = (this as? Class<*>)?.let {
+    when {
+        Int::class.java.isAssignableFrom(it) -> true
+        Float::class.java.isAssignableFrom(it) -> true
+        Long::class.java.isAssignableFrom(it) -> true
+        Double::class.java.isAssignableFrom(it) -> true
+        String::class.java.isAssignableFrom(it) -> true
+        else -> false
+    }
+} ?: false
 
 fun Array<Any?>.addingContinuation(continuation: Continuation<Any?>): Array<Any?> {
     val newArray = arrayOfNulls<Any?>(this.size + 1)
@@ -151,13 +158,13 @@ fun Array<Any?>.addingContinuation(continuation: Continuation<Any?>): Array<Any?
     return newArray
 }
 
-suspend fun Any.invokeSuspend(method: Method, params: Array<Any?>) : Any? {
+suspend fun Any.invokeSuspend(method: Method, params: Array<Any?>): Any? {
     val element = this
     return if (method.isSuspendFunction()) {
         suspendCancellableCoroutine { continuation ->
             //found the method
             val result = method.invoke(element, *params.addingContinuation(continuation))
-            if(result != COROUTINE_SUSPENDED) {
+            if (result != COROUTINE_SUSPENDED) {
                 continuation.resume(result)
             }
             Log.d(BridgeManager.TAG, "callMethodOnObject $result")

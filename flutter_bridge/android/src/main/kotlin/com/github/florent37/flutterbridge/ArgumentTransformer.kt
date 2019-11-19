@@ -74,24 +74,6 @@ class ArgumentTransformer(val jsonSerialisation: JsonSerialisation) {
         try {
             return element?.let { parameter ->
                 when {
-                    actualParameterClass != null && actualParameterClass.parameterDoesNotRequireUnwrapping() -> {
-                        Log.e("ArgumentTransformer", "element class parameterDoesNotRequireUnwrapping")
-                        when {
-                            Int::class.java.isAssignableFrom(actualParameterClass) -> (parameter as Number).toInt()
-                            Float::class.java.isAssignableFrom(actualParameterClass) -> (parameter as Number).toFloat()
-                            Double::class.java.isAssignableFrom(actualParameterClass) -> (parameter as Number).toDouble()
-                            else -> parameter
-                        }
-                    }
-                    actualTypeArgumentType != null && actualTypeArgumentType.parameterDoesNotRequireUnwrapping() -> {
-                        Log.e("ArgumentTransformer", "element type parameterDoesNotRequireUnwrapping")
-                        when {
-                            Int::class.java.isAssignableFrom(actualParameterClass) -> (parameter as Number).toInt()
-                            Float::class.java.isAssignableFrom(actualParameterClass) -> (parameter as Number).toFloat()
-                            Double::class.java.isAssignableFrom(actualParameterClass) -> (parameter as Number).toDouble()
-                            else -> parameter
-                        }
-                    }
                     actualTypeArgumentType != null && parameter is Map<*, *> -> {
                         Log.e("ArgumentTransformer", "element is Map")
                         jsonSerialisation.deserialize(
@@ -105,6 +87,30 @@ class ArgumentTransformer(val jsonSerialisation: JsonSerialisation) {
                                 actualTypeArgumentType,
                                 parameter
                         )
+                    }
+                    actualParameterClass != null && actualParameterClass.parameterDoesNotRequireUnwrapping() -> {
+                        Log.e("ArgumentTransformer", "element class parameterDoesNotRequireUnwrapping")
+                        when {
+                            Int::class.java.isAssignableFrom(actualParameterClass) -> (parameter as Number).toInt()
+                            Long::class.java.isAssignableFrom(actualParameterClass) -> (parameter as Number).toLong()
+                            Float::class.java.isAssignableFrom(actualParameterClass) -> (parameter as Number).toFloat()
+                            Double::class.java.isAssignableFrom(actualParameterClass) -> (parameter as Number).toDouble()
+                            String::class.java.isAssignableFrom(actualParameterClass) -> parameter
+                            else -> parameter
+                        }
+                    }
+                    actualTypeArgumentType != null && actualTypeArgumentType.parameterDoesNotRequireUnwrapping() -> {
+                        Log.e("ArgumentTransformer", "element type parameterDoesNotRequireUnwrapping")
+                        (actualTypeArgumentType as? Class<*>)?.let {
+                            when {
+                                Int::class.java.isAssignableFrom(it) -> (parameter as Number).toInt()
+                                Long::class.java.isAssignableFrom(it) -> (parameter as Number).toLong()
+                                Float::class.java.isAssignableFrom(it) -> (parameter as Number).toFloat()
+                                Double::class.java.isAssignableFrom(it) -> (parameter as Number).toDouble()
+                                String::class.java.isAssignableFrom(it) -> parameter
+                                else -> parameter
+                            }
+                        }
                     }
                     else -> {
                         Log.e("ArgumentTransformer", "element is not one of above")
