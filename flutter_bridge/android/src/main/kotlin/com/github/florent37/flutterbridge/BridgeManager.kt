@@ -245,9 +245,11 @@ class BridgeManager(
                                 }
                     } else {
                         val continuation = args!!.getContinuation()
-                        val actualTypeArgument = method.continuationType()
-                        val deferred = waitMethodCallAsync<Any>(actualTypeArgument, methodName)
-                        deferred.awaitWithContinuation(continuation)
+                        method.continuationType()?.let { actualTypeArgument ->
+                            val deferred = waitMethodCallAsync<Any>(actualTypeArgument, methodName)
+                            deferred.awaitWithContinuation(continuation)
+                        }
+
                     }
                 }
                 method.returnType == Deferred::class.java -> {
@@ -276,13 +278,13 @@ class BridgeManager(
                         return sendMessageAndReturnDeffered(
                                 methodName,
                                 emptyArray(),
-                                actualTypeArgument
+                                actualTypeArgument!!
                         ).awaitWithContinuation(continuation)
                     } else if (method.parameterTypes.size == 2) { //2 because of continuation
                         return sendMessageAndReturnDeffered(
                                 methodName,
                                 args,
-                                actualTypeArgument
+                                actualTypeArgument!!
                         ).awaitWithContinuation(continuation)
                     } else {
                         throw BridgeError("ToFlutter only Works with 1 arg")

@@ -20,7 +20,7 @@ class FlutterBridgeGenerator extends GeneratorForAnnotation<flutter_bridge.Flutt
   static const _toReturn = "\$toReturn\$\$";
   static const _input = "\$input\$\$";
 
-  bool _showLogs = false;
+  bool _showLogs = true;
 
   FlutterBridgeGenerator() {}
 
@@ -303,7 +303,7 @@ class FlutterBridgeGenerator extends GeneratorForAnnotation<flutter_bridge.Flutt
     }
   }
 
-  Code _generateMapParameters(String mapName, MethodElement method){
+  Code _generateMapParameters(String mapName, MethodElement method) {
     final List<Code> codes = List();
     codes.add(Code("final $mapName = Map<String, dynamic>();"));
 
@@ -321,7 +321,6 @@ class FlutterBridgeGenerator extends GeneratorForAnnotation<flutter_bridge.Flutt
   }
 
   Code _generateToBody(MethodElement method, String methodName) {
-
     final mapName = "_\$_map";
 
     if (isStream(method.returnType)) {
@@ -424,10 +423,11 @@ class FlutterBridgeGenerator extends GeneratorForAnnotation<flutter_bridge.Flutt
     final bindMethod = Method((mm) {
       mm
         ..name = "bind"
-        ..returns = refer("void")
+        ..returns = refer(element.type.toString())
         ..body = Block.of([
           Code("this.$_target = target;"),
           _generateInjections(injectFields),
+          Code("return target;")
         ])
         ..requiredParameters.add(Parameter((p) => p
           ..type = refer(element.type.toString())
@@ -461,79 +461,85 @@ class FlutterBridgeGenerator extends GeneratorForAnnotation<flutter_bridge.Flutt
 
     for (var i = 0; i < bindAnnotatedMethods.length; ++i) {
       final MethodElement method = bindAnnotatedMethods[i];
-      final String annotationMethodName = getAnnotationName(getMethodAnnotation(method, _methodsAnnotations));
-      final String realMethodName = method.name;
+      if (isStream(method.returnType)) {
+        print("Error generating Expose for ${method.name}, Events can only be streamed from native to Flutter currently");
+      }
+      else {
+        final String annotationMethodName = getAnnotationName(getMethodAnnotation(method, _methodsAnnotations));
+        final String realMethodName = method.name;
 
-      codes.addAll([Code("if(name == \"${annotationMethodName}\") {"), Code("try {")]);
+        codes.addAll([Code("if(name == \"${annotationMethodName}\") {"), Code("try {")]);
 
-      if (method.parameters.isEmpty) {
-        final methodCall = "$_target.$realMethodName()";
-        codes.addAll([generateBindingReturn(method, methodCall, false), Code("}")]);
-      } else {
-        if (method.parameters.length == 1) {
-          final parameter = method.parameters[0];
-
-          // 1 parameter -> set or decode json depending on type
-          final parameterType = parameter.type;
-
-          final String parameterVariable = "_\$_parameter";
-
-          String methodCall;
-          if (parameter.isOptionalNamed) {
-            methodCall = "$_target.$realMethodName(${parameter.name} : $parameterVariable)";
-          } else {
-            methodCall = "$_target.$realMethodName($parameterVariable)";
-          }
-
-          codes.addAll([
-            Code("if(call.arguments != null && call.arguments is Map<dynamic, dynamic>) {"),
-            Code("  final $_input = Map<String, dynamic>.from(call.arguments as Map<dynamic, dynamic>);"),
-            Code("  final $parameterVariable = $parameterType.fromJson($_input);"),
-            generateBindingReturn(method, methodCall, false),
-            Code("}")
-          ]);
+        if (method.parameters.isEmpty) {
+          final methodCall = "$_target.$realMethodName()";
+          codes.addAll([generateBindingReturn(method, methodCall, false)]);
         } else {
-          //multiple parameters -> unwrap
+          if (method.parameters.length == 1) {
+            final parameter = method.parameters[0];
 
-          codes.addAll([
-            Code("final $_input = Map<String, dynamic>.from(call.arguments as Map<dynamic, dynamic>);"),
-          ]);
-          final parametersNames = [];
-          for (var i = 0; i < method.parameters.length; ++i) {
-            final parameter = method.parameters[i];
-            final parameterName = getAnnotationName(getParameterAnnotation(parameter, [flutter_bridge.Param])) ?? parameter.name;
-
+            // 1 parameter -> set or decode json depending on type
             final parameterType = parameter.type;
 
-            final variableName = "_${parameterName}Param$i";
+            final String parameterVariable = "_\$_parameter";
 
-            parametersNames.add(variableName);
-
-            if (isPrimitiveType(parameterType)) {
-              codes.add(Code("final $variableName = $_input[\"$parameterName\"] as ${parameterType.toString()};"));
-            } else {
-              codes.add(generateJsonDecodeFromMap(type: parameterType, parameterName: parameterName, variableName: variableName, mapName: "$_input"));
-            }
-          }
-
-          String methodCall = "$_target.$realMethodName(";
-          for (var i = 0; i < parametersNames.length; ++i) {
-            final parameter = method.parameters[i];
-            final parametersName = parametersNames[i];
-            if (i > 0) {
-              methodCall += ", ";
-            }
-
+            String methodCall;
             if (parameter.isOptionalNamed) {
-              methodCall += "${parameter.name} : $parametersName";
+              methodCall = "$_target.$realMethodName(${parameter.name} : $parameterVariable)";
             } else {
-              methodCall += "$parametersName";
+              methodCall = "$_target.$realMethodName($parameterVariable)";
             }
-          }
-          methodCall += ")";
 
-          codes.add(generateBindingReturn(method, methodCall, false));
+            codes.addAll([
+              Code("if(call.arguments != null && call.arguments is Map<dynamic, dynamic>) {"),
+              Code("  final $_input = Map<String, dynamic>.from(call.arguments as Map<dynamic, dynamic>);"),
+              Code("  final $parameterVariable = $parameterType.fromJson($_input);"),
+              generateBindingReturn(method, methodCall, false),
+              Code("}")
+            ]);
+          } else {
+            //multiple parameters -> unwrap
+
+            codes.addAll([
+              Code("final $_input = Map<String, dynamic>.from(call.arguments as Map<dynamic, dynamic>);"),
+            ]);
+            final parametersNames = [];
+            for (var i = 0; i < method.parameters.length; ++i) {
+              final parameter = method.parameters[i];
+              final parameterName = getAnnotationName(getParameterAnnotation(parameter, [flutter_bridge.Param])) ?? parameter.name;
+
+              final parameterType = parameter.type;
+
+              final variableName = "_${parameterName}Param$i";
+
+              parametersNames.add(variableName);
+
+              if (isPrimitiveType(parameterType)) {
+                codes.add(Code("final $variableName = $_input[\"$parameterName\"] as ${parameterType.toString()};"));
+              } else {
+                codes.add(generateJsonDecodeFromMap(type: parameterType, parameterName: parameterName, variableName: variableName, mapName: "$_input"));
+              }
+            }
+
+            String methodCall = "$_target.$realMethodName(";
+            for (var i = 0; i < parametersNames.length; ++i) {
+              final parameter = method.parameters[i];
+              final parametersName = parametersNames[i];
+              if (i > 0) {
+                methodCall += ", ";
+              }
+
+              if (parameter.isOptionalNamed) {
+                methodCall += "${parameter.name} : $parametersName";
+              } else {
+                methodCall += "$parametersName";
+              }
+            }
+            methodCall += ")";
+
+            codes.add(generateBindingReturn(method, methodCall, false));
+          }
         }
+
         codes.addAll([
           Code("  } catch(e) {"),
           Code("    print(\"error while calling $realMethodName\");"),

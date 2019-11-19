@@ -13,8 +13,6 @@ class _UserScreenState extends State<UserScreen> {
   TextEditingController _textEditingController = TextEditingController();
   int _selectedAge = 18;
 
-  User _loadedUser;
-
   _saveUser() async {
     if (_textEditingController.text.isNotEmpty && _selectedAge != null) {
       userManager.saveUser(User(

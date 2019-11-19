@@ -78,15 +78,15 @@ internal fun Any.findBindingMethodReturningFlow(
     return allMethods
 }
 
-fun Method.continuationType(): Type {
+fun Method.continuationType(): Type? {
     val method = this
-    return (((method.genericParameterTypes.lastOrNull()) as ParameterizedType).actualTypeArguments[0] as WildcardType).lowerBounds[0]
+    return (((method.genericParameterTypes.lastOrNull()) as? ParameterizedType)?.actualTypeArguments?.getOrNull(0) as? WildcardType)?.lowerBounds?.getOrNull(0)
 }
 
-fun Method.continuationFlowType(): Type {
+fun Method.continuationFlowType(): Type? {
     val method = this
     val flowType = method.continuationType()
-    return ((flowType as ParameterizedType)).actualTypeArguments[0]
+    return ((flowType as? ParameterizedType))?.actualTypeArguments?.getOrNull(0)
 }
 
 fun Method.findReturnType(): Type {
@@ -101,9 +101,13 @@ fun Method.isSuspendFunction(): Boolean {
 
 fun Method.isSuspendFlowFunction(): Boolean {
     val method = this
-    return (((method.continuationType() as? ParameterizedType)?.rawType) as? Class<*>)?.isAssignableFrom(
+    val hasLastArgFlow = (((method.continuationType() as? ParameterizedType)?.rawType) as? Class<*>)?.isAssignableFrom(
         Flow::class.java
     ) ?: false
+    val returnAFlow = method.returnType?.isAssignableFrom(
+            Flow::class.java
+    ) ?: false
+    return hasLastArgFlow || returnAFlow
 }
 
 fun Array<Any>.getContinuation() = this.last() as Continuation<Any?>

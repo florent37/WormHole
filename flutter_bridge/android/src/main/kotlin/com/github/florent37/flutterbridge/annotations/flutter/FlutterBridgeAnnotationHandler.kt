@@ -1,7 +1,6 @@
 package com.github.florent37.flutterbridge.annotations.flutter
 
 import com.github.florent37.flutterbridge.annotations.BridgeAnnotationHandler
-import com.github.florent37.flutterbridge.annotations.flutter.FlutterAnnotations.*
 
 class FlutterBridgeAnnotationHandler : BridgeAnnotationHandler {
 
