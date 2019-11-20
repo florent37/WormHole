@@ -5,5 +5,5 @@ import com.github.florent37.flutterbridge.annotations.flutter.Call
 interface UserManager2 {
 
     @Call("user")
-    suspend fun getUserName() : String
+    suspend fun getUserName(age: Int) : String
 }

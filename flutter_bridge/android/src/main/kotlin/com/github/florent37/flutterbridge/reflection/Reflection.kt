@@ -120,7 +120,7 @@ fun Class<*>.parameterRequireUnwrapping() = !this.parameterDoesNotRequireUnwrapp
 
 fun Class<*>.parameterDoesNotRequireUnwrapping(): Boolean {
     val parameterClass = this
-    return parameterClass.isPrimitive || parameterClass == String::class.java
+    return parameterClass.isPrimitive || String::class.java.isAssignableFrom(parameterClass) || Number::class.java.isAssignableFrom(parameterClass)
 }
 
 fun Method.parametersNames(annotationHandler: BridgeAnnotationHandler): List<String> {

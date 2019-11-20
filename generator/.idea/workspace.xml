@@ -2,11 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="26e3380e-23eb-484c-809d-29b1eacbbf48" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/../flutter_bridge/example/android/app/src/main/kotlin/com/github/florent37/flutter_bridge_example/usermanager/UserManager2.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../flutter_bridge/example/lib/usermanager/usermanager2.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../flutter_bridge/android/src/main/kotlin/com/github/florent37/flutterbridge/reflection/Reflection.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../flutter_bridge/android/src/main/kotlin/com/github/florent37/flutterbridge/reflection/Reflection.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../flutter_bridge/example/android/app/src/main/kotlin/com/github/florent37/flutter_bridge_example/MainActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../flutter_bridge/example/android/app/src/main/kotlin/com/github/florent37/flutter_bridge_example/MainActivity.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../flutter_bridge/example/lib/main.dart" beforeDir="false" afterPath="$PROJECT_DIR$/../flutter_bridge/example/lib/main.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../flutter_bridge/example/lib/userscreen/userscreen.dart" beforeDir="false" afterPath="$PROJECT_DIR$/../flutter_bridge/example/lib/userscreen/userscreen.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../flutter_bridge/example/android/app/src/main/kotlin/com/github/florent37/flutter_bridge_example/usermanager/UserManager2.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../flutter_bridge/example/android/app/src/main/kotlin/com/github/florent37/flutter_bridge_example/usermanager/UserManager2.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../flutter_bridge/example/lib/usermanager/usermanager2.dart" beforeDir="false" afterPath="$PROJECT_DIR$/../flutter_bridge/example/lib/usermanager/usermanager2.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/src/generator.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/generator.dart" afterDir="false" />
     </list>
@@ -24,8 +23,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/lib/src/generator.dart">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="179">
-              <caret line="429" column="30" selection-start-line="429" selection-start-column="30" selection-end-line="429" selection-end-column="30" />
+            <state relative-caret-position="340">
+              <caret line="496" column="26" lean-forward="true" selection-start-line="496" selection-start-column="26" selection-end-line="496" selection-end-column="26" />
               <folding>
                 <element signature="e#0#52#0" expanded="true" />
               </folding>
@@ -36,7 +35,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$APPLICATION_CONFIG_DIR$/scratches/scratch.dart">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="435">
+            <state relative-caret-position="300">
               <caret line="29" column="11" selection-start-line="29" selection-start-column="11" selection-end-line="29" selection-end-column="11" />
             </state>
           </provider>
@@ -111,6 +110,7 @@
       <find>fromJs</find>
       <find>bind</find>
       <find>This method should only return a void or Future&lt;YourModel&gt;.</find>
+      <find>$_input</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -135,7 +135,6 @@
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="64" />
     <option name="y" value="23" />
     <option name="width" value="1541" />
     <option name="height" value="1027" />
@@ -147,6 +146,7 @@
     </navigator>
     <panes>
       <pane id="Scope" />
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -169,7 +169,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -206,10 +205,11 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="64" y="23" width="1541" height="1027" extended-state="0" />
+    <frame x="0" y="23" width="1541" height="1027" extended-state="0" />
+    <editor active="true" />
     <layout>
       <window_info id="Captures" order="0" weight="0.25" />
-      <window_info content_ui="combo" id="Project" order="1" visible="true" weight="0.3569046" />
+      <window_info content_ui="combo" id="Project" order="1" visible="true" weight="0.37091395" />
       <window_info id="Structure" order="2" side_tool="true" />
       <window_info id="Image Layers" order="3" />
       <window_info id="Designer" order="4" />
@@ -293,8 +293,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/lib/src/generator.dart">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="179">
-          <caret line="429" column="30" selection-start-line="429" selection-start-column="30" selection-end-line="429" selection-end-column="30" />
+        <state relative-caret-position="340">
+          <caret line="496" column="26" lean-forward="true" selection-start-line="496" selection-start-column="26" selection-end-line="496" selection-end-column="26" />
           <folding>
             <element signature="e#0#52#0" expanded="true" />
           </folding>
@@ -303,7 +303,7 @@
     </entry>
     <entry file="file://$APPLICATION_CONFIG_DIR$/scratches/scratch.dart">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="435">
+        <state relative-caret-position="300">
           <caret line="29" column="11" selection-start-line="29" selection-start-column="11" selection-end-line="29" selection-end-column="11" />
         </state>
       </provider>

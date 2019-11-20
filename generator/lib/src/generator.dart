@@ -424,11 +424,7 @@ class FlutterBridgeGenerator extends GeneratorForAnnotation<flutter_bridge.Flutt
       mm
         ..name = "bind"
         ..returns = refer(element.type.toString())
-        ..body = Block.of([
-          Code("this.$_target = target;"),
-          _generateInjections(injectFields),
-          Code("return target;")
-        ])
+        ..body = Block.of([Code("this.$_target = target;"), _generateInjections(injectFields), Code("return target;")])
         ..requiredParameters.add(Parameter((p) => p
           ..type = refer(element.type.toString())
           ..name = "target"));
@@ -463,8 +459,7 @@ class FlutterBridgeGenerator extends GeneratorForAnnotation<flutter_bridge.Flutt
       final MethodElement method = bindAnnotatedMethods[i];
       if (isStream(method.returnType)) {
         print("Error generating Expose for ${method.name}, Events can only be streamed from native to Flutter currently");
-      }
-      else {
+      } else {
         final String annotationMethodName = getAnnotationName(getMethodAnnotation(method, _methodsAnnotations));
         final String realMethodName = method.name;
 
@@ -480,7 +475,7 @@ class FlutterBridgeGenerator extends GeneratorForAnnotation<flutter_bridge.Flutt
             // 1 parameter -> set or decode json depending on type
             final parameterType = parameter.type;
 
-            final String parameterVariable = "_\$_parameter";
+            final String parameterVariable = "\$parameter\$\$";
 
             String methodCall;
             if (parameter.isOptionalNamed) {
@@ -489,13 +484,26 @@ class FlutterBridgeGenerator extends GeneratorForAnnotation<flutter_bridge.Flutt
               methodCall = "$_target.$realMethodName($parameterVariable)";
             }
 
+            final parameterName = parameter.name;
+            final variableName = "\$param";
+
+            codes.addAll([
+              Code("if(call.arguments != null && call.arguments is ${parameterType.toString()}) {"),
+              Code("final $parameterVariable = call.arguments as ${parameterType.toString()};"),
+              generateBindingReturn(method, methodCall, false),
+              Code("} else "),
+            ]);
+
             codes.addAll([
               Code("if(call.arguments != null && call.arguments is Map<dynamic, dynamic>) {"),
-              Code("  final $_input = Map<String, dynamic>.from(call.arguments as Map<dynamic, dynamic>);"),
-              Code("  final $parameterVariable = $parameterType.fromJson($_input);"),
-              generateBindingReturn(method, methodCall, false),
-              Code("}")
+              Code("final $_input = Map<String, dynamic>.from(call.arguments as Map<dynamic, dynamic>);"),
             ]);
+            if (isPrimitiveType(parameterType)) {
+              codes.add(Code("final $parameterVariable = $_input[\"$parameterName\"] as ${parameterType.toString()};"));
+            } else {
+              codes.add(generateJsonDecodeFromMap(type: parameterType, parameterName: parameterVariable, variableName: variableName, mapName: "$_input"));
+            }
+            codes.addAll([generateBindingReturn(method, methodCall, false), Code("}")]);
           } else {
             //multiple parameters -> unwrap
 

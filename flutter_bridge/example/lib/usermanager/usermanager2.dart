@@ -5,13 +5,13 @@ part 'usermanager2.g.dart';
 @FlutterBridge()
 class UserManager2 {
 
-  UserManager2(){}
+  UserManager2();
 
   @Expose("user")
-  Future<String> getUserName() async {
-    return "florent";
+  Future<String> getUserName(int age) async {
+    return "florent $age";
   }
 
-  UserManager2 bind(String channel) => Bridge_UserManager2(channel).bind(this);
+  bind(channel) => Bridge_UserManager2(channel).bind(this);
 
 }

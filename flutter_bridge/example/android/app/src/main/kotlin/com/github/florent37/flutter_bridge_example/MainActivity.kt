@@ -25,7 +25,7 @@ class MainActivity : FlutterActivity(), CoroutineScope by MainScope() {
 
         launch {
             delay(3000)
-            val name = userBridge2.getUserName()
+            val name = userBridge2.getUserName(18)
             Log.d("MainActivity", "$name")
         }
     }
