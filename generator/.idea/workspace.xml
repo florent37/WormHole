@@ -2,12 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="26e3380e-23eb-484c-809d-29b1eacbbf48" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/../flutter_bridge/android/src/main/kotlin/com/github/florent37/flutterbridge/reflection/Reflection.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../flutter_bridge/android/src/main/kotlin/com/github/florent37/flutterbridge/reflection/Reflection.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../flutter_bridge/android/src/main/kotlin/com/github/florent37/flutterbridge/FlutterBuildBridge.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../flutter_bridge/android/src/main/kotlin/com/github/florent37/flutterbridge/FlutterBuildBridge.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../flutter_bridge/example/android/app/src/main/kotlin/com/github/florent37/flutter_bridge_example/MainActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../flutter_bridge/example/android/app/src/main/kotlin/com/github/florent37/flutter_bridge_example/MainActivity.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../flutter_bridge/example/android/app/src/main/kotlin/com/github/florent37/flutter_bridge_example/usermanager/UserManager2.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../flutter_bridge/example/android/app/src/main/kotlin/com/github/florent37/flutter_bridge_example/usermanager/UserManager2.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../flutter_bridge/example/lib/usermanager/usermanager2.dart" beforeDir="false" afterPath="$PROJECT_DIR$/../flutter_bridge/example/lib/usermanager/usermanager2.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/src/generator.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/generator.dart" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -24,7 +20,7 @@
         <entry file="file://$PROJECT_DIR$/lib/src/generator.dart">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="340">
-              <caret line="496" column="26" lean-forward="true" selection-start-line="496" selection-start-column="26" selection-end-line="496" selection-end-column="26" />
+              <caret line="496" column="26" selection-start-line="496" selection-start-column="26" selection-end-line="496" selection-end-column="26" />
               <folding>
                 <element signature="e#0#52#0" expanded="true" />
               </folding>
@@ -294,7 +290,7 @@
     <entry file="file://$PROJECT_DIR$/lib/src/generator.dart">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="340">
-          <caret line="496" column="26" lean-forward="true" selection-start-line="496" selection-start-column="26" selection-end-line="496" selection-end-column="26" />
+          <caret line="496" column="26" selection-start-line="496" selection-start-column="26" selection-end-line="496" selection-end-column="26" />
           <folding>
             <element signature="e#0#52#0" expanded="true" />
           </folding>

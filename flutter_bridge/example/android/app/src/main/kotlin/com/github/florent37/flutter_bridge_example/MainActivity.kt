@@ -6,6 +6,7 @@ import com.github.florent37.flutter_bridge_example.usermanager.UserManager
 import com.github.florent37.flutter_bridge_example.usermanager.UserManager2
 import com.github.florent37.flutterbridge.buildBridge
 import com.github.florent37.flutterbridge.expose
+import com.github.florent37.flutterbridge.exposeTo
 import com.github.florent37.flutterbridge.flutterBridge
 import io.flutter.app.FlutterActivity
 import io.flutter.plugins.GeneratedPluginRegistrant
@@ -24,7 +25,6 @@ class MainActivity : FlutterActivity(), CoroutineScope by MainScope() {
         expose("user", userManager)
 
         launch {
-            delay(3000)
             val name = userBridge2.getUserName(18)
             Log.d("MainActivity", "$name")
         }
