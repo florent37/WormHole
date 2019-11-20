@@ -495,7 +495,7 @@ class FlutterBridgeGenerator extends GeneratorForAnnotation<flutter_bridge.Flutt
             ]);
 
             codes.addAll([
-              Code("if(call.arguments != null && call.arguments is Map<dynamic, dynamic>) {"),
+              Code("if(call.arguments != null && call.arguments is Map<dynamic, dynamic> && (call.arguments as Map<dynamic, dynamic>).length >= 1) {"),
               Code("final $_input = Map<String, dynamic>.from(call.arguments as Map<dynamic, dynamic>);"),
             ]);
             if (isPrimitiveType(parameterType)) {
@@ -509,6 +509,7 @@ class FlutterBridgeGenerator extends GeneratorForAnnotation<flutter_bridge.Flutt
 
             codes.addAll([
               Code("final $_input = Map<String, dynamic>.from(call.arguments as Map<dynamic, dynamic>);"),
+              Code("if(call.arguments.length >= ${method.parameters.length}) { "),
             ]);
             final parametersNames = [];
             for (var i = 0; i < method.parameters.length; ++i) {
@@ -545,6 +546,7 @@ class FlutterBridgeGenerator extends GeneratorForAnnotation<flutter_bridge.Flutt
             methodCall += ")";
 
             codes.add(generateBindingReturn(method, methodCall, false));
+            codes.add(Code("}"));
           }
         }
 
