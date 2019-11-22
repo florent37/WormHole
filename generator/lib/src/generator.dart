@@ -484,8 +484,8 @@ class FlutterBridgeGenerator extends GeneratorForAnnotation<flutter_bridge.Flutt
               methodCall = "$_target.$realMethodName($parameterVariable)";
             }
 
-            final parameterName = parameter.name;
-            final variableName = "\$param";
+            final annotationParam = getParameterAnnotation(parameter, [flutter_bridge.Param]);
+            final parameterName = getAnnotationName(annotationParam) ?? parameter.name;
 
             codes.addAll([
               Code("if(call.arguments != null && call.arguments is ${parameterType.toString()}) {"),
@@ -495,13 +495,14 @@ class FlutterBridgeGenerator extends GeneratorForAnnotation<flutter_bridge.Flutt
             ]);
 
             codes.addAll([
-              Code("if(call.arguments != null && call.arguments is Map<dynamic, dynamic> && (call.arguments as Map<dynamic, dynamic>).length >= 1) {"),
+              Code("if(call.arguments != null && call.arguments is Map<dynamic, dynamic> ) {"),
               Code("final $_input = Map<String, dynamic>.from(call.arguments as Map<dynamic, dynamic>);"),
             ]);
             if (isPrimitiveType(parameterType)) {
               codes.add(Code("final $parameterVariable = $_input[\"$parameterName\"] as ${parameterType.toString()};"));
             } else {
-              codes.add(generateJsonDecodeFromMap(type: parameterType, parameterName: parameterVariable, variableName: variableName, mapName: "$_input"));
+              codes.add(
+                  generateJsonDecodeFromMap(type: parameterType, parameterName: parameterName, variableName: parameterVariable, mapName: "$_input", forceUseAnnotationName: annotationParam != null));
             }
             codes.addAll([generateBindingReturn(method, methodCall, false), Code("}")]);
           } else {
@@ -509,7 +510,9 @@ class FlutterBridgeGenerator extends GeneratorForAnnotation<flutter_bridge.Flutt
 
             codes.addAll([
               Code("final $_input = Map<String, dynamic>.from(call.arguments as Map<dynamic, dynamic>);"),
-              Code("if(call.arguments.length >= ${method.parameters.length}) { "),
+              Code("if(call.arguments.length <= ${method.parameters.length}) { "),
+              Code("print(\"error while calling ${method.name}, received only ${method.parameters.length} parameters, are you sure your native implementation and flutter binding are symetric ?\");"),
+              Code("} else { "),
             ]);
             final parametersNames = [];
             for (var i = 0; i < method.parameters.length; ++i) {
@@ -569,7 +572,7 @@ class FlutterBridgeGenerator extends GeneratorForAnnotation<flutter_bridge.Flutt
     return type.isDartCoreBool || type.isDartCoreDouble || type.isDartCoreInt || type.isDartCoreString;
   }
 
-  Code generateJsonDecodeFromMap({DartType type, String mapName, String parameterName, String variableName}) {
+  Code generateJsonDecodeFromMap({DartType type, String mapName, String parameterName, String variableName, bool forceUseAnnotationName = false}) {
     if (type is ParameterizedType) {
       final isList = type.toString().startsWith("List");
 
@@ -594,9 +597,29 @@ class FlutterBridgeGenerator extends GeneratorForAnnotation<flutter_bridge.Flutt
       }
     }
 
-    return Block.of([
-      Code("  final $variableName = $type.fromJson(Map<String, dynamic>.from($mapName[\"$parameterName\"] as Map<dynamic, dynamic>));"),
+    List<Code> codes = List();
+
+    codes.add(Code("dynamic $variableName;"));
+
+    final fromJsonMapWithAnnotationName = Block.of([
+      Code("if ((call.arguments as Map<dynamic, dynamic>).length >= 1) {"),
+      Code("    $variableName = $type.fromJson(Map<String, dynamic>.from($mapName[\"$parameterName\"] as Map<dynamic, dynamic>));"),
+      Code("}"),
     ]);
+
+    if (forceUseAnnotationName) {
+      codes.add(fromJsonMapWithAnnotationName);
+    } else {
+      codes.addAll([
+        Code("try {"),
+        Code("   $variableName = $type.fromJson(Map<String, dynamic>.from($mapName));"),
+        Code("} catch (t) {"),
+        fromJsonMapWithAnnotationName,
+        Code("}"),
+      ]);
+    }
+
+    return Block.of(codes);
   }
 
   Code generateBindingReturn(MethodElement method, String methodCall, bool mustReturn) {
