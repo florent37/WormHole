@@ -15,7 +15,7 @@ class FlutterBridgeGenerator extends GeneratorForAnnotation<flutter_bridge.Flutt
   static const _PlatformWaiter = "PlatformWaiter";
   static const _channelName = "channelName";
   static const _eventChannel = "\$eventChannel\$\$";
-  static const _handleMessage = "_bridge_handleMessage";
+  static const _handleMessage = "\$bridge\$handleMessage";
   static const _target = "_target";
   static const _toReturn = "\$toReturn\$\$";
   static const _input = "\$input\$\$";
@@ -46,14 +46,14 @@ class FlutterBridgeGenerator extends GeneratorForAnnotation<flutter_bridge.Flutt
 
       if (bindAnnotatedMethods.isNotEmpty) {
         c
-          ..name = 'Bridge_$className'
+          ..name = 'Bridge\$$className'
           ..constructors.addAll([_generateBindConstructor()])
           ..fields.addAll([_buildBridgeFiled(), _buildChannelNameFiled(), _builTargetFiled(element)])
           ..methods.addAll(_generateBindMethods(element, bindAnnotatedMethods, injectFields));
       } else {
         if (element.isAbstract) {
           c
-            ..name = '_$className'
+            ..name = '\$$className'
             ..constructors.addAll([_generateFromToConstructor()])
             ..fields.addAll([_buildBridgeFiled(), _buildChannelNameFiled(), _buildWaiterslFiled()])
             ..implements = ListBuilder([refer(className)])
