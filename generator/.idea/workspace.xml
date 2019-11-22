@@ -2,9 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="26e3380e-23eb-484c-809d-29b1eacbbf48" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/../examples/add2app/flutter_project/lib/question/question_bridge.dart" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../flutter_bridge/android/gradlew" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/src/generator.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/generator.dart" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -21,8 +18,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/lib/src/generator.dart">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="291">
-              <caret line="610" column="21" selection-start-line="610" selection-start-column="21" selection-end-line="610" selection-end-column="21" />
+            <state relative-caret-position="356">
+              <caret line="608" column="139" selection-start-line="608" selection-start-column="139" selection-end-line="608" selection-end-column="139" />
               <folding>
                 <element signature="e#0#52#0" expanded="true" />
               </folding>
@@ -343,8 +340,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/lib/src/generator.dart">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="291">
-          <caret line="610" column="21" selection-start-line="610" selection-start-column="21" selection-end-line="610" selection-end-column="21" />
+        <state relative-caret-position="356">
+          <caret line="608" column="139" selection-start-line="608" selection-start-column="139" selection-end-line="608" selection-end-column="139" />
           <folding>
             <element signature="e#0#52#0" expanded="true" />
           </folding>

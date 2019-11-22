@@ -602,8 +602,11 @@ class FlutterBridgeGenerator extends GeneratorForAnnotation<flutter_bridge.Flutt
     codes.add(Code("dynamic $variableName;"));
 
     final fromJsonMapWithAnnotationName = Block.of([
+      Code("/* look inside the map to fetch the object, using @Param */"),
       Code("if ((call.arguments as Map<dynamic, dynamic>).length >= 1) {"),
       Code("    $variableName = $type.fromJson(Map<String, dynamic>.from($mapName[\"$parameterName\"] as Map<dynamic, dynamic>));"),
+      Code("} else {"),
+      Code(" print(\"cannot retrieve a $type from arguments, are you sure the native implementation method send at lease one argument ?\");"),
       Code("}"),
     ]);
 
@@ -612,6 +615,7 @@ class FlutterBridgeGenerator extends GeneratorForAnnotation<flutter_bridge.Flutt
     } else {
       codes.addAll([
         Code("try {"),
+        Code("/* trying to decode the map directly to our object */"),
         Code("   $variableName = $type.fromJson(Map<String, dynamic>.from($mapName));"),
         Code("} catch (t) {"),
         fromJsonMapWithAnnotationName,
