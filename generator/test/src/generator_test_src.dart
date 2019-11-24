@@ -36,7 +36,7 @@ class Bridge_QuestionBinding {
 @FlutterBridge()
 class QuestionBinding {
 
-  @InjectBinding(channelName: "test") QuestionBridge bridge;
+  @Retrieve(channelName: "test") QuestionBridge bridge;
 
   @Expose("answer")
   void displayTask(Answer answer) {

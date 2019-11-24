@@ -13,16 +13,18 @@ part 'question_bloc.g.dart';
 @FlutterBridge()
 class QuestionBloc implements Bloc {
 
-  @InjectBinding()
+  @Retrieve()
   QuestionController questionBridge;
 
   final _questionToDisplay = BehaviorSubject<Question>();
   Observable<Question> get questionToDisplay => _questionToDisplay.stream;
 
   QuestionBloc() {
+    //I want to expose this object to "question"
     Bridge$QuestionBloc("question").expose(this);
   }
 
+  //this method will be exposed
   @Expose("question")
   void question(Question question) {
     _questionToDisplay.add(question);

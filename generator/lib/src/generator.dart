@@ -142,7 +142,7 @@ class FlutterBridgeGenerator extends GeneratorForAnnotation<flutter_bridge.Flutt
    */
   Code _generateInjections(List<FieldElement> injectFields) {
     return Block.of(injectFields.map((field) {
-      String channelName = getAnnotationName(getFieldAnnotation(field, [flutter_bridge.InjectBinding]));
+      String channelName = getAnnotationName(getFieldAnnotation(field, [flutter_bridge.Retrieve]));
       if (channelName == null) {
         return Code("$_target.${field.name} = ${field.type.toString()}($_channelName);");
       } else {
@@ -177,7 +177,7 @@ class FlutterBridgeGenerator extends GeneratorForAnnotation<flutter_bridge.Flutt
    */
   List<FieldElement> _findInjectFields(List<FieldElement> fields) {
     return fields.where((FieldElement m) {
-      final ConstantReader annotation = getFieldAnnotation(m, [flutter_bridge.InjectBinding]);
+      final ConstantReader annotation = getFieldAnnotation(m, [flutter_bridge.Retrieve]);
       return annotation != null;
     }).toList();
   }

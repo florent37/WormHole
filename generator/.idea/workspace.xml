@@ -2,13 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="26e3380e-23eb-484c-809d-29b1eacbbf48" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/../examples/add2app/flutter_project/lib/question/question_bloc.dart" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../examples/add2app/flutter_project/lib/question/question_controller.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../examples/add2app/flutter_project/lib/question/question_bridge.dart" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../flutter_bridge/android/src/main/kotlin/com/github/florent37/flutterbridge/BridgeManager.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../flutter_bridge/android/src/main/kotlin/com/github/florent37/flutterbridge/BridgeManager.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../flutter_bridge/android/src/main/kotlin/com/github/florent37/flutterbridge/FlutterBuildBridge.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../flutter_bridge/android/src/main/kotlin/com/github/florent37/flutterbridge/FlutterBuildBridge.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../examples/add2app/flutter_project/lib/question/question_bloc.dart" beforeDir="false" afterPath="$PROJECT_DIR$/../examples/add2app/flutter_project/lib/question/question_bloc.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../flutter_bridge/lib/platform_annotations.dart" beforeDir="false" afterPath="$PROJECT_DIR$/../flutter_bridge/lib/platform_annotations.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/src/generator.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/generator.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/lib/src/generator.dart" beforeDir="false" afterPath="$PROJECT_DIR$/test/lib/src/generator.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/lib/src/generator_helper.dart" beforeDir="false" afterPath="$PROJECT_DIR$/test/lib/src/generator_helper.dart" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -21,11 +20,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/lib/src/generator.dart">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="186">
-              <caret line="459" column="32" selection-start-line="459" selection-start-column="32" selection-end-line="459" selection-end-column="32" />
+            <state relative-caret-position="195">
+              <caret line="179" column="86" selection-start-line="179" selection-start-column="86" selection-end-line="179" selection-end-column="86" />
               <folding>
                 <element signature="e#0#52#0" expanded="true" />
               </folding>
@@ -34,19 +33,19 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/../flutter_bridge/lib/platform_annotations.dart">
+        <entry file="file://$PROJECT_DIR$/test/lib/src/generator_helper.dart">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="630">
-              <caret line="44" column="6" selection-start-line="44" selection-start-column="6" selection-end-line="44" selection-end-column="6" />
+            <state relative-caret-position="45">
+              <caret line="3" selection-start-line="3" selection-end-line="3" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$APPLICATION_CONFIG_DIR$/scratches/scratch.dart">
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/test/lib/src/generator.dart">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="450">
-              <caret line="30" column="69" selection-start-line="30" selection-start-column="34" selection-end-line="30" selection-end-column="69" />
+            <state relative-caret-position="195">
+              <caret line="148" column="86" selection-start-line="148" selection-start-column="86" selection-end-line="148" selection-end-column="86" />
             </state>
           </provider>
         </entry>
@@ -54,7 +53,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/lib/src/generator_helper.dart">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1005">
+            <state relative-caret-position="1065">
               <caret line="71" column="13" selection-start-line="71" selection-start-column="5" selection-end-line="71" selection-end-column="13" />
               <folding>
                 <element signature="e#0#52#0" expanded="true" />
@@ -99,7 +98,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/lib/builder.dart">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="30">
+            <state relative-caret-position="45">
               <caret line="3" column="28" selection-start-line="3" selection-start-column="8" selection-end-line="3" selection-end-column="28" />
               <folding>
                 <element signature="e#0#34#0" expanded="true" />
@@ -145,7 +144,9 @@
         <option value="$PROJECT_DIR$/LICENSE" />
         <option value="$PROJECT_DIR$/lib/src/generator_helper.dart" />
         <option value="$APPLICATION_CONFIG_DIR$/scratches/scratch.dart" />
+        <option value="$PROJECT_DIR$/test/lib/src/generator_helper.dart" />
         <option value="$PROJECT_DIR$/lib/src/generator.dart" />
+        <option value="$PROJECT_DIR$/test/lib/src/generator.dart" />
       </list>
     </option>
   </component>
@@ -161,6 +162,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -181,8 +184,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
-      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -223,7 +224,7 @@
     <editor active="true" />
     <layout>
       <window_info id="Captures" order="0" weight="0.25" />
-      <window_info content_ui="combo" id="Project" order="1" visible="true" weight="0.30769232" />
+      <window_info content_ui="combo" id="Project" order="1" visible="true" weight="0.31501833" />
       <window_info id="Structure" order="2" side_tool="true" />
       <window_info id="Image Layers" order="3" />
       <window_info id="Designer" order="4" />
@@ -316,16 +317,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/lib/src/generator.dart">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="186">
-          <caret line="459" column="32" selection-start-line="459" selection-start-column="32" selection-end-line="459" selection-end-column="32" />
-          <folding>
-            <element signature="e#0#52#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/../flutter_bridge/lib/platform_annotations.dart">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="630">
@@ -342,7 +333,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/lib/src/generator_helper.dart">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1005">
+        <state relative-caret-position="1065">
           <caret line="71" column="13" selection-start-line="71" selection-start-column="5" selection-end-line="71" selection-end-column="13" />
           <folding>
             <element signature="e#0#52#0" expanded="true" />
@@ -375,11 +366,35 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/lib/builder.dart">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
+        <state relative-caret-position="45">
           <caret line="3" column="28" selection-start-line="3" selection-start-column="8" selection-end-line="3" selection-end-column="28" />
           <folding>
             <element signature="e#0#34#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/lib/src/generator_helper.dart">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="45">
+          <caret line="3" selection-start-line="3" selection-end-line="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/src/generator.dart">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="195">
+          <caret line="179" column="86" selection-start-line="179" selection-start-column="86" selection-end-line="179" selection-end-column="86" />
+          <folding>
+            <element signature="e#0#52#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/lib/src/generator.dart">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="195">
+          <caret line="148" column="86" selection-start-line="148" selection-start-column="86" selection-end-line="148" selection-end-column="86" />
         </state>
       </provider>
     </entry>

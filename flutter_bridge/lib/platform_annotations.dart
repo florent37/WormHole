@@ -42,6 +42,6 @@ class Param extends PlatformAnnotation {
 }
 
 @immutable
-class InjectBinding extends PlatformAnnotation {
-  const InjectBinding({String channelName = null}) : super(FlutterPlatformDirection.INJECT, channelName);
+class Retrieve extends PlatformAnnotation {
+  const Retrieve({String channelName = null}) : super(FlutterPlatformDirection.INJECT, channelName);
 }
