@@ -4,15 +4,15 @@ import io.flutter.app.FlutterActivity
 import io.flutter.plugin.common.BinaryMessenger
 import io.flutter.view.FlutterView
 
-inline fun <reified T> BinaryMessenger.buildBridge(channelName: String) : T {
+inline fun <reified T> BinaryMessenger.retrieve(channelName: String) : T {
     return BridgeManager.findOrCreate(this, channelName).buildBridge()
 }
 
-inline fun <B : BinaryMessenger> BinaryMessenger.expose(channelName: String, annotatedElement: Any) {
+inline fun BinaryMessenger.expose(channelName: String, annotatedElement: Any) {
     BridgeManager.findOrCreate(this, channelName).expose(annotatedElement)
 }
 
-inline fun <reified T> FlutterView.Provider.buildBridge(channelName: String) : T {
+inline fun <reified T> FlutterView.Provider.retrieve(channelName: String) : T {
     return BridgeManager.findOrCreate(this.flutterView, channelName).buildBridge()
 }
 
@@ -38,5 +38,5 @@ inline fun <T : Any> T.exposeTo(channelName: String, binaryMessenger: BinaryMess
     return this
 }
 
-inline fun <reified T> FlutterActivity.flutterBridge(channelName: String) = lazy { buildBridge<T>(channelName) }
-inline fun <reified T> BinaryMessenger.flutterBridge(channelName: String) = lazy { buildBridge<T>(channelName) }
+inline fun <reified T> FlutterActivity.flutterRetrieve(channelName: String) = lazy { retrieve<T>(channelName) }
+inline fun <reified T> BinaryMessenger.flutterRetrieve(channelName: String) = lazy { retrieve<T>(channelName) }

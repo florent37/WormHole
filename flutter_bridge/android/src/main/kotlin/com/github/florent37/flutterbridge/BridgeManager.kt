@@ -79,7 +79,6 @@ class BridgeManager(
             arg: Any?,
             result: MethodChannel.Result
     ) {
-
         Log.d(TAG, "onMethodCalled $name $arg")
 
         waitingCalls[name]?.forEach {
@@ -354,6 +353,14 @@ class BridgeManager(
         return completableDeferred
     }
 
+    fun display(array: Array<Any?>) : String {
+        var displayed = ""
+        array.forEach {
+            displayed += it?.toString() ?: "null"
+        }
+        return displayed
+    }
+
     /**
      * Used for bind / expose annotations
      */
@@ -379,11 +386,13 @@ class BridgeManager(
                     continue
                 }
 
+                Log.d(TAG, "callMethodOnObject transformed $arg into ${display(params)}")
+
                 coroutineViewScope.launch {
                     //handle return
                     try {
                         val methodResult = element.invokeSuspend(method, params)
-                        Log.d(TAG, "callMethodOnObject $methodResult")
+                        Log.d(TAG, "callMethodOnObject ${method.name}(${display(params)}) => returns $methodResult")
                         handleCallMethodOnObjectReturn(
                                 element = element,
                                 method = method,

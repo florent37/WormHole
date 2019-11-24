@@ -19,8 +19,17 @@ class FlutterBridgeGenerator extends GeneratorForAnnotation<flutter_bridge.Flutt
   static const _target = "_target";
   static const _toReturn = "\$toReturn\$\$";
   static const _input = "\$input\$\$";
+  static const _mapName = "_\$_map";
+
+  static const _bindMethodName = "expose";
 
   bool _showLogs = true;
+
+  final _methodsAnnotations = const [
+    flutter_bridge.Wait,
+    flutter_bridge.Call,
+    flutter_bridge.Expose,
+  ];
 
   FlutterBridgeGenerator() {}
 
@@ -53,7 +62,7 @@ class FlutterBridgeGenerator extends GeneratorForAnnotation<flutter_bridge.Flutt
       } else {
         if (element.isAbstract) {
           c
-            ..name = '\$$className'
+            ..name = 'Bridge\$$className'
             ..constructors.addAll([_generateFromToConstructor()])
             ..fields.addAll([_buildBridgeFiled(), _buildChannelNameFiled(), _buildWaiterslFiled()])
             ..implements = ListBuilder([refer(className)])
@@ -89,12 +98,18 @@ class FlutterBridgeGenerator extends GeneratorForAnnotation<flutter_bridge.Flutt
     ..name = _target
     ..type = refer(element.type.toString()));
 
+  /**
+   * For Bridges with methods annotated with @Wait
+   */
   Field _buildWaiterslFiled() => Field((m) => m
     ..name = _waiters
     ..type = refer("Map<String, $_PlatformWaiter>")
     ..modifier = FieldModifier.final$
     ..assignment = Code("Map<String, $_PlatformWaiter>()"));
 
+  /**
+   * For Bridges with methods annotated with @Wait & @Call
+   */
   Constructor _generateFromToConstructor() => Constructor((c) {
         c.requiredParameters.add(Parameter((p) => p
           ..name = _channelName
@@ -109,6 +124,22 @@ class FlutterBridgeGenerator extends GeneratorForAnnotation<flutter_bridge.Flutt
         ]);
       });
 
+  /**
+   * For Bridges with methods annotated with @Expose
+   */
+  Constructor _generateBindConstructor() => Constructor((c) {
+    c.requiredParameters.add(Parameter((p) => p
+      ..name = _channelName
+      ..toThis = true));
+    c.body = Code("""
+            this.$_bridge = $_flutterBridge().findOrCreate($_channelName);
+            this.$_bridge.addMethodCallHandler($_handleMessage);
+        """);
+  });
+
+  /**
+   * For Bridges with fields annotated with @InjectBinding
+   */
   Code _generateInjections(List<FieldElement> injectFields) {
     return Block.of(injectFields.map((field) {
       String channelName = getAnnotationName(getFieldAnnotation(field, [flutter_bridge.InjectBinding]));
@@ -120,16 +151,9 @@ class FlutterBridgeGenerator extends GeneratorForAnnotation<flutter_bridge.Flutt
     }));
   }
 
-  Constructor _generateBindConstructor() => Constructor((c) {
-        c.requiredParameters.add(Parameter((p) => p
-          ..name = _channelName
-          ..toThis = true));
-        c.body = Code("""
-            this.$_bridge = $_flutterBridge().findOrCreate($_channelName);
-            this.$_bridge.addMethodCallHandler($_handleMessage);
-        """);
-      });
-
+  /**
+   * Returns the given class methods annotated with at least one element of _methodsAnnotations
+   */
   List<MethodElement> _findAnnotatedMethods(ClassElement element) {
     return element.methods.where((MethodElement m) {
       final methodAnnot = getMethodAnnotation(m, _methodsAnnotations);
@@ -137,6 +161,9 @@ class FlutterBridgeGenerator extends GeneratorForAnnotation<flutter_bridge.Flutt
     }).toList();
   }
 
+  /**
+   * Returns the given class methods annotated with one @Expose
+   */
   List<MethodElement> _findBindMethods(List<MethodElement> annotatedMethods) {
     return annotatedMethods.where((MethodElement m) {
       final ConstantReader annotation = getMethodAnnotation(m, _methodsAnnotations);
@@ -145,6 +172,9 @@ class FlutterBridgeGenerator extends GeneratorForAnnotation<flutter_bridge.Flutt
     }).toList();
   }
 
+  /**
+   * Returns the given class fields annotated with one @InjectBinding
+   */
   List<FieldElement> _findInjectFields(List<FieldElement> fields) {
     return fields.where((FieldElement m) {
       final ConstantReader annotation = getFieldAnnotation(m, [flutter_bridge.InjectBinding]);
@@ -152,6 +182,9 @@ class FlutterBridgeGenerator extends GeneratorForAnnotation<flutter_bridge.Flutt
     }).toList();
   }
 
+  /**
+   * Returns the given class methods annotated with one @Call
+   */
   List<MethodElement> _findToMethods(List<MethodElement> annotatedMethods) {
     return annotatedMethods.where((MethodElement m) {
       final ConstantReader annotation = getMethodAnnotation(m, _methodsAnnotations);
@@ -160,6 +193,9 @@ class FlutterBridgeGenerator extends GeneratorForAnnotation<flutter_bridge.Flutt
     }).toList();
   }
 
+  /**
+   * Returns the given class methods annotated with one @Wait
+   */
   List<MethodElement> _findFromMethods(List<MethodElement> annotatedMethods) {
     return annotatedMethods.where((MethodElement m) {
       final ConstantReader annotation = getMethodAnnotation(m, _methodsAnnotations);
@@ -168,6 +204,9 @@ class FlutterBridgeGenerator extends GeneratorForAnnotation<flutter_bridge.Flutt
     }).toList();
   }
 
+  /**
+   * Construct generated mothods from @Wait & @Call annotated methods
+   */
   List<Method> _parseFromToMethods(ClassElement element, List<MethodElement> annotatedMethods) {
     final List<Method> generatedMethods = List();
 
@@ -187,12 +226,6 @@ class FlutterBridgeGenerator extends GeneratorForAnnotation<flutter_bridge.Flutt
 
     return generatedMethods;
   }
-
-  final _methodsAnnotations = const [
-    flutter_bridge.Wait,
-    flutter_bridge.Call,
-    flutter_bridge.Expose,
-  ];
 
   String getAnnotationDirection(ConstantReader annotation) {
     if (annotation != null) {
@@ -320,8 +353,10 @@ class FlutterBridgeGenerator extends GeneratorForAnnotation<flutter_bridge.Flutt
     return Block.of(codes);
   }
 
+  /**
+   * Generate method (only body) from @Call annotated element
+   */
   Code _generateToBody(MethodElement method, String methodName) {
-    final mapName = "_\$_map";
 
     if (isStream(method.returnType)) {
       final List<Code> codes = List();
@@ -333,8 +368,8 @@ class FlutterBridgeGenerator extends GeneratorForAnnotation<flutter_bridge.Flutt
         final parameter = method.parameters[0];
         codes.add(Code("return $_eventChannel.getBroadcastSubscription(${transformParameter(parameter)}).map(($_input) {"));
       } else {
-        codes.add(_generateMapParameters(mapName, method));
-        codes.add(Code("return $_eventChannel.getBroadcastSubscription(${mapName}).map(($_input) {"));
+        codes.add(_generateMapParameters(_mapName, method));
+        codes.add(Code("return $_eventChannel.getBroadcastSubscription(${_mapName}).map(($_input) {"));
       }
       codes.add(Code("  return ${getResponseInnerType(method.returnType)}.fromJson(Map<String, dynamic>.from($_input));"));
       codes.add(Code("});"));
@@ -355,10 +390,10 @@ class FlutterBridgeGenerator extends GeneratorForAnnotation<flutter_bridge.Flutt
 
           methodCall = "$_bridge.invokeMethod(\"$methodName\", ${transformParameter(parameter)})";
         } else {
-          methodCall = "$_bridge.invokeMethod(\"$methodName\", $mapName)";
+          methodCall = "$_bridge.invokeMethod(\"$methodName\", $_mapName)";
 
           return Block.of([
-            _generateMapParameters(mapName, method),
+            _generateMapParameters(_mapName, method),
             generateToReturn(method, methodCall),
           ]);
         }
@@ -422,7 +457,7 @@ class FlutterBridgeGenerator extends GeneratorForAnnotation<flutter_bridge.Flutt
     //bindMethod
     final bindMethod = Method((mm) {
       mm
-        ..name = "bind"
+        ..name = _bindMethodName
         ..returns = refer(element.type.toString())
         ..body = Block.of([Code("this.$_target = target;"), _generateInjections(injectFields), Code("return target;")])
         ..requiredParameters.add(Parameter((p) => p
