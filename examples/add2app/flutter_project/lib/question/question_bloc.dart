@@ -21,7 +21,7 @@ class QuestionBloc implements Bloc {
 
   QuestionBloc() {
     //I want to expose this object to "question"
-    Bridge$QuestionBloc("question").expose(this);
+    Expose$QuestionBloc("question").expose(this);
   }
 
   //this method will be exposed

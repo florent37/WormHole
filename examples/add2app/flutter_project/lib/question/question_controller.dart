@@ -7,7 +7,7 @@ part 'question_controller.g.dart';
 @FlutterBridge()
 abstract class QuestionController {
 
-  factory QuestionController(channelName) => Bridge$QuestionController(channelName);
+  factory QuestionController(channelName) => Retrieve$QuestionController(channelName);
 
   @Call("answer")
   void answer(Answer answer);
