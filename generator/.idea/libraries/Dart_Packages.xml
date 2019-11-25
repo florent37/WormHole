@@ -523,7 +523,7 @@
         <entry key="wormhole">
           <value>
             <list>
-              <option value="$PROJECT_DIR$/../flutter_bridge/lib" />
+              <option value="$PROJECT_DIR$/../wormhole/lib" />
             </list>
           </value>
         </entry>
@@ -612,7 +612,7 @@
       <root url="file://$PROJECT_DIR$/../../flutter-sdk/bin/cache/pkg/sky_engine/lib" />
       <root url="file://$PROJECT_DIR$/../../flutter-sdk/packages/flutter/lib" />
       <root url="file://$PROJECT_DIR$/../../flutter-sdk/packages/flutter_test/lib" />
-      <root url="file://$PROJECT_DIR$/../flutter_bridge/lib" />
+      <root url="file://$PROJECT_DIR$/../wormhole/lib" />
     </CLASSES>
     <JAVADOC />
     <SOURCES />

@@ -516,7 +516,7 @@ packages:
   wormhole:
     dependency: "direct main"
     description:
-      path: "../flutter_bridge"
+      path: "../wormhole"
       relative: true
     source: path
     version: "0.0.1"
