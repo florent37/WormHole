@@ -1,0 +1,22 @@
+PODS:
+  - Flutter (1.0.0)
+  - wormhole (0.0.1):
+    - Flutter
+
+DEPENDENCIES:
+  - Flutter (from `.symlinks/flutter/ios`)
+  - wormhole (from `.symlinks/plugins/wormhole/ios`)
+
+EXTERNAL SOURCES:
+  Flutter:
+    :path: ".symlinks/flutter/ios"
+  wormhole:
+    :path: ".symlinks/plugins/wormhole/ios"
+
+SPEC CHECKSUMS:
+  Flutter: 0e3d915762c693b495b44d77113d4970485de6ec
+  wormhole: ac6c343625320fc40ae9296f76ff4fc5053c9e0b
+
+PODFILE CHECKSUM: 10ae9c18d12c9ffc2275c9a159a3b1e281990db0
+
+COCOAPODS: 1.6.1

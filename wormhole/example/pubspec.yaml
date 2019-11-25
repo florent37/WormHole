@@ -1,0 +1,30 @@
+name: wormhole_example
+description: Demonstrates how to use the wormhole plugin.
+publish_to: 'none'
+
+environment:
+  sdk: ">=2.2.2 <3.0.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+  json_annotation:
+  wormhole:
+
+dev_dependencies:
+  build_runner: ^1.4.0
+  json_serializable:
+  wormhole_generator:
+
+  flutter_test:
+    sdk: flutter
+
+
+flutter:
+  uses-material-design: true
+
+dependency_overrides:
+  wormhole:
+    path: ../../wormhole
+  wormhole_generator:
+    path: ../../generator
