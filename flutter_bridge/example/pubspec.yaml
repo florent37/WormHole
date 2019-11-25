@@ -1,4 +1,4 @@
-name: flutter_bridge_example
+name: wormhole_example
 description: Demonstrates how to use the flutter_bridge plugin.
 publish_to: 'none'
 
@@ -9,12 +9,12 @@ dependencies:
   flutter:
     sdk: flutter
   json_annotation:
-  flutter_bridge:
+  wormhole:
 
 dev_dependencies:
   build_runner: ^1.4.0
   json_serializable:
-  flutter_bridge_generator:
+  wormhole_generator:
 
   flutter_test:
     sdk: flutter
@@ -24,7 +24,7 @@ flutter:
   uses-material-design: true
 
 dependency_overrides:
-  flutter_bridge:
+  wormhole:
     path: ../../flutter_bridge
-  flutter_bridge_generator:
+  wormhole_generator:
     path: ../../generator

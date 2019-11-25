@@ -1,10 +1,10 @@
 # Read about `build.yaml` at https://pub.dartlang.org/packages/build_config
 builders:
-  flutter_bridge:
-    target: ':flutter_bridge'
-    import: 'package:flutter_bridge_generator/builder.dart'
-    builder_factories: ['flutterBridgeBuilder']
-    build_extensions: { '.dart': ['.flutter_bridge.g.part'] }
+  wormhole:
+    target: ':wormhole'
+    import: 'package:wormhole_generator/builder.dart'
+    builder_factories: ['flutterWormHoleBuilder']
+    build_extensions: { '.dart': ['.wormhole.g.part'] }
     auto_apply: dependents
     build_to: cache
     applies_builders: ['source_gen|combining_builder']

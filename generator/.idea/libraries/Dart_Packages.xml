@@ -68,7 +68,6 @@
         <entry key="built_value">
           <value>
             <list>
-              <option value="$PROJECT_DIR$/../../flutter-sdk/.pub-cache/hosted/pub.dartlang.org/built_value-6.7.1/lib" />
               <option value="$PROJECT_DIR$/../../flutter-sdk/.pub-cache/hosted/pub.dartlang.org/built_value-7.0.0/lib" />
             </list>
           </value>
@@ -90,7 +89,6 @@
         <entry key="code_builder">
           <value>
             <list>
-              <option value="$PROJECT_DIR$/../../flutter-sdk/.pub-cache/hosted/pub.dartlang.org/code_builder-3.2.0/lib" />
               <option value="$PROJECT_DIR$/../../flutter-sdk/.pub-cache/hosted/pub.dartlang.org/code_builder-3.2.1/lib" />
             </list>
           </value>
@@ -141,13 +139,6 @@
           <value>
             <list>
               <option value="$PROJECT_DIR$/../../flutter-sdk/packages/flutter/lib" />
-            </list>
-          </value>
-        </entry>
-        <entry key="flutter_bridge">
-          <value>
-            <list>
-              <option value="$PROJECT_DIR$/../flutter_bridge/lib" />
             </list>
           </value>
         </entry>
@@ -529,6 +520,13 @@
             </list>
           </value>
         </entry>
+        <entry key="wormhole">
+          <value>
+            <list>
+              <option value="$PROJECT_DIR$/../flutter_bridge/lib" />
+            </list>
+          </value>
+        </entry>
         <entry key="yaml">
           <value>
             <list>
@@ -548,11 +546,9 @@
       <root url="file://$PROJECT_DIR$/../../flutter-sdk/.pub-cache/hosted/pub.dartlang.org/build_resolvers-1.2.1/lib" />
       <root url="file://$PROJECT_DIR$/../../flutter-sdk/.pub-cache/hosted/pub.dartlang.org/build_test-0.10.9+1/lib" />
       <root url="file://$PROJECT_DIR$/../../flutter-sdk/.pub-cache/hosted/pub.dartlang.org/built_collection-4.2.2/lib" />
-      <root url="file://$PROJECT_DIR$/../../flutter-sdk/.pub-cache/hosted/pub.dartlang.org/built_value-6.7.1/lib" />
       <root url="file://$PROJECT_DIR$/../../flutter-sdk/.pub-cache/hosted/pub.dartlang.org/built_value-7.0.0/lib" />
       <root url="file://$PROJECT_DIR$/../../flutter-sdk/.pub-cache/hosted/pub.dartlang.org/charcode-1.1.2/lib" />
       <root url="file://$PROJECT_DIR$/../../flutter-sdk/.pub-cache/hosted/pub.dartlang.org/checked_yaml-1.0.2/lib" />
-      <root url="file://$PROJECT_DIR$/../../flutter-sdk/.pub-cache/hosted/pub.dartlang.org/code_builder-3.2.0/lib" />
       <root url="file://$PROJECT_DIR$/../../flutter-sdk/.pub-cache/hosted/pub.dartlang.org/code_builder-3.2.1/lib" />
       <root url="file://$PROJECT_DIR$/../../flutter-sdk/.pub-cache/hosted/pub.dartlang.org/collection-1.14.11/lib" />
       <root url="file://$PROJECT_DIR$/../../flutter-sdk/.pub-cache/hosted/pub.dartlang.org/convert-2.1.1/lib" />

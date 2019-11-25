@@ -4,11 +4,11 @@ import 'package:build/build.dart';
 import 'package:built_collection/built_collection.dart';
 import 'package:code_builder/code_builder.dart';
 import 'package:dart_style/dart_style.dart';
-import 'package:flutter_bridge/platform_annotations.dart' as flutter_bridge;
-import 'package:flutter_bridge_generator/src/generator_helper.dart';
+import 'package:wormhole/platform_annotations.dart' as wormhole;
+import 'package:wormhole_generator/src/generator_helper.dart';
 import 'package:source_gen/source_gen.dart';
 
-class FlutterBridgeGenerator extends GeneratorForAnnotation<flutter_bridge.FlutterBridge> {
+class FlutterWormHoleGenerator extends GeneratorForAnnotation<wormhole.WormHole> {
   static const _flutterBridge = "flutterBridge";
   static const _bridge = "_bridge";
   static const _waiters = "_waiters";
@@ -26,9 +26,9 @@ class FlutterBridgeGenerator extends GeneratorForAnnotation<flutter_bridge.Flutt
   bool _showLogs = true;
 
   final _methodsAnnotations = const [
-    flutter_bridge.Wait,
-    flutter_bridge.Call,
-    flutter_bridge.Expose,
+    wormhole.Wait,
+    wormhole.Call,
+    wormhole.Expose,
   ];
 
   FlutterBridgeGenerator() {}
@@ -142,7 +142,7 @@ class FlutterBridgeGenerator extends GeneratorForAnnotation<flutter_bridge.Flutt
    */
   Code _generateInjections(List<FieldElement> injectFields) {
     return Block.of(injectFields.map((field) {
-      String channelName = getAnnotationName(getFieldAnnotation(field, [flutter_bridge.Retrieve]));
+      String channelName = getAnnotationName(getFieldAnnotation(field, [wormhole.Retrieve]));
       if (channelName == null) {
         return Code("$_target.${field.name} = ${field.type.toString()}($_channelName);");
       } else {
@@ -168,7 +168,7 @@ class FlutterBridgeGenerator extends GeneratorForAnnotation<flutter_bridge.Flutt
     return annotatedMethods.where((MethodElement m) {
       final ConstantReader annotation = getMethodAnnotation(m, _methodsAnnotations);
       final direction = getAnnotationDirection(annotation);
-      return direction == flutter_bridge.FlutterPlatformDirection.BIND;
+      return direction == wormhole.FlutterPlatformDirection.BIND;
     }).toList();
   }
 
@@ -177,7 +177,7 @@ class FlutterBridgeGenerator extends GeneratorForAnnotation<flutter_bridge.Flutt
    */
   List<FieldElement> _findInjectFields(List<FieldElement> fields) {
     return fields.where((FieldElement m) {
-      final ConstantReader annotation = getFieldAnnotation(m, [flutter_bridge.Retrieve]);
+      final ConstantReader annotation = getFieldAnnotation(m, [wormhole.Retrieve]);
       return annotation != null;
     }).toList();
   }
@@ -189,7 +189,7 @@ class FlutterBridgeGenerator extends GeneratorForAnnotation<flutter_bridge.Flutt
     return annotatedMethods.where((MethodElement m) {
       final ConstantReader annotation = getMethodAnnotation(m, _methodsAnnotations);
       final direction = getAnnotationDirection(annotation);
-      return direction == flutter_bridge.FlutterPlatformDirection.TO;
+      return direction == wormhole.FlutterPlatformDirection.TO;
     }).toList();
   }
 
@@ -200,7 +200,7 @@ class FlutterBridgeGenerator extends GeneratorForAnnotation<flutter_bridge.Flutt
     return annotatedMethods.where((MethodElement m) {
       final ConstantReader annotation = getMethodAnnotation(m, _methodsAnnotations);
       final direction = getAnnotationDirection(annotation);
-      return direction == flutter_bridge.FlutterPlatformDirection.FROM;
+      return direction == wormhole.FlutterPlatformDirection.FROM;
     }).toList();
   }
 
@@ -343,7 +343,7 @@ class FlutterBridgeGenerator extends GeneratorForAnnotation<flutter_bridge.Flutt
     final List<String> parametersNames = List();
     for (var i = 0; i < method.parameters.length; ++i) {
       final parameter = method.parameters[i];
-      final parameterName = getAnnotationName(getParameterAnnotation(parameter, [flutter_bridge.Param])) ?? parameter.name;
+      final parameterName = getAnnotationName(getParameterAnnotation(parameter, [wormhole.Param])) ?? parameter.name;
       parametersNames.add(parameterName);
 
       print("parameter.type.name: ${parameter.type.name}");
@@ -519,7 +519,7 @@ class FlutterBridgeGenerator extends GeneratorForAnnotation<flutter_bridge.Flutt
               methodCall = "$_target.$realMethodName($parameterVariable)";
             }
 
-            final annotationParam = getParameterAnnotation(parameter, [flutter_bridge.Param]);
+            final annotationParam = getParameterAnnotation(parameter, [wormhole.Param]);
             final parameterName = getAnnotationName(annotationParam) ?? parameter.name;
 
             codes.addAll([
@@ -552,7 +552,7 @@ class FlutterBridgeGenerator extends GeneratorForAnnotation<flutter_bridge.Flutt
             final parametersNames = [];
             for (var i = 0; i < method.parameters.length; ++i) {
               final parameter = method.parameters[i];
-              final parameterName = getAnnotationName(getParameterAnnotation(parameter, [flutter_bridge.Param])) ?? parameter.name;
+              final parameterName = getAnnotationName(getParameterAnnotation(parameter, [wormhole.Param])) ?? parameter.name;
 
               final parameterType = parameter.type;
 
@@ -755,4 +755,4 @@ class FlutterBridgeGenerator extends GeneratorForAnnotation<flutter_bridge.Flutt
   }
 }
 
-Builder generatorFactoryBuilder(BuilderOptions options) => new SharedPartBuilder([new FlutterBridgeGenerator()], "flutter_bridge");
+Builder generatorFactoryBuilder(BuilderOptions options) => new SharedPartBuilder([new FlutterWormHoleGenerator()], "wormholee");

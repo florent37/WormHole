@@ -1,5 +1,5 @@
-name: flutter_bridge_generator
-description: Flutter Platform Bridge generator a classes depending on annotations to communicate with current platform (inspired by Retrofit)
+name: wormhole_generator
+description: Flutter WormHole generator a classes depending on annotations to communicate with current platform (inspired by Retrofit)
 version: 1.0.0
 
 authors:
@@ -16,7 +16,7 @@ dependencies:
   source_gen: ^0.9.4+2
   built_collection: ^4.2.0
   code_builder: ^3.2.0
-  flutter_bridge:
+  wormhole:
 dev_dependencies:
   test:
   source_gen_test: any
@@ -27,5 +27,5 @@ dev_dependencies:
 
 
 dependency_overrides:
-  flutter_bridge:
+  wormhole:
     path: ../flutter_bridge

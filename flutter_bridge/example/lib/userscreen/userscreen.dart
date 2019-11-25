@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_bridge_example/usermanager/user.dart';
-import 'package:flutter_bridge_example/usermanager/usermanager.dart';
+import 'package:wormhole_example/usermanager/user.dart';
+import 'package:wormhole_example/usermanager/usermanager.dart';
 
 class UserScreen extends StatefulWidget {
   @override

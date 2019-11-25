@@ -1,10 +1,10 @@
 
-import 'package:flutter_bridge/flutter_bridge.dart';
-import 'package:flutter_bridge_example/usermanager/user.dart';
+import 'package:wormhole/wormhole.dart';
+import 'package:wormhole_example/usermanager/user.dart';
 
 part 'usermanager.g.dart';
 
-@FlutterBridge()
+@WormHole()
 abstract class UserManager {
 
   @Call("getUser")
@@ -16,5 +16,5 @@ abstract class UserManager {
   @Call("clear")
   void clear();
 
-  factory UserManager(String channelName) => _UserManager(channelName);
+  factory UserManager(String channelName) => Retrieve$UserManager(channelName);
 }

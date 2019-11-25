@@ -1,10 +1,10 @@
-import 'package:flutter_bridge/flutter_bridge.dart';
+import 'package:wormhole/wormhole.dart';
 
 import 'model/answer.dart';
 
 part 'question_controller.g.dart';
 
-@FlutterBridge()
+@WormHole()
 abstract class QuestionController {
 
   factory QuestionController(channelName) => Retrieve$QuestionController(channelName);

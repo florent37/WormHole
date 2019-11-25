@@ -1,8 +1,9 @@
-import 'package:flutter_bridge/flutter_bridge.dart';
+import 'package:wormhole/wormhole.dart';
+import 'dart:async';
 
 part 'usermanager2.g.dart';
 
-@FlutterBridge()
+@WormHole()
 class UserManager2 {
 
   UserManager2();
@@ -12,6 +13,6 @@ class UserManager2 {
     return "florent $age";
   }
 
-  bind(channel) => Bridge_UserManager2(channel).bind(this);
+  bind(channel) => Expose$UserManager2(channel).expose(this);
 
 }

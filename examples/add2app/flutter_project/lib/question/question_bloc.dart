@@ -1,7 +1,7 @@
 import 'dart:async';
 
 import 'package:bloc_provider/bloc_provider.dart';
-import 'package:flutter_bridge/flutter_bridge.dart';
+import 'package:wormhole/wormhole.dart';
 import 'package:flutter_project/question/model/answer.dart';
 import 'package:flutter_project/question/question_controller.dart';
 import 'package:rxdart/rxdart.dart';
@@ -10,7 +10,7 @@ import 'model/question.dart';
 
 part 'question_bloc.g.dart';
 
-@FlutterBridge()
+@WormHole()
 class QuestionBloc implements Bloc {
 
   @Retrieve()

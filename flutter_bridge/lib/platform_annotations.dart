@@ -17,8 +17,8 @@ abstract class PlatformAnnotation {
 }
 
 @immutable
-class FlutterBridge {
-  const FlutterBridge();
+class WormHole {
+  const WormHole();
 }
 
 @immutable

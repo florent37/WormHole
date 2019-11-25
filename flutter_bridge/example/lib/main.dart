@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_bridge_example/usermanager/usermanager2.dart';
-import 'package:flutter_bridge_example/userscreen/userscreen.dart';
+import 'package:wormhole_example/usermanager/usermanager2.dart';
+import 'package:wormhole_example/userscreen/userscreen.dart';
 
 void main() => runApp(MyApp());
 
