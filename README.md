@@ -1,0 +1,188 @@
+# WormHole
+
+A WormHole is a speculative structure linking disparate points in spacetime.
+
+In a mobile universe, a WormHole is a special solution of the Einstein field equations,
+enabling to share platform classes to Flutter, and expose Flutter's classes to your native code.
+
+# Example
+
+## Expose on Flutter, Retrieve on Native
+
+### Expose on Flutter
+
+1. Add `@WormHole` annotation on your class
+2. Add `@Expose("name")` on your method, specifying a method name
+3. Expose your object to a named WormHole, here it's done in the constructor
+
+```dart
+@WormHole() //A WormHole will be created arount this class
+class QuestionBloc implements Bloc {
+
+  QuestionBloc() {
+    //I want to expose this object through the wormhole named "question"
+    Expose$QuestionBloc("question").expose(this);
+  }
+
+  //this method will be exposed to native through a WormHole, using the method name "ask"
+  @Expose("ask")
+  void ask(Question question) {
+    //TODO your code here
+  }
+}
+```
+
+### Retrieve on native
+
+1. Create an interface, containing reflecting your Dart class `QuestionBloc`
+2. For each @Expose method in Dart, create an @Call method, containing the same method name : `ask`
+```kotlin
+interface QuestionBloc {
+    @Call("ask")
+    fun question(question: Question)
+}
+```
+3. Retrieve an object sent into the wormhole
+```kotlin
+//retrieve the Flutter's QuestionBloc, in a FlutterActivity for example
+val questionBloc = retrieve<QuestionBloc>("question")
+```
+
+4. Your can now interact with your class 
+```kotlin
+questionBloc.ask(Question("what's your name"))
+```
+
+## Expose on Native, Retrieve on Flutter
+
+### Native
+
+1. Add `@Expose("name")` on your method, specifying a method name
+. For async methods, be sure they're implementing coroutine's `suspend`
+. For observables results, be sure they're implementing coroutine's `Flow`
+
+```kotlin
+class UserManager(val context: Context) {
+
+    companion object {
+        const val USER = "user"
+    }
+
+    /**
+     * For example, save an user as json into shared preferences
+     * Can be a room database, etc.
+     */
+    private val gson = Gson()
+    private val sharedPreferences = context.getSharedPreferences("user_shared", Context.MODE_PRIVATE)
+    private val userChannel = ConflatedBroadcastChannel<User?>()
+
+    init {
+        updateUser()
+    }
+
+    private fun updateUser() {
+        val currentUser = sharedPreferences.getString(USER, null)?.let {
+            gson.fromJson(it, User::class.java)
+        }
+        userChannel.offer(currentUser)
+    }
+
+    /**
+     * A stream exposing the current user
+     */
+    @Expose("getUser")
+    fun getUser(): Flow<User?> = userChannel.asFlow()
+
+    @Expose("saveUser")
+    suspend fun saveUser(user: User) {
+        sharedPreferences.edit().putString(USER, gson.toJson(user)).apply()
+        updateUser()
+    }
+
+    @Expose("clear")
+    fun clear() {
+        sharedPreferences.edit().remove(USER).apply()
+        updateUser()
+    }
+}
+```
+
+2. Expose this class to a Flutter's element
+```kotlin
+class MainActivity : FlutterActivity() {
+
+    private val userManager by lazy { UserManager(this) }
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        GeneratedPluginRegistrant.registerWith(this)
+
+        /**
+         * Expose the user manager to be accessible to Flutter via a WormHole
+         */
+        expose("user", userManager)
+    }
+}
+```
+
+### Flutter
+
+1. Create an abstract class mirroring the Native's element
+2. Annotate it with `@WormHole()`
+3. For each Native's method, create a Dart method annotated with `@Call("methodname")`
+. For async methods, be sure they're returning a `Future<type>`
+. For observables results, be sure they're returining a `Stream<type>`
+4. Create a factory, jumping to `Retrieve$yourclass(channelName);`
+
+```dart
+@WormHole()
+abstract class UserManager {
+
+  @Call("getUser")
+  Stream<User> getUser();
+
+  @Call("saveUser")
+  Future<void> saveUser(User user);
+
+  @Call("clear")
+  void clear();
+
+  factory UserManager(channelName) => Retrieve$UserManager(channelName);
+}
+```
+
+5. Then retrieve your native object from the WormHole
+
+```dart
+final UserManager userManager = UserManager("user");
+``` 
+
+And use it as an usual flutter class
+
+```dart
+StreamBuilder(
+    stream: userManager.getUser(),
+    builder: (context, snapshot) {
+       if (snapshot.hasData && snapshot.data != null) {
+         final user = snapshot.data;
+         ...
+       }
+    }
+);
+```
+
+# Flutter 
+
+WormHole uses annotation processing to Expose/Retrieve Dart through WormHoles
+
+See [Generator](./generator/) for further explanations and configurations
+
+# Android 
+
+WormHole uses jvm reflection to Expose/Retrieve Java/Kotlin objects to be accessible through WormHoles
+
+See [WormHole-Android](./wormhole/)
+
+# iOS
+
+¯\_(ツ)_/¯
