@@ -43,7 +43,7 @@ class UserManager(val context: Context) {
     fun getUser(): Flow<User?> = userChannel.asFlow()
 
     @Expose("saveUser")
-    suspend fun saveUser(user: User) {
+    fun saveUser(user: User) {
         sharedPreferences.edit().putString(USER, gson.toJson(user)).apply()
         updateUser()
     }

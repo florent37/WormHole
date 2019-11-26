@@ -5,12 +5,13 @@
     <content url="file://$MODULE_DIR$">
       <excludeFolder url="file://$MODULE_DIR$/examples/add2app/flutter_project/.pub" />
       <excludeFolder url="file://$MODULE_DIR$/examples/add2app/flutter_project/build" />
+      <excludeFolder url="file://$MODULE_DIR$/examples/example/.pub" />
+      <excludeFolder url="file://$MODULE_DIR$/examples/example/build" />
       <excludeFolder url="file://$MODULE_DIR$/generator/.pub" />
       <excludeFolder url="file://$MODULE_DIR$/generator/build" />
       <excludeFolder url="file://$MODULE_DIR$/wormhole/.pub" />
       <excludeFolder url="file://$MODULE_DIR$/wormhole/build" />
       <excludeFolder url="file://$MODULE_DIR$/wormhole/example/.pub" />
-      <excludeFolder url="file://$MODULE_DIR$/wormhole/example/build" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
