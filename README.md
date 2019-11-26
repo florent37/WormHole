@@ -5,7 +5,25 @@ A WormHole is a speculative structure linking disparate points in spacetime.
 In a mobile universe, a WormHole is a special solution of the Einstein field equations,
 enabling to share platform classes to Flutter, and expose Flutter's classes to your native code.
 
-# Example
+# Import
+
+WormHole depends on [`json_annotation`](https://pub.dev/packages/json_annotation) and needs a dart [`build_runner`](https://pub.dev/packages/build_runner) to run [`json_serializable`](https://pub.dev/packages/json_serializable)
+
+```yaml
+dependencies:
+  flutter:
+    sdk: flutter
+
+  json_annotation: 3.0.0
+  wormhole: 1.0.0
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  build_runner: 1.7.2
+  json_serializable: 3.2.3
+  wormhole_generator: 1.0.0
+```
 
 ## Expose on Flutter, Retrieve on Native
 
@@ -174,13 +192,13 @@ StreamBuilder(
 
 # Flutter 
 
-WormHole uses annotation processing to Expose/Retrieve Dart through WormHoles
+WormHole uses annotation processing to Expose/Retrieve Dart through WormHole
 
 See [Generator](./generator/) for further explanations and configurations
 
 # Android 
 
-WormHole uses jvm reflection to Expose/Retrieve Java/Kotlin objects to be accessible through WormHoles
+WormHole uses jvm reflection to Expose/Retrieve Java/Kotlin objects to be accessible through WormHole
 
 See [WormHole-Android](./wormhole/)
 

@@ -4,7 +4,6 @@
     <list default="true" id="4f3564d0-f9fa-44a7-9567-22f2a9062418" name="Default Changelist" comment="">
       <change afterPath="$PROJECT_DIR$/examples/add2app/AndroidApp/app/src/main/java/com/github/florent37/androidapp/QuestionViewModel.kt" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/examples/add2app/AndroidApp/app/src/main/java/com/github/florent37/androidapp/core/BaseActivity.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/examples/add2app/AndroidApp" beforeDir="false" afterPath="$PROJECT_DIR$/examples/add2app/AndroidApp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/examples/add2app/AndroidApp/app/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/examples/add2app/AndroidApp/app/build.gradle" afterDir="false" />
@@ -12,8 +11,6 @@
       <change beforePath="$PROJECT_DIR$/examples/add2app/AndroidApp/app/src/main/java/com/github/florent37/androidapp/MainActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/examples/add2app/AndroidApp/app/src/main/java/com/github/florent37/androidapp/MainActivity.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/examples/add2app/AndroidApp/app/src/main/java/com/github/florent37/androidapp/SplashActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/examples/add2app/AndroidApp/app/src/main/java/com/github/florent37/androidapp/SplashActivity.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/examples/add2app/AndroidApp/app/src/main/java/com/github/florent37/androidapp/question/QuestionBridge.kt" beforeDir="false" afterPath="$PROJECT_DIR$/examples/add2app/AndroidApp/app/src/main/java/com/github/florent37/androidapp/question/QuestionBloc.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/generator/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/generator/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/generator/lib/src/generator.dart" beforeDir="false" afterPath="$PROJECT_DIR$/generator/lib/src/generator.dart" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -44,8 +41,22 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/README.md">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="162">
-              <caret line="20" column="36" lean-forward="true" selection-start-line="20" selection-start-column="36" selection-end-line="20" selection-end-column="36" />
+            <state relative-caret-position="330">
+              <caret line="22" column="21" selection-start-line="22" selection-start-column="21" selection-end-line="22" selection-end-column="21" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/wormhole/pubspec.yaml">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/examples/add2app/flutter_project/pubspec.yaml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="490">
+              <caret line="38" column="28" lean-forward="true" selection-start-line="22" selection-end-line="38" selection-end-column="28" />
             </state>
           </provider>
         </entry>
@@ -96,6 +107,7 @@
   <component name="FindInProjectRecents">
     <findStrings>
       <find>Exp</find>
+      <find>Expose$</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -132,201 +144,20 @@
             <path>
               <item name="wormhole" type="b2602c69:ProjectViewProjectNode" />
               <item name="wormhole" type="462c0819:PsiDirectoryNode" />
-              <item name="wormhole" type="462c0819:PsiDirectoryNode" />
+              <item name="examples" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="wormhole" type="b2602c69:ProjectViewProjectNode" />
               <item name="wormhole" type="462c0819:PsiDirectoryNode" />
-              <item name="wormhole" type="462c0819:PsiDirectoryNode" />
-              <item name="example" type="462c0819:PsiDirectoryNode" />
+              <item name="examples" type="462c0819:PsiDirectoryNode" />
+              <item name="add2app" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="wormhole" type="b2602c69:ProjectViewProjectNode" />
               <item name="wormhole" type="462c0819:PsiDirectoryNode" />
-              <item name="wormhole" type="462c0819:PsiDirectoryNode" />
-              <item name="example" type="462c0819:PsiDirectoryNode" />
-              <item name="android" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="wormhole" type="b2602c69:ProjectViewProjectNode" />
-              <item name="wormhole" type="462c0819:PsiDirectoryNode" />
-              <item name="wormhole" type="462c0819:PsiDirectoryNode" />
-              <item name="example" type="462c0819:PsiDirectoryNode" />
-              <item name="android" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="wormhole" type="b2602c69:ProjectViewProjectNode" />
-              <item name="wormhole" type="462c0819:PsiDirectoryNode" />
-              <item name="wormhole" type="462c0819:PsiDirectoryNode" />
-              <item name="example" type="462c0819:PsiDirectoryNode" />
-              <item name="android" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="wormhole" type="b2602c69:ProjectViewProjectNode" />
-              <item name="wormhole" type="462c0819:PsiDirectoryNode" />
-              <item name="wormhole" type="462c0819:PsiDirectoryNode" />
-              <item name="example" type="462c0819:PsiDirectoryNode" />
-              <item name="android" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="wormhole" type="b2602c69:ProjectViewProjectNode" />
-              <item name="wormhole" type="462c0819:PsiDirectoryNode" />
-              <item name="wormhole" type="462c0819:PsiDirectoryNode" />
-              <item name="example" type="462c0819:PsiDirectoryNode" />
-              <item name="android" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="wormhole" type="b2602c69:ProjectViewProjectNode" />
-              <item name="wormhole" type="462c0819:PsiDirectoryNode" />
-              <item name="wormhole" type="462c0819:PsiDirectoryNode" />
-              <item name="example" type="462c0819:PsiDirectoryNode" />
-              <item name="android" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="io" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="wormhole" type="b2602c69:ProjectViewProjectNode" />
-              <item name="wormhole" type="462c0819:PsiDirectoryNode" />
-              <item name="wormhole" type="462c0819:PsiDirectoryNode" />
-              <item name="example" type="462c0819:PsiDirectoryNode" />
-              <item name="android" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="io" type="462c0819:PsiDirectoryNode" />
-              <item name="flutter" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="wormhole" type="b2602c69:ProjectViewProjectNode" />
-              <item name="wormhole" type="462c0819:PsiDirectoryNode" />
-              <item name="wormhole" type="462c0819:PsiDirectoryNode" />
-              <item name="example" type="462c0819:PsiDirectoryNode" />
-              <item name="android" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="io" type="462c0819:PsiDirectoryNode" />
-              <item name="flutter" type="462c0819:PsiDirectoryNode" />
-              <item name="plugins" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="wormhole" type="b2602c69:ProjectViewProjectNode" />
-              <item name="wormhole" type="462c0819:PsiDirectoryNode" />
-              <item name="wormhole" type="462c0819:PsiDirectoryNode" />
-              <item name="example" type="462c0819:PsiDirectoryNode" />
-              <item name="android" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="kotlin" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="wormhole" type="b2602c69:ProjectViewProjectNode" />
-              <item name="wormhole" type="462c0819:PsiDirectoryNode" />
-              <item name="wormhole" type="462c0819:PsiDirectoryNode" />
-              <item name="example" type="462c0819:PsiDirectoryNode" />
-              <item name="android" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="kotlin" type="462c0819:PsiDirectoryNode" />
-              <item name="com" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="wormhole" type="b2602c69:ProjectViewProjectNode" />
-              <item name="wormhole" type="462c0819:PsiDirectoryNode" />
-              <item name="wormhole" type="462c0819:PsiDirectoryNode" />
-              <item name="example" type="462c0819:PsiDirectoryNode" />
-              <item name="android" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="kotlin" type="462c0819:PsiDirectoryNode" />
-              <item name="com" type="462c0819:PsiDirectoryNode" />
-              <item name="github" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="wormhole" type="b2602c69:ProjectViewProjectNode" />
-              <item name="wormhole" type="462c0819:PsiDirectoryNode" />
-              <item name="wormhole" type="462c0819:PsiDirectoryNode" />
-              <item name="example" type="462c0819:PsiDirectoryNode" />
-              <item name="android" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="kotlin" type="462c0819:PsiDirectoryNode" />
-              <item name="com" type="462c0819:PsiDirectoryNode" />
-              <item name="github" type="462c0819:PsiDirectoryNode" />
-              <item name="florent37" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="wormhole" type="b2602c69:ProjectViewProjectNode" />
-              <item name="wormhole" type="462c0819:PsiDirectoryNode" />
-              <item name="wormhole" type="462c0819:PsiDirectoryNode" />
-              <item name="example" type="462c0819:PsiDirectoryNode" />
-              <item name="android" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="kotlin" type="462c0819:PsiDirectoryNode" />
-              <item name="com" type="462c0819:PsiDirectoryNode" />
-              <item name="github" type="462c0819:PsiDirectoryNode" />
-              <item name="florent37" type="462c0819:PsiDirectoryNode" />
-              <item name="wormhole_example" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="wormhole" type="b2602c69:ProjectViewProjectNode" />
-              <item name="wormhole" type="462c0819:PsiDirectoryNode" />
-              <item name="wormhole" type="462c0819:PsiDirectoryNode" />
-              <item name="example" type="462c0819:PsiDirectoryNode" />
-              <item name="android" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="kotlin" type="462c0819:PsiDirectoryNode" />
-              <item name="com" type="462c0819:PsiDirectoryNode" />
-              <item name="github" type="462c0819:PsiDirectoryNode" />
-              <item name="florent37" type="462c0819:PsiDirectoryNode" />
-              <item name="wormhole_example" type="462c0819:PsiDirectoryNode" />
-              <item name="usermanager" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="wormhole" type="b2602c69:ProjectViewProjectNode" />
-              <item name="wormhole" type="462c0819:PsiDirectoryNode" />
-              <item name="wormhole" type="462c0819:PsiDirectoryNode" />
-              <item name="example" type="462c0819:PsiDirectoryNode" />
-              <item name="lib" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="wormhole" type="b2602c69:ProjectViewProjectNode" />
-              <item name="wormhole" type="462c0819:PsiDirectoryNode" />
-              <item name="wormhole" type="462c0819:PsiDirectoryNode" />
-              <item name="example" type="462c0819:PsiDirectoryNode" />
-              <item name="lib" type="462c0819:PsiDirectoryNode" />
-              <item name="usermanager" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="wormhole" type="b2602c69:ProjectViewProjectNode" />
-              <item name="wormhole" type="462c0819:PsiDirectoryNode" />
-              <item name="wormhole" type="462c0819:PsiDirectoryNode" />
-              <item name="example" type="462c0819:PsiDirectoryNode" />
-              <item name="lib" type="462c0819:PsiDirectoryNode" />
-              <item name="userscreen" type="462c0819:PsiDirectoryNode" />
+              <item name="examples" type="462c0819:PsiDirectoryNode" />
+              <item name="add2app" type="462c0819:PsiDirectoryNode" />
+              <item name="flutter_project" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -372,7 +203,7 @@
     <editor active="true" />
     <layout>
       <window_info id="Captures" order="0" weight="0.25" />
-      <window_info content_ui="combo" id="Project" order="1" visible="true" weight="0.33333334" />
+      <window_info active="true" content_ui="combo" id="Project" order="1" visible="true" weight="0.33333334" />
       <window_info id="Structure" order="2" side_tool="true" />
       <window_info id="Image Layers" order="3" />
       <window_info id="Designer" order="4" />
@@ -383,7 +214,7 @@
       <window_info anchor="bottom" id="Debug" />
       <window_info anchor="bottom" id="Version Control" order="0" />
       <window_info anchor="bottom" id="TODO" order="1" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="2" visible="true" weight="0.32894737" />
+      <window_info anchor="bottom" id="Terminal" order="2" visible="true" weight="0.32894737" />
       <window_info anchor="bottom" id="Event Log" order="3" side_tool="true" />
       <window_info anchor="bottom" id="Flutter Performance" order="4" side_tool="true" />
       <window_info anchor="right" id="Capture Analysis" order="0" />
@@ -478,10 +309,20 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/wormhole/pubspec.yaml">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/examples/add2app/flutter_project/pubspec.yaml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="490">
+          <caret line="38" column="28" lean-forward="true" selection-start-line="22" selection-end-line="38" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/README.md">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="162">
-          <caret line="20" column="36" lean-forward="true" selection-start-line="20" selection-start-column="36" selection-end-line="20" selection-end-column="36" />
+        <state relative-caret-position="330">
+          <caret line="22" column="21" selection-start-line="22" selection-start-column="21" selection-end-line="22" selection-end-column="21" />
         </state>
       </provider>
     </entry>
