@@ -55,14 +55,14 @@ class FlutterWormHoleGenerator extends GeneratorForAnnotation<wormhole.WormHole>
 
       if (bindAnnotatedMethods.isNotEmpty) {
         c
-          ..name = 'Expose\$$className'
+          ..name = 'WormHole\$$className'
           ..constructors.addAll([_generateBindConstructor()])
           ..fields.addAll([_buildBridgeFiled(), _buildChannelNameFiled(), _builTargetFiled(element)])
           ..methods.addAll(_generateBindMethods(element, bindAnnotatedMethods, injectFields));
       } else {
         if (element.isAbstract) {
           c
-            ..name = 'Retrieve\$$className'
+            ..name = 'WormHole\$$className'
             ..constructors.addAll([_generateFromToConstructor()])
             ..fields.addAll([_buildBridgeFiled(), _buildChannelNameFiled(), _buildWaiterslFiled()])
             ..implements = ListBuilder([refer(className)])

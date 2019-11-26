@@ -2,131 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="26e3380e-23eb-484c-809d-29b1eacbbf48" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../flutter_bridge/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../flutter_bridge/.idea/codeStyles/Project.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../flutter_bridge/CHANGELOG.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../flutter_bridge/LICENSE" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../flutter_bridge/README.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../flutter_bridge/android/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../flutter_bridge/android/.idea/.name" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../flutter_bridge/android/.idea/codeStyles/Project.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../flutter_bridge/android/.idea/misc.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../flutter_bridge/android/.idea/runConfigurations.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../flutter_bridge/android/build.gradle" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../flutter_bridge/android/gradle.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../flutter_bridge/android/gradle/wrapper/gradle-wrapper.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../flutter_bridge/android/gradlew" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../flutter_bridge/android/res/values/strings_en.arb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../flutter_bridge/android/settings.gradle" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../flutter_bridge/android/src/main/AndroidManifest.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../flutter_bridge/android/src/main/java/com/github/florent37/wormhole/gson/CustomizedObjectTypeAdapter.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../flutter_bridge/android/src/main/java/com/github/florent37/wormhole/kotlin/KotlinHelper.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../flutter_bridge/android/src/main/kotlin/com/github/florent37/wormhole/ArgumentTransformer.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../flutter_bridge/android/src/main/kotlin/com/github/florent37/wormhole/BridgeError.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../flutter_bridge/android/src/main/kotlin/com/github/florent37/wormhole/BridgeManager.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../flutter_bridge/android/src/main/kotlin/com/github/florent37/wormhole/FlutterBuildBridge.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../flutter_bridge/android/src/main/kotlin/com/github/florent37/wormhole/FlutterViewWithArguments.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../flutter_bridge/android/src/main/kotlin/com/github/florent37/wormhole/ListUtils.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../flutter_bridge/android/src/main/kotlin/com/github/florent37/wormhole/SerialisationUtilsGSON.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../flutter_bridge/android/src/main/kotlin/com/github/florent37/wormhole/WormHolePlugin.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../flutter_bridge/android/src/main/kotlin/com/github/florent37/wormhole/annotations/BridgeAnnotationHandler.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../flutter_bridge/android/src/main/kotlin/com/github/florent37/wormhole/annotations/flutter/FlutterAnnotations.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../flutter_bridge/android/src/main/kotlin/com/github/florent37/wormhole/annotations/flutter/FlutterBridgeAnnotationHandler.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../flutter_bridge/android/src/main/kotlin/com/github/florent37/wormhole/deferred/WaitingCall.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../flutter_bridge/android/src/main/kotlin/com/github/florent37/wormhole/kotlin/DefferedWaiter.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../flutter_bridge/android/src/main/kotlin/com/github/florent37/wormhole/reflection/Reflection.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../flutter_bridge/android/src/test/java/com/github/florent37/flutterbridge/BridgeManagerTest.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../flutter_bridge/android/src/test/resources/mockito-extensions/org.mockito.plugins.MockMaker" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../flutter_bridge/example/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../flutter_bridge/example/.metadata" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../flutter_bridge/example/README.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../flutter_bridge/example/android/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../flutter_bridge/example/android/app/build.gradle" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../flutter_bridge/example/android/app/src/debug/AndroidManifest.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../flutter_bridge/example/android/app/src/main/AndroidManifest.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../flutter_bridge/example/android/app/src/main/kotlin/com/github/florent37/wormhole_example/MainActivity.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../flutter_bridge/example/android/app/src/main/kotlin/com/github/florent37/wormhole_example/usermanager/User.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../flutter_bridge/example/android/app/src/main/kotlin/com/github/florent37/wormhole_example/usermanager/UserManager.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../flutter_bridge/example/android/app/src/main/kotlin/com/github/florent37/wormhole_example/usermanager/UserManager2.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../flutter_bridge/example/android/app/src/main/res/drawable/launch_background.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../flutter_bridge/example/android/app/src/main/res/mipmap-hdpi/ic_launcher.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../flutter_bridge/example/android/app/src/main/res/mipmap-mdpi/ic_launcher.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../flutter_bridge/example/android/app/src/main/res/mipmap-xhdpi/ic_launcher.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../flutter_bridge/example/android/app/src/main/res/mipmap-xxhdpi/ic_launcher.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../flutter_bridge/example/android/app/src/main/res/mipmap-xxxhdpi/ic_launcher.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../flutter_bridge/example/android/app/src/main/res/values/styles.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../flutter_bridge/example/android/app/src/profile/AndroidManifest.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../flutter_bridge/example/android/build.gradle" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../flutter_bridge/example/android/gradle.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../flutter_bridge/example/android/gradle/wrapper/gradle-wrapper.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../flutter_bridge/example/android/res/values/strings_en.arb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../flutter_bridge/example/android/settings.gradle" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../flutter_bridge/example/ios/Flutter/AppFrameworkInfo.plist" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../flutter_bridge/example/ios/Flutter/Debug.xcconfig" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../flutter_bridge/example/ios/Flutter/Release.xcconfig" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../flutter_bridge/example/ios/Podfile" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../flutter_bridge/example/ios/Runner.xcodeproj/project.pbxproj" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../flutter_bridge/example/ios/Runner.xcodeproj/project.xcworkspace/contents.xcworkspacedata" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../flutter_bridge/example/ios/Runner.xcodeproj/xcshareddata/xcschemes/Runner.xcscheme" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../flutter_bridge/example/ios/Runner.xcworkspace/contents.xcworkspacedata" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../flutter_bridge/example/ios/Runner/AppDelegate.swift" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../flutter_bridge/example/ios/Runner/Assets.xcassets/AppIcon.appiconset/Contents.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../flutter_bridge/example/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-1024x1024@1x.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../flutter_bridge/example/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-20x20@1x.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../flutter_bridge/example/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-20x20@2x.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../flutter_bridge/example/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-20x20@3x.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../flutter_bridge/example/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-29x29@1x.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../flutter_bridge/example/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-29x29@2x.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../flutter_bridge/example/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-29x29@3x.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../flutter_bridge/example/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-40x40@1x.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../flutter_bridge/example/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-40x40@2x.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../flutter_bridge/example/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-40x40@3x.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../flutter_bridge/example/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-60x60@2x.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../flutter_bridge/example/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-60x60@3x.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../flutter_bridge/example/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-76x76@1x.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../flutter_bridge/example/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-76x76@2x.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../flutter_bridge/example/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-83.5x83.5@2x.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../flutter_bridge/example/ios/Runner/Assets.xcassets/LaunchImage.imageset/Contents.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../flutter_bridge/example/ios/Runner/Assets.xcassets/LaunchImage.imageset/LaunchImage.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../flutter_bridge/example/ios/Runner/Assets.xcassets/LaunchImage.imageset/LaunchImage@2x.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../flutter_bridge/example/ios/Runner/Assets.xcassets/LaunchImage.imageset/LaunchImage@3x.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../flutter_bridge/example/ios/Runner/Assets.xcassets/LaunchImage.imageset/README.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../flutter_bridge/example/ios/Runner/Base.lproj/LaunchScreen.storyboard" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../flutter_bridge/example/ios/Runner/Base.lproj/Main.storyboard" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../flutter_bridge/example/ios/Runner/Info.plist" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../flutter_bridge/example/ios/Runner/Runner-Bridging-Header.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../flutter_bridge/example/lib/generated/i18n.dart" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../flutter_bridge/example/lib/main.dart" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../flutter_bridge/example/lib/usermanager/user.dart" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../flutter_bridge/example/lib/usermanager/user.g.dart" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../flutter_bridge/example/lib/usermanager/usermanager.dart" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../flutter_bridge/example/lib/usermanager/usermanager2.dart" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../flutter_bridge/example/lib/userscreen/userscreen.dart" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../flutter_bridge/example/pubspec.yaml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../flutter_bridge/example/res/values/strings_en.arb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../flutter_bridge/example/run_build_runner.sh" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../flutter_bridge/example/test/widget_test.dart" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../flutter_bridge/ios/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../flutter_bridge/ios/Assets/.gitkeep" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../flutter_bridge/ios/Classes/FlutterBridgePlugin.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../flutter_bridge/ios/Classes/FlutterBridgePlugin.m" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../flutter_bridge/ios/Classes/SwiftFlutterBridgePlugin.swift" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../flutter_bridge/ios/flutter_bridge.podspec" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../flutter_bridge/lib/generated/i18n.dart" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../flutter_bridge/lib/platform_annotations.dart" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../flutter_bridge/lib/platform_waiter.dart" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../flutter_bridge/lib/wormhole.dart" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../flutter_bridge/pubspec.yaml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../flutter_bridge/res/values/strings_en.arb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../flutter_bridge/test/wormhole_test.dart" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.flutter-plugins" beforeDir="false" afterPath="$PROJECT_DIR$/.flutter-plugins" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Dart_Packages.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Dart_Packages.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Flutter_Plugins.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Flutter_Plugins.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.packages" beforeDir="false" afterPath="$PROJECT_DIR$/.packages" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pubspec.lock" beforeDir="false" afterPath="$PROJECT_DIR$/pubspec.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pubspec.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/pubspec.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../README.md" beforeDir="false" afterPath="$PROJECT_DIR$/../README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../examples/add2app/AndroidApp" beforeDir="false" afterPath="$PROJECT_DIR$/../examples/add2app/AndroidApp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/src/generator.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/generator.dart" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -139,11 +18,14 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/lib/src/generator.dart">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="90">
-              <caret line="6" column="26" selection-start-line="6" selection-start-column="26" selection-end-line="6" selection-end-column="26" />
+            <state relative-caret-position="488">
+              <caret line="64" column="30" selection-start-line="64" selection-start-column="30" selection-end-line="64" selection-end-column="30" />
+              <folding>
+                <element signature="e#0#52#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -177,7 +59,7 @@
           <provider selected="true" editor-type-id="text-editor" />
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/pubspec.yaml">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="210">
@@ -206,7 +88,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/.gitignore">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="857">
+            <state relative-caret-position="5250">
               <caret line="350" column="32" selection-start-line="350" selection-start-column="32" selection-end-line="350" selection-end-column="32" />
             </state>
           </provider>
@@ -249,17 +131,17 @@
         <option value="$PROJECT_DIR$/lib/builder.dart" />
         <option value="$PROJECT_DIR$/../flutter_bridge/lib/platform_annotations.dart" />
         <option value="$PROJECT_DIR$/test/pubspec.yaml" />
-        <option value="$PROJECT_DIR$/lib/src/generator.dart" />
         <option value="$PROJECT_DIR$/test/src/generator_test_src.dart" />
         <option value="$PROJECT_DIR$/test/generator_test.dart" />
         <option value="$PROJECT_DIR$/test/build.yaml" />
         <option value="$PROJECT_DIR$/build.yaml" />
         <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/pubspec.yaml" />
+        <option value="$PROJECT_DIR$/lib/src/generator.dart" />
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
+  <component name="ProjectFrameBounds">
     <option name="y" value="23" />
     <option name="width" value="1680" />
     <option name="height" value="1027" />
@@ -347,7 +229,7 @@
     <editor active="true" />
     <layout>
       <window_info id="Captures" order="0" weight="0.25" />
-      <window_info active="true" content_ui="combo" id="Project" order="1" visible="true" weight="0.32234433" />
+      <window_info active="true" content_ui="combo" id="Project" order="1" visible="true" weight="0.32600734" />
       <window_info id="Structure" order="2" side_tool="true" />
       <window_info id="Image Layers" order="3" />
       <window_info id="Designer" order="4" />
@@ -431,15 +313,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/lib/src/generator_helper.dart">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="750">
-          <caret line="54" selection-start-line="54" selection-end-line="54" />
-          <folding>
-            <element signature="e#0#52#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
+    <entry file="file://$PROJECT_DIR$/res/values/strings_en.arb">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mono_pkg.yaml">
+      <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/build.yaml">
       <provider selected="true" editor-type-id="text-editor">
@@ -459,28 +337,35 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/.gitignore">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="857">
+        <state relative-caret-position="5250">
           <caret line="350" column="32" selection-start-line="350" selection-start-column="32" selection-end-line="350" selection-end-column="32" />
         </state>
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/lib/src/generator.dart">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="6" column="26" selection-start-line="6" selection-start-column="26" selection-end-line="6" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/res/values/strings_en.arb">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/mono_pkg.yaml">
-      <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/pubspec.yaml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="210">
           <caret line="14" column="16" selection-start-line="14" selection-start-column="16" selection-end-line="14" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/src/generator_helper.dart">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="750">
+          <caret line="54" selection-start-line="54" selection-end-line="54" />
+          <folding>
+            <element signature="e#0#52#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/src/generator.dart">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="488">
+          <caret line="64" column="30" selection-start-line="64" selection-start-column="30" selection-end-line="64" selection-end-column="30" />
+          <folding>
+            <element signature="e#0#52#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

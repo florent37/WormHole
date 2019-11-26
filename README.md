@@ -14,6 +14,7 @@ enabling to share platform classes to Flutter, and expose Flutter's classes to y
 1. Add `@WormHole` annotation on your class
 2. Add `@Expose("name")` on your method, specifying a method name
 3. Expose your object to a named WormHole, here it's done in the constructor
+Via `WormHole$yourclass("channelName").expose(yourInstance);`
 
 ```dart
 @WormHole() //A WormHole will be created arount this class
@@ -21,7 +22,7 @@ class QuestionBloc implements Bloc {
 
   QuestionBloc() {
     //I want to expose this object through the wormhole named "question"
-    Expose$QuestionBloc("question").expose(this);
+    WormHole$QuestionBloc("question").expose(this);
   }
 
   //this method will be exposed to native through a WormHole, using the method name "ask"
@@ -132,7 +133,7 @@ class MainActivity : FlutterActivity() {
 3. For each Native's method, create a Dart method annotated with `@Call("methodname")`
 . For async methods, be sure they're returning a `Future<type>`
 . For observables results, be sure they're returining a `Stream<type>`
-4. Create a factory, jumping to `Retrieve$yourclass(channelName);`
+4. Create a factory, jumping to `WormHole$yourclass(channelName);`
 
 ```dart
 @WormHole()
@@ -147,7 +148,7 @@ abstract class UserManager {
   @Call("clear")
   void clear();
 
-  factory UserManager(channelName) => Retrieve$UserManager(channelName);
+  factory UserManager(channelName) => WormHole$UserManager(channelName);
 }
 ```
 
