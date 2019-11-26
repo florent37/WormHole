@@ -96,17 +96,16 @@ fun Method.findReturnType(): Type {
 
 fun Method.isSuspendFunction(): Boolean {
     val method = this
-    return method.parameterTypes.lastOrNull()?.isAssignableFrom(Continuation::class.java) ?: false
+    return method.parameterTypes.lastOrNull()?.let { Continuation::class.java.isAssignableFrom(it) }
+            ?: false
 }
 
 fun Method.isSuspendFlowFunction(): Boolean {
     val method = this
-    val hasLastArgFlow = (((method.continuationType() as? ParameterizedType)?.rawType) as? Class<*>)?.isAssignableFrom(
-            Flow::class.java
-    ) ?: false
-    val returnAFlow = method.returnType?.isAssignableFrom(
-            Flow::class.java
-    ) ?: false
+    val hasLastArgFlow = (((method.continuationType() as? ParameterizedType)?.rawType) as? Class<*>)?.let {
+        Flow::class.java.isAssignableFrom(it)
+    } ?: false
+    val returnAFlow = method.returnType?.let { Flow::class.java.isAssignableFrom(it) } ?: false
     return hasLastArgFlow || returnAFlow
 }
 

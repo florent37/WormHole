@@ -1,87 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="BookmarkManager">
+    <bookmark url="file://$PROJECT_DIR$/wormhole/android/src/main/kotlin/com/github/florent37/wormhole/BridgeManager.kt" description="val methodsList = element.getBindAnnotatedMethodWi..." line="375" />
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="4f3564d0-f9fa-44a7-9567-22f2a9062418" name="Default Changelist" comment="">
       <change afterPath="$PROJECT_DIR$/examples/add2app/AndroidApp/app/src/main/java/com/github/florent37/androidapp/QuestionViewModel.kt" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/examples/add2app/AndroidApp/app/src/main/java/com/github/florent37/androidapp/core/BaseActivity.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/wormhole.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/wormhole.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/examples/add2app/AndroidApp" beforeDir="false" afterPath="$PROJECT_DIR$/examples/add2app/AndroidApp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/examples/add2app/AndroidApp/app/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/examples/add2app/AndroidApp/app/build.gradle" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/examples/add2app/AndroidApp/app/src/main/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/examples/add2app/AndroidApp/app/src/main/AndroidManifest.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/examples/add2app/AndroidApp/app/src/main/java/com/github/florent37/androidapp/MainActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/examples/add2app/AndroidApp/app/src/main/java/com/github/florent37/androidapp/MainActivity.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/examples/add2app/AndroidApp/app/src/main/java/com/github/florent37/androidapp/SplashActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/examples/add2app/AndroidApp/app/src/main/java/com/github/florent37/androidapp/SplashActivity.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/examples/add2app/AndroidApp/app/src/main/java/com/github/florent37/androidapp/question/QuestionBridge.kt" beforeDir="false" afterPath="$PROJECT_DIR$/examples/add2app/AndroidApp/app/src/main/java/com/github/florent37/androidapp/question/QuestionBloc.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/wormhole/example/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/examples/example/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/wormhole/example/.metadata" beforeDir="false" afterPath="$PROJECT_DIR$/examples/example/.metadata" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/wormhole/example/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/examples/example/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/wormhole/example/android/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/examples/example/android/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/wormhole/example/android/app/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/examples/example/android/app/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/wormhole/example/android/app/src/debug/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/examples/example/android/app/src/debug/AndroidManifest.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/wormhole/example/android/app/src/main/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/examples/example/android/app/src/main/AndroidManifest.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/wormhole/example/android/app/src/main/kotlin/com/github/florent37/wormhole_example/MainActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/examples/example/android/app/src/main/kotlin/com/github/florent37/wormhole_example/MainActivity.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/wormhole/example/android/app/src/main/kotlin/com/github/florent37/wormhole_example/usermanager/User.kt" beforeDir="false" afterPath="$PROJECT_DIR$/examples/example/android/app/src/main/kotlin/com/github/florent37/wormhole_example/usermanager/User.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/wormhole/example/android/app/src/main/kotlin/com/github/florent37/wormhole_example/usermanager/UserManager.kt" beforeDir="false" afterPath="$PROJECT_DIR$/examples/example/android/app/src/main/kotlin/com/github/florent37/wormhole_example/usermanager/UserManager.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/wormhole/example/android/app/src/main/res/drawable/launch_background.xml" beforeDir="false" afterPath="$PROJECT_DIR$/examples/example/android/app/src/main/res/drawable/launch_background.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/wormhole/example/android/app/src/main/res/mipmap-hdpi/ic_launcher.png" beforeDir="false" afterPath="$PROJECT_DIR$/examples/example/android/app/src/main/res/mipmap-hdpi/ic_launcher.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/wormhole/example/android/app/src/main/res/mipmap-mdpi/ic_launcher.png" beforeDir="false" afterPath="$PROJECT_DIR$/examples/example/android/app/src/main/res/mipmap-mdpi/ic_launcher.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/wormhole/example/android/app/src/main/res/mipmap-xhdpi/ic_launcher.png" beforeDir="false" afterPath="$PROJECT_DIR$/examples/example/android/app/src/main/res/mipmap-xhdpi/ic_launcher.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/wormhole/example/android/app/src/main/res/mipmap-xxhdpi/ic_launcher.png" beforeDir="false" afterPath="$PROJECT_DIR$/examples/example/android/app/src/main/res/mipmap-xxhdpi/ic_launcher.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/wormhole/example/android/app/src/main/res/mipmap-xxxhdpi/ic_launcher.png" beforeDir="false" afterPath="$PROJECT_DIR$/examples/example/android/app/src/main/res/mipmap-xxxhdpi/ic_launcher.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/wormhole/example/android/app/src/main/res/values/styles.xml" beforeDir="false" afterPath="$PROJECT_DIR$/examples/example/android/app/src/main/res/values/styles.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/wormhole/example/android/app/src/profile/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/examples/example/android/app/src/profile/AndroidManifest.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/wormhole/example/android/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/examples/example/android/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/wormhole/example/android/gradle.properties" beforeDir="false" afterPath="$PROJECT_DIR$/examples/example/android/gradle.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/wormhole/example/android/gradle/wrapper/gradle-wrapper.properties" beforeDir="false" afterPath="$PROJECT_DIR$/examples/example/android/gradle/wrapper/gradle-wrapper.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/wormhole/example/android/res/values/strings_en.arb" beforeDir="false" afterPath="$PROJECT_DIR$/examples/example/android/res/values/strings_en.arb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/wormhole/example/android/settings.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/examples/example/android/settings.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/wormhole/example/ios/Flutter/AppFrameworkInfo.plist" beforeDir="false" afterPath="$PROJECT_DIR$/examples/example/ios/Flutter/AppFrameworkInfo.plist" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/wormhole/example/ios/Flutter/Debug.xcconfig" beforeDir="false" afterPath="$PROJECT_DIR$/examples/example/ios/Flutter/Debug.xcconfig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/wormhole/example/ios/Flutter/Release.xcconfig" beforeDir="false" afterPath="$PROJECT_DIR$/examples/example/ios/Flutter/Release.xcconfig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/wormhole/example/ios/Podfile" beforeDir="false" afterPath="$PROJECT_DIR$/examples/example/ios/Podfile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/wormhole/example/ios/Podfile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/examples/example/ios/Podfile.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/wormhole/example/ios/Runner.xcodeproj/project.pbxproj" beforeDir="false" afterPath="$PROJECT_DIR$/examples/example/ios/Runner.xcodeproj/project.pbxproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/wormhole/example/ios/Runner.xcodeproj/project.xcworkspace/contents.xcworkspacedata" beforeDir="false" afterPath="$PROJECT_DIR$/examples/example/ios/Runner.xcodeproj/project.xcworkspace/contents.xcworkspacedata" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/wormhole/example/ios/Runner.xcodeproj/xcshareddata/xcschemes/Runner.xcscheme" beforeDir="false" afterPath="$PROJECT_DIR$/examples/example/ios/Runner.xcodeproj/xcshareddata/xcschemes/Runner.xcscheme" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/wormhole/example/ios/Runner.xcworkspace/contents.xcworkspacedata" beforeDir="false" afterPath="$PROJECT_DIR$/examples/example/ios/Runner.xcworkspace/contents.xcworkspacedata" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/wormhole/example/ios/Runner.xcworkspace/xcshareddata/IDEWorkspaceChecks.plist" beforeDir="false" afterPath="$PROJECT_DIR$/examples/example/ios/Runner.xcworkspace/xcshareddata/IDEWorkspaceChecks.plist" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/wormhole/example/ios/Runner/AppDelegate.swift" beforeDir="false" afterPath="$PROJECT_DIR$/examples/example/ios/Runner/AppDelegate.swift" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/wormhole/example/ios/Runner/Assets.xcassets/AppIcon.appiconset/Contents.json" beforeDir="false" afterPath="$PROJECT_DIR$/examples/example/ios/Runner/Assets.xcassets/AppIcon.appiconset/Contents.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/wormhole/example/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-1024x1024@1x.png" beforeDir="false" afterPath="$PROJECT_DIR$/examples/example/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-1024x1024@1x.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/wormhole/example/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-20x20@1x.png" beforeDir="false" afterPath="$PROJECT_DIR$/examples/example/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-20x20@1x.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/wormhole/example/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-20x20@2x.png" beforeDir="false" afterPath="$PROJECT_DIR$/examples/example/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-20x20@2x.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/wormhole/example/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-20x20@3x.png" beforeDir="false" afterPath="$PROJECT_DIR$/examples/example/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-20x20@3x.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/wormhole/example/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-29x29@1x.png" beforeDir="false" afterPath="$PROJECT_DIR$/examples/example/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-29x29@1x.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/wormhole/example/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-29x29@2x.png" beforeDir="false" afterPath="$PROJECT_DIR$/examples/example/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-29x29@2x.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/wormhole/example/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-29x29@3x.png" beforeDir="false" afterPath="$PROJECT_DIR$/examples/example/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-29x29@3x.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/wormhole/example/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-40x40@1x.png" beforeDir="false" afterPath="$PROJECT_DIR$/examples/example/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-40x40@1x.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/wormhole/example/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-40x40@2x.png" beforeDir="false" afterPath="$PROJECT_DIR$/examples/example/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-40x40@2x.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/wormhole/example/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-40x40@3x.png" beforeDir="false" afterPath="$PROJECT_DIR$/examples/example/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-40x40@3x.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/wormhole/example/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-60x60@2x.png" beforeDir="false" afterPath="$PROJECT_DIR$/examples/example/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-60x60@2x.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/wormhole/example/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-60x60@3x.png" beforeDir="false" afterPath="$PROJECT_DIR$/examples/example/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-60x60@3x.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/wormhole/example/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-76x76@1x.png" beforeDir="false" afterPath="$PROJECT_DIR$/examples/example/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-76x76@1x.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/wormhole/example/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-76x76@2x.png" beforeDir="false" afterPath="$PROJECT_DIR$/examples/example/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-76x76@2x.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/wormhole/example/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-83.5x83.5@2x.png" beforeDir="false" afterPath="$PROJECT_DIR$/examples/example/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-83.5x83.5@2x.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/wormhole/example/ios/Runner/Assets.xcassets/LaunchImage.imageset/Contents.json" beforeDir="false" afterPath="$PROJECT_DIR$/examples/example/ios/Runner/Assets.xcassets/LaunchImage.imageset/Contents.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/wormhole/example/ios/Runner/Assets.xcassets/LaunchImage.imageset/LaunchImage.png" beforeDir="false" afterPath="$PROJECT_DIR$/examples/example/ios/Runner/Assets.xcassets/LaunchImage.imageset/LaunchImage.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/wormhole/example/ios/Runner/Assets.xcassets/LaunchImage.imageset/LaunchImage@2x.png" beforeDir="false" afterPath="$PROJECT_DIR$/examples/example/ios/Runner/Assets.xcassets/LaunchImage.imageset/LaunchImage@2x.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/wormhole/example/ios/Runner/Assets.xcassets/LaunchImage.imageset/LaunchImage@3x.png" beforeDir="false" afterPath="$PROJECT_DIR$/examples/example/ios/Runner/Assets.xcassets/LaunchImage.imageset/LaunchImage@3x.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/wormhole/example/ios/Runner/Assets.xcassets/LaunchImage.imageset/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/examples/example/ios/Runner/Assets.xcassets/LaunchImage.imageset/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/wormhole/example/ios/Runner/Base.lproj/LaunchScreen.storyboard" beforeDir="false" afterPath="$PROJECT_DIR$/examples/example/ios/Runner/Base.lproj/LaunchScreen.storyboard" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/wormhole/example/ios/Runner/Base.lproj/Main.storyboard" beforeDir="false" afterPath="$PROJECT_DIR$/examples/example/ios/Runner/Base.lproj/Main.storyboard" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/wormhole/example/ios/Runner/Info.plist" beforeDir="false" afterPath="$PROJECT_DIR$/examples/example/ios/Runner/Info.plist" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/wormhole/example/ios/Runner/Runner-Bridging-Header.h" beforeDir="false" afterPath="$PROJECT_DIR$/examples/example/ios/Runner/Runner-Bridging-Header.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/wormhole/example/lib/generated/i18n.dart" beforeDir="false" afterPath="$PROJECT_DIR$/examples/example/lib/generated/i18n.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/wormhole/example/lib/main.dart" beforeDir="false" afterPath="$PROJECT_DIR$/examples/example/lib/main.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/wormhole/example/lib/usermanager/user.dart" beforeDir="false" afterPath="$PROJECT_DIR$/examples/example/lib/usermanager/user.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/wormhole/example/lib/usermanager/user.g.dart" beforeDir="false" afterPath="$PROJECT_DIR$/examples/example/lib/usermanager/user.g.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/wormhole/example/lib/usermanager/usermanager.dart" beforeDir="false" afterPath="$PROJECT_DIR$/examples/example/lib/usermanager/usermanager.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/wormhole/example/lib/usermanager/usermanager.g.dart" beforeDir="false" afterPath="$PROJECT_DIR$/examples/example/lib/usermanager/usermanager.g.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/wormhole/example/lib/userscreen/userscreen.dart" beforeDir="false" afterPath="$PROJECT_DIR$/examples/example/lib/userscreen/userscreen.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/wormhole/example/pubspec.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/examples/example/pubspec.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/wormhole/example/res/values/strings_en.arb" beforeDir="false" afterPath="$PROJECT_DIR$/examples/example/res/values/strings_en.arb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/wormhole/example/run_build_runner.sh" beforeDir="false" afterPath="$PROJECT_DIR$/examples/example/run_build_runner.sh" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/wormhole/example/test/widget_test.dart" beforeDir="false" afterPath="$PROJECT_DIR$/examples/example/test/widget_test.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/examples/example/android/app/src/main/kotlin/com/github/florent37/wormhole_example/usermanager/UserManager.kt" beforeDir="false" afterPath="$PROJECT_DIR$/examples/example/android/app/src/main/kotlin/com/github/florent37/wormhole_example/usermanager/UserManager.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wormhole/android/src/main/kotlin/com/github/florent37/wormhole/reflection/Reflection.kt" beforeDir="false" afterPath="$PROJECT_DIR$/wormhole/android/src/main/kotlin/com/github/florent37/wormhole/reflection/Reflection.kt" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -268,7 +201,6 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="21" y="23" width="1680" height="1027" extended-state="0" />
-    <editor active="true" />
     <layout>
       <window_info id="Captures" order="0" weight="0.25" />
       <window_info active="true" content_ui="combo" id="Project" order="1" visible="true" weight="0.33333334" />
