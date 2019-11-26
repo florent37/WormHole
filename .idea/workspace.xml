@@ -4,128 +4,13 @@
     <list default="true" id="4f3564d0-f9fa-44a7-9567-22f2a9062418" name="Default Changelist" comment="">
       <change afterPath="$PROJECT_DIR$/examples/add2app/AndroidApp/app/src/main/java/com/github/florent37/androidapp/QuestionViewModel.kt" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/examples/add2app/AndroidApp/app/src/main/java/com/github/florent37/androidapp/core/BaseActivity.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/wormhole.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/wormhole.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/examples/add2app/AndroidApp" beforeDir="false" afterPath="$PROJECT_DIR$/examples/add2app/AndroidApp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/examples/add2app/AndroidApp/app/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/examples/add2app/AndroidApp/app/build.gradle" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/examples/add2app/AndroidApp/app/src/main/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/examples/add2app/AndroidApp/app/src/main/AndroidManifest.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/examples/add2app/AndroidApp/app/src/main/java/com/github/florent37/androidapp/MainActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/examples/add2app/AndroidApp/app/src/main/java/com/github/florent37/androidapp/MainActivity.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/examples/add2app/AndroidApp/app/src/main/java/com/github/florent37/androidapp/SplashActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/examples/add2app/AndroidApp/app/src/main/java/com/github/florent37/androidapp/SplashActivity.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/examples/add2app/AndroidApp/app/src/main/java/com/github/florent37/androidapp/question/QuestionBridge.kt" beforeDir="false" afterPath="$PROJECT_DIR$/examples/add2app/AndroidApp/app/src/main/java/com/github/florent37/androidapp/question/QuestionBloc.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/flutter_bridge/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/flutter_bridge/.idea/codeStyles/Project.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/flutter_bridge/CHANGELOG.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/flutter_bridge/LICENSE" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/flutter_bridge/README.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/flutter_bridge/android/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/flutter_bridge/android/.idea/.name" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/flutter_bridge/android/.idea/codeStyles/Project.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/flutter_bridge/android/.idea/misc.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/flutter_bridge/android/.idea/runConfigurations.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/flutter_bridge/android/build.gradle" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/flutter_bridge/android/gradle.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/flutter_bridge/android/gradle/wrapper/gradle-wrapper.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/flutter_bridge/android/gradlew" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/flutter_bridge/android/res/values/strings_en.arb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/flutter_bridge/android/settings.gradle" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/flutter_bridge/android/src/main/AndroidManifest.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/flutter_bridge/android/src/main/java/com/github/florent37/wormhole/gson/CustomizedObjectTypeAdapter.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/flutter_bridge/android/src/main/java/com/github/florent37/wormhole/kotlin/KotlinHelper.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/flutter_bridge/android/src/main/kotlin/com/github/florent37/wormhole/ArgumentTransformer.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/flutter_bridge/android/src/main/kotlin/com/github/florent37/wormhole/BridgeError.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/flutter_bridge/android/src/main/kotlin/com/github/florent37/wormhole/BridgeManager.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/flutter_bridge/android/src/main/kotlin/com/github/florent37/wormhole/FlutterBuildBridge.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/flutter_bridge/android/src/main/kotlin/com/github/florent37/wormhole/FlutterViewWithArguments.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/flutter_bridge/android/src/main/kotlin/com/github/florent37/wormhole/ListUtils.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/flutter_bridge/android/src/main/kotlin/com/github/florent37/wormhole/SerialisationUtilsGSON.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/flutter_bridge/android/src/main/kotlin/com/github/florent37/wormhole/WormHolePlugin.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/flutter_bridge/android/src/main/kotlin/com/github/florent37/wormhole/annotations/BridgeAnnotationHandler.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/flutter_bridge/android/src/main/kotlin/com/github/florent37/wormhole/annotations/flutter/FlutterAnnotations.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/flutter_bridge/android/src/main/kotlin/com/github/florent37/wormhole/annotations/flutter/FlutterBridgeAnnotationHandler.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/flutter_bridge/android/src/main/kotlin/com/github/florent37/wormhole/deferred/WaitingCall.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/flutter_bridge/android/src/main/kotlin/com/github/florent37/wormhole/kotlin/DefferedWaiter.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/flutter_bridge/android/src/main/kotlin/com/github/florent37/wormhole/reflection/Reflection.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/flutter_bridge/android/src/test/java/com/github/florent37/flutterbridge/BridgeManagerTest.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/flutter_bridge/android/src/test/resources/mockito-extensions/org.mockito.plugins.MockMaker" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/flutter_bridge/example/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/flutter_bridge/example/.metadata" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/flutter_bridge/example/README.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/flutter_bridge/example/android/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/flutter_bridge/example/android/app/build.gradle" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/flutter_bridge/example/android/app/src/debug/AndroidManifest.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/flutter_bridge/example/android/app/src/main/AndroidManifest.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/flutter_bridge/example/android/app/src/main/kotlin/com/github/florent37/wormhole_example/MainActivity.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/flutter_bridge/example/android/app/src/main/kotlin/com/github/florent37/wormhole_example/usermanager/User.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/flutter_bridge/example/android/app/src/main/kotlin/com/github/florent37/wormhole_example/usermanager/UserManager.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/flutter_bridge/example/android/app/src/main/kotlin/com/github/florent37/wormhole_example/usermanager/UserManager2.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/flutter_bridge/example/android/app/src/main/res/drawable/launch_background.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/flutter_bridge/example/android/app/src/main/res/mipmap-hdpi/ic_launcher.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/flutter_bridge/example/android/app/src/main/res/mipmap-mdpi/ic_launcher.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/flutter_bridge/example/android/app/src/main/res/mipmap-xhdpi/ic_launcher.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/flutter_bridge/example/android/app/src/main/res/mipmap-xxhdpi/ic_launcher.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/flutter_bridge/example/android/app/src/main/res/mipmap-xxxhdpi/ic_launcher.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/flutter_bridge/example/android/app/src/main/res/values/styles.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/flutter_bridge/example/android/app/src/profile/AndroidManifest.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/flutter_bridge/example/android/build.gradle" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/flutter_bridge/example/android/gradle.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/flutter_bridge/example/android/gradle/wrapper/gradle-wrapper.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/flutter_bridge/example/android/res/values/strings_en.arb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/flutter_bridge/example/android/settings.gradle" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/flutter_bridge/example/ios/Flutter/AppFrameworkInfo.plist" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/flutter_bridge/example/ios/Flutter/Debug.xcconfig" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/flutter_bridge/example/ios/Flutter/Release.xcconfig" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/flutter_bridge/example/ios/Podfile" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/flutter_bridge/example/ios/Runner.xcodeproj/project.pbxproj" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/flutter_bridge/example/ios/Runner.xcodeproj/project.xcworkspace/contents.xcworkspacedata" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/flutter_bridge/example/ios/Runner.xcodeproj/xcshareddata/xcschemes/Runner.xcscheme" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/flutter_bridge/example/ios/Runner.xcworkspace/contents.xcworkspacedata" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/flutter_bridge/example/ios/Runner/AppDelegate.swift" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/flutter_bridge/example/ios/Runner/Assets.xcassets/AppIcon.appiconset/Contents.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/flutter_bridge/example/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-1024x1024@1x.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/flutter_bridge/example/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-20x20@1x.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/flutter_bridge/example/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-20x20@2x.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/flutter_bridge/example/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-20x20@3x.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/flutter_bridge/example/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-29x29@1x.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/flutter_bridge/example/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-29x29@2x.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/flutter_bridge/example/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-29x29@3x.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/flutter_bridge/example/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-40x40@1x.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/flutter_bridge/example/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-40x40@2x.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/flutter_bridge/example/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-40x40@3x.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/flutter_bridge/example/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-60x60@2x.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/flutter_bridge/example/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-60x60@3x.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/flutter_bridge/example/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-76x76@1x.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/flutter_bridge/example/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-76x76@2x.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/flutter_bridge/example/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-83.5x83.5@2x.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/flutter_bridge/example/ios/Runner/Assets.xcassets/LaunchImage.imageset/Contents.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/flutter_bridge/example/ios/Runner/Assets.xcassets/LaunchImage.imageset/LaunchImage.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/flutter_bridge/example/ios/Runner/Assets.xcassets/LaunchImage.imageset/LaunchImage@2x.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/flutter_bridge/example/ios/Runner/Assets.xcassets/LaunchImage.imageset/LaunchImage@3x.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/flutter_bridge/example/ios/Runner/Assets.xcassets/LaunchImage.imageset/README.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/flutter_bridge/example/ios/Runner/Base.lproj/LaunchScreen.storyboard" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/flutter_bridge/example/ios/Runner/Base.lproj/Main.storyboard" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/flutter_bridge/example/ios/Runner/Info.plist" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/flutter_bridge/example/ios/Runner/Runner-Bridging-Header.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/flutter_bridge/example/lib/generated/i18n.dart" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/flutter_bridge/example/lib/main.dart" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/flutter_bridge/example/lib/usermanager/user.dart" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/flutter_bridge/example/lib/usermanager/user.g.dart" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/flutter_bridge/example/lib/usermanager/usermanager.dart" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/flutter_bridge/example/lib/usermanager/usermanager2.dart" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/flutter_bridge/example/lib/userscreen/userscreen.dart" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/flutter_bridge/example/pubspec.yaml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/flutter_bridge/example/res/values/strings_en.arb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/flutter_bridge/example/run_build_runner.sh" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/flutter_bridge/example/test/widget_test.dart" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/flutter_bridge/ios/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/flutter_bridge/ios/Assets/.gitkeep" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/flutter_bridge/ios/Classes/FlutterBridgePlugin.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/flutter_bridge/ios/Classes/FlutterBridgePlugin.m" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/flutter_bridge/ios/Classes/SwiftFlutterBridgePlugin.swift" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/flutter_bridge/ios/flutter_bridge.podspec" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/flutter_bridge/lib/generated/i18n.dart" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/flutter_bridge/lib/platform_annotations.dart" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/flutter_bridge/lib/platform_waiter.dart" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/flutter_bridge/lib/wormhole.dart" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/flutter_bridge/pubspec.yaml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/flutter_bridge/res/values/strings_en.arb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/flutter_bridge/test/wormhole_test.dart" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -133,8 +18,90 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="FileEditorManager">
+    <leaf>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/README.md">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="690">
+              <caret line="46" lean-forward="true" selection-start-line="46" selection-end-line="46" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/examples/add2app/AndroidApp/app/src/main/java/com/github/florent37/androidapp/MainActivity.kt">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="270">
+              <caret line="28" column="25" selection-start-line="28" selection-start-column="25" selection-end-line="28" selection-end-column="25" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/examples/add2app/AndroidApp/app/src/main/java/com/github/florent37/androidapp/QuestionViewModel.kt">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="495">
+              <caret line="42" column="65" lean-forward="true" selection-start-line="41" selection-start-column="11" selection-end-line="42" selection-end-column="65" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/examples/add2app/AndroidApp/app/src/main/java/com/github/florent37/androidapp/question/QuestionBloc.kt">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="60">
+              <caret line="4" selection-start-line="4" selection-end-line="7" selection-end-column="1" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/wormhole/example/lib/usermanager/usermanager.dart">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="270">
+              <caret line="19" column="1" lean-forward="true" selection-start-line="6" selection-end-line="19" selection-end-column="1" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/examples/add2app/flutter_project/lib/question/question_bloc.g.dart">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/examples/add2app/flutter_project/lib/question/question_bloc.dart">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="180">
+              <caret line="12" selection-start-line="12" selection-end-line="40" selection-end-column="1" />
+              <folding>
+                <element signature="e#0#20#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/wormhole/README.md">
+          <provider selected="true" editor-type-id="text-editor">
+            <state>
+              <caret column="1" lean-forward="true" selection-end-line="1" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/README.md" />
+      </list>
+    </option>
   </component>
   <component name="ProjectFrameBounds">
     <option name="x" value="21" />
@@ -148,7 +115,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
       <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
@@ -157,16 +123,182 @@
               <item name="wormhole" type="b2602c69:ProjectViewProjectNode" />
               <item name="wormhole" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="wormhole" type="b2602c69:ProjectViewProjectNode" />
+              <item name="wormhole" type="462c0819:PsiDirectoryNode" />
+              <item name="examples" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="wormhole" type="b2602c69:ProjectViewProjectNode" />
+              <item name="wormhole" type="462c0819:PsiDirectoryNode" />
+              <item name="examples" type="462c0819:PsiDirectoryNode" />
+              <item name="add2app" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="wormhole" type="b2602c69:ProjectViewProjectNode" />
+              <item name="wormhole" type="462c0819:PsiDirectoryNode" />
+              <item name="examples" type="462c0819:PsiDirectoryNode" />
+              <item name="add2app" type="462c0819:PsiDirectoryNode" />
+              <item name="AndroidApp" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="wormhole" type="b2602c69:ProjectViewProjectNode" />
+              <item name="wormhole" type="462c0819:PsiDirectoryNode" />
+              <item name="examples" type="462c0819:PsiDirectoryNode" />
+              <item name="add2app" type="462c0819:PsiDirectoryNode" />
+              <item name="AndroidApp" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="wormhole" type="b2602c69:ProjectViewProjectNode" />
+              <item name="wormhole" type="462c0819:PsiDirectoryNode" />
+              <item name="examples" type="462c0819:PsiDirectoryNode" />
+              <item name="add2app" type="462c0819:PsiDirectoryNode" />
+              <item name="AndroidApp" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="wormhole" type="b2602c69:ProjectViewProjectNode" />
+              <item name="wormhole" type="462c0819:PsiDirectoryNode" />
+              <item name="examples" type="462c0819:PsiDirectoryNode" />
+              <item name="add2app" type="462c0819:PsiDirectoryNode" />
+              <item name="AndroidApp" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="wormhole" type="b2602c69:ProjectViewProjectNode" />
+              <item name="wormhole" type="462c0819:PsiDirectoryNode" />
+              <item name="examples" type="462c0819:PsiDirectoryNode" />
+              <item name="add2app" type="462c0819:PsiDirectoryNode" />
+              <item name="AndroidApp" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="wormhole" type="b2602c69:ProjectViewProjectNode" />
+              <item name="wormhole" type="462c0819:PsiDirectoryNode" />
+              <item name="examples" type="462c0819:PsiDirectoryNode" />
+              <item name="add2app" type="462c0819:PsiDirectoryNode" />
+              <item name="AndroidApp" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="com" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="wormhole" type="b2602c69:ProjectViewProjectNode" />
+              <item name="wormhole" type="462c0819:PsiDirectoryNode" />
+              <item name="examples" type="462c0819:PsiDirectoryNode" />
+              <item name="add2app" type="462c0819:PsiDirectoryNode" />
+              <item name="AndroidApp" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="com" type="462c0819:PsiDirectoryNode" />
+              <item name="github" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="wormhole" type="b2602c69:ProjectViewProjectNode" />
+              <item name="wormhole" type="462c0819:PsiDirectoryNode" />
+              <item name="examples" type="462c0819:PsiDirectoryNode" />
+              <item name="add2app" type="462c0819:PsiDirectoryNode" />
+              <item name="AndroidApp" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="com" type="462c0819:PsiDirectoryNode" />
+              <item name="github" type="462c0819:PsiDirectoryNode" />
+              <item name="florent37" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="wormhole" type="b2602c69:ProjectViewProjectNode" />
+              <item name="wormhole" type="462c0819:PsiDirectoryNode" />
+              <item name="examples" type="462c0819:PsiDirectoryNode" />
+              <item name="add2app" type="462c0819:PsiDirectoryNode" />
+              <item name="AndroidApp" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="com" type="462c0819:PsiDirectoryNode" />
+              <item name="github" type="462c0819:PsiDirectoryNode" />
+              <item name="florent37" type="462c0819:PsiDirectoryNode" />
+              <item name="androidapp" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="wormhole" type="b2602c69:ProjectViewProjectNode" />
+              <item name="wormhole" type="462c0819:PsiDirectoryNode" />
+              <item name="examples" type="462c0819:PsiDirectoryNode" />
+              <item name="add2app" type="462c0819:PsiDirectoryNode" />
+              <item name="AndroidApp" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="com" type="462c0819:PsiDirectoryNode" />
+              <item name="github" type="462c0819:PsiDirectoryNode" />
+              <item name="florent37" type="462c0819:PsiDirectoryNode" />
+              <item name="androidapp" type="462c0819:PsiDirectoryNode" />
+              <item name="question" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="wormhole" type="b2602c69:ProjectViewProjectNode" />
+              <item name="wormhole" type="462c0819:PsiDirectoryNode" />
+              <item name="examples" type="462c0819:PsiDirectoryNode" />
+              <item name="add2app" type="462c0819:PsiDirectoryNode" />
+              <item name="AndroidApp" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="res" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="wormhole" type="b2602c69:ProjectViewProjectNode" />
+              <item name="wormhole" type="462c0819:PsiDirectoryNode" />
+              <item name="wormhole" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="wormhole" type="b2602c69:ProjectViewProjectNode" />
+              <item name="wormhole" type="462c0819:PsiDirectoryNode" />
+              <item name="wormhole" type="462c0819:PsiDirectoryNode" />
+              <item name="example" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="wormhole" type="b2602c69:ProjectViewProjectNode" />
+              <item name="wormhole" type="462c0819:PsiDirectoryNode" />
+              <item name="wormhole" type="462c0819:PsiDirectoryNode" />
+              <item name="example" type="462c0819:PsiDirectoryNode" />
+              <item name="lib" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="wormhole" type="b2602c69:ProjectViewProjectNode" />
+              <item name="wormhole" type="462c0819:PsiDirectoryNode" />
+              <item name="wormhole" type="462c0819:PsiDirectoryNode" />
+              <item name="example" type="462c0819:PsiDirectoryNode" />
+              <item name="lib" type="462c0819:PsiDirectoryNode" />
+              <item name="usermanager" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="android.sdk.path" value="$USER_HOME$/Library/Android/sdk" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="settings.editor.selected.configurable" value="preferences.keymap" />
+    <property name="show.migrate.to.gradle.popup" value="false" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -180,6 +312,9 @@
       </list>
     </option>
   </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
       <changelist id="4f3564d0-f9fa-44a7-9567-22f2a9062418" name="Default Changelist" comment="" />
@@ -192,25 +327,85 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="21" y="23" width="1680" height="1027" extended-state="0" />
+    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" visible="true" weight="0.32967034" />
-      <window_info id="Structure" side_tool="true" />
-      <window_info id="Image Layers" />
-      <window_info id="Designer" />
-      <window_info id="Resources Explorer" />
-      <window_info id="Capture Tool" />
-      <window_info id="Favorites" side_tool="true" />
       <window_info id="Captures" order="0" weight="0.25" />
-      <window_info anchor="bottom" id="Version Control" />
-      <window_info anchor="bottom" id="TODO" />
-      <window_info anchor="bottom" id="Terminal" />
-      <window_info anchor="bottom" id="Event Log" side_tool="true" />
-      <window_info anchor="bottom" id="Flutter Performance" side_tool="true" />
-      <window_info anchor="right" id="Capture Analysis" />
-      <window_info anchor="right" id="Theme Preview" />
-      <window_info anchor="right" id="Flutter Inspector" />
-      <window_info anchor="right" id="Flutter Outline" />
-      <window_info anchor="right" id="Palette&#9;" />
+      <window_info active="true" content_ui="combo" id="Project" order="1" visible="true" weight="0.33333334" />
+      <window_info id="Structure" order="2" side_tool="true" />
+      <window_info id="Image Layers" order="3" />
+      <window_info id="Designer" order="4" />
+      <window_info id="Resources Explorer" order="5" />
+      <window_info id="Capture Tool" order="6" />
+      <window_info id="Favorites" order="7" side_tool="true" />
+      <window_info anchor="bottom" id="Run" />
+      <window_info anchor="bottom" id="Debug" />
+      <window_info anchor="bottom" id="Version Control" order="0" />
+      <window_info anchor="bottom" id="TODO" order="1" />
+      <window_info anchor="bottom" id="Terminal" order="2" />
+      <window_info anchor="bottom" id="Event Log" order="3" side_tool="true" />
+      <window_info anchor="bottom" id="Flutter Performance" order="4" side_tool="true" />
+      <window_info anchor="right" id="Capture Analysis" order="0" />
+      <window_info anchor="right" id="Theme Preview" order="1" />
+      <window_info anchor="right" id="Flutter Inspector" order="2" />
+      <window_info anchor="right" id="Flutter Outline" order="3" />
+      <window_info anchor="right" id="Palette&#9;" order="4" />
     </layout>
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/wormhole/README.md">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="1" lean-forward="true" selection-end-line="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/wormhole/example/lib/usermanager/usermanager.dart">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="19" column="1" lean-forward="true" selection-start-line="6" selection-end-line="19" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/examples/add2app/flutter_project/lib/question/question_bloc.dart">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="12" selection-start-line="12" selection-end-line="40" selection-end-column="1" />
+          <folding>
+            <element signature="e#0#20#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/examples/add2app/flutter_project/lib/question/question_bloc.g.dart">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/examples/add2app/AndroidApp/app/src/main/java/com/github/florent37/androidapp/question/QuestionBloc.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="4" selection-start-line="4" selection-end-line="7" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/examples/add2app/AndroidApp/app/src/main/java/com/github/florent37/androidapp/QuestionViewModel.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="495">
+          <caret line="42" column="65" lean-forward="true" selection-start-line="41" selection-start-column="11" selection-end-line="42" selection-end-column="65" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/examples/add2app/AndroidApp/app/src/main/java/com/github/florent37/androidapp/MainActivity.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="28" column="25" selection-start-line="28" selection-start-column="25" selection-end-line="28" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="690">
+          <caret line="46" lean-forward="true" selection-start-line="46" selection-end-line="46" />
+        </state>
+      </provider>
+    </entry>
   </component>
 </project>
