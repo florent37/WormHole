@@ -7,7 +7,8 @@ enabling to share platform classes to Flutter, and expose Flutter's classes to y
 
 # Import
 
-WormHole depends on [`json_annotation`](https://pub.dev/packages/json_annotation) and needs a dart [`build_runner`](https://pub.dev/packages/build_runner) to run [`json_serializable`](https://pub.dev/packages/json_serializable)
+WormHole depends on [`json_annotation`](https://pub.dev/packages/json_annotation) and needs a dart [`build_runner`](https://pub.dev/packages/build_runner) 
+to run [`json_serializable`](https://pub.dev/packages/json_serializable) and *wormhole_generator*
 
 ```yaml
 dependencies:
