@@ -17,6 +17,10 @@ class UserManager(val context: Context) {
         const val USER = "user"
     }
 
+    /**
+     * For example, save an user as json into shared preferences
+     * Can be a room database, etc.
+     */
     private val gson = Gson()
     private val sharedPreferences = context.getSharedPreferences("user_shared", Context.MODE_PRIVATE)
     private val userChannel = ConflatedBroadcastChannel<User?>()
@@ -32,6 +36,9 @@ class UserManager(val context: Context) {
         userChannel.offer(currentUser)
     }
 
+    /**
+     * A stream exposing the current user
+     */
     @Expose("getUser")
     fun getUser(): Flow<User?> = userChannel.asFlow()
 

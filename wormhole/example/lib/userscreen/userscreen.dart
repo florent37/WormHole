@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:provider/provider.dart';
 import 'package:wormhole_example/usermanager/user.dart';
 import 'package:wormhole_example/usermanager/usermanager.dart';
 
@@ -9,7 +8,6 @@ class UserScreen extends StatefulWidget {
 }
 
 class _UserScreenState extends State<UserScreen> {
-
   final UserManager userManager = UserManager("user");
 
   TextEditingController _textEditingController = TextEditingController();
@@ -17,7 +15,6 @@ class _UserScreenState extends State<UserScreen> {
 
   _saveUser() async {
     if (_textEditingController.text.isNotEmpty && _selectedAge != null) {
-      final UserManager userManager = Provider.of<UserManager>(context);
       userManager.saveUser(User(
         name: _textEditingController.text,
         age: _selectedAge,
@@ -28,46 +25,93 @@ class _UserScreenState extends State<UserScreen> {
   @override
   Widget build(BuildContext context) {
     return Column(
+      crossAxisAlignment: CrossAxisAlignment.stretch,
       children: <Widget>[
-        TextField(
-          decoration: InputDecoration(hintText: "save an user name"),
-          controller: _textEditingController,
+        Card(
+          margin: EdgeInsets.symmetric(vertical: 8, horizontal: 8),
+          child: Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: Column(
+              children: <Widget>[
+                Text("Create an user", style: TextStyle(color: Colors.grey[800], fontWeight: FontWeight.w700, fontSize: 18)),
+                Row(children: <Widget>[
+                  Text("Username :", style: TextStyle(color: Colors.grey[800], fontWeight: FontWeight.w700, fontSize: 16)),
+                  SizedBox(
+                    width: 12,
+                  ),
+                  Expanded(
+                    child: TextField(
+                      decoration: InputDecoration(hintText: "Username"),
+                      controller: _textEditingController,
+                    ),
+                  ),
+                ]),
+                Row(children: <Widget>[
+                  Text("Age :", style: TextStyle(color: Colors.grey[800], fontWeight: FontWeight.w700, fontSize: 16)),
+                  SizedBox(
+                    width: 12,
+                  ),
+                  Flexible(
+                    child: DropdownButton(
+                        onChanged: (value) {
+                          setState(() {
+                            _selectedAge = value;
+                          });
+                        },
+                        value: _selectedAge,
+                        items: [18, 25, 30].map((age) => DropdownMenuItem(value: age, child: Text(age.toString()))).toList()),
+                  ),
+                ]),
+                RaisedButton(
+                  color: Theme.of(context).accentColor,
+                  child: Text(
+                    "save",
+                    style: Theme.of(context).accentTextTheme.button,
+                  ),
+                  onPressed: () {
+                    _saveUser();
+                  },
+                )
+              ],
+            ),
+          ),
         ),
-        DropdownButton(
-            onChanged: (value) {
-              setState(() {
-                _selectedAge = value;
-              });
+        Card(
+          margin: EdgeInsets.symmetric(vertical: 8, horizontal: 8),
+          child: StreamBuilder(
+            stream: userManager.getUser(),
+            builder: (context, snapshot) {
+              if (snapshot.hasData && snapshot.data != null) {
+                final _user = snapshot.data;
+                return Padding(
+                  padding: const EdgeInsets.only(top: 8.0, left: 8.0, right: 8.0, bottom: 12.0),
+                  child: Column(
+                    children: <Widget>[
+                      Text("Loaded user from native", style: TextStyle(color: Colors.grey[800], fontWeight: FontWeight.w700, fontSize: 18)),
+                      SizedBox(height: 12,),
+                      Row(children: <Widget>[
+                        Text("Username :", style: TextStyle(color: Colors.grey[800], fontWeight: FontWeight.w700, fontSize: 16)),
+                        SizedBox(
+                          width: 12,
+                        ),
+                        Text(_user.name),
+                      ],),
+                      SizedBox(height: 12,),
+                      Row(children: <Widget>[
+                        Text("Age :", style: TextStyle(color: Colors.grey[800], fontWeight: FontWeight.w700, fontSize: 16)),
+                        SizedBox(
+                          width: 12,
+                        ),
+                        Text(_user.age.toString()),
+                      ],)
+                    ],
+                  ),
+                );
+              } else {
+                return CircularProgressIndicator();
+              }
             },
-            value: _selectedAge,
-            items: [18, 25, 30].map((age) => DropdownMenuItem(value: age, child: Text(age.toString()))).toList()),
-        RaisedButton(
-          child: Text("save"),
-          onPressed: () {
-            _saveUser();
-          },
-        ),
-        Divider(
-          color: Colors.black,
-          height: 1,
-        ),
-        StreamBuilder(
-          stream: userManager.getUser(),
-          builder: (context, snapshot) {
-            if(snapshot.hasData && snapshot.data != null){
-              final _user = snapshot.data;
-              return Column(
-                children: <Widget>[
-                  Text("loaded user :"),
-                  Text(_user.name),
-                  Text("user age"),
-                  Text(_user.age.toString())
-                ],
-              );
-            } else {
-              return CircularProgressIndicator();
-            }
-          },
+          ),
         )
       ],
     );
