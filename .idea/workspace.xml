@@ -7,14 +7,13 @@
     <list default="true" id="4f3564d0-f9fa-44a7-9567-22f2a9062418" name="Default Changelist" comment="">
       <change afterPath="$PROJECT_DIR$/examples/add2app/AndroidApp/app/src/main/java/com/github/florent37/androidapp/QuestionViewModel.kt" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/examples/add2app/AndroidApp/app/src/main/java/com/github/florent37/androidapp/core/BaseActivity.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/examples/add2app/AndroidApp" beforeDir="false" afterPath="$PROJECT_DIR$/examples/add2app/AndroidApp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/examples/add2app/AndroidApp/app/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/examples/add2app/AndroidApp/app/build.gradle" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/examples/add2app/AndroidApp/app/src/main/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/examples/add2app/AndroidApp/app/src/main/AndroidManifest.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/examples/add2app/AndroidApp/app/src/main/java/com/github/florent37/androidapp/MainActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/examples/add2app/AndroidApp/app/src/main/java/com/github/florent37/androidapp/MainActivity.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/examples/add2app/AndroidApp/app/src/main/java/com/github/florent37/androidapp/SplashActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/examples/add2app/AndroidApp/app/src/main/java/com/github/florent37/androidapp/SplashActivity.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/examples/add2app/AndroidApp/app/src/main/java/com/github/florent37/androidapp/question/QuestionBridge.kt" beforeDir="false" afterPath="$PROJECT_DIR$/examples/add2app/AndroidApp/app/src/main/java/com/github/florent37/androidapp/question/QuestionBloc.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/examples/example/android/app/src/main/kotlin/com/github/florent37/wormhole_example/usermanager/UserManager.kt" beforeDir="false" afterPath="$PROJECT_DIR$/examples/example/android/app/src/main/kotlin/com/github/florent37/wormhole_example/usermanager/UserManager.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/wormhole/android/src/main/kotlin/com/github/florent37/wormhole/reflection/Reflection.kt" beforeDir="false" afterPath="$PROJECT_DIR$/wormhole/android/src/main/kotlin/com/github/florent37/wormhole/reflection/Reflection.kt" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -45,8 +44,17 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/README.md">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="120">
-              <caret line="10" column="97" selection-start-line="10" selection-start-column="97" selection-end-line="10" selection-end-column="97" />
+            <state relative-caret-position="465">
+              <caret line="77" column="41" selection-start-line="77" selection-start-column="41" selection-end-line="77" selection-end-column="41" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/wormhole/README.md">
+          <provider selected="true" editor-type-id="text-editor">
+            <state>
+              <caret column="1" selection-end-line="1" />
             </state>
           </provider>
         </entry>
@@ -150,11 +158,6 @@
               <item name="wormhole" type="462c0819:PsiDirectoryNode" />
               <item name="examples" type="462c0819:PsiDirectoryNode" />
             </path>
-            <path>
-              <item name="wormhole" type="b2602c69:ProjectViewProjectNode" />
-              <item name="wormhole" type="462c0819:PsiDirectoryNode" />
-              <item name="wormhole" type="462c0819:PsiDirectoryNode" />
-            </path>
           </expand>
           <select />
         </subPane>
@@ -201,6 +204,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="21" y="23" width="1680" height="1027" extended-state="0" />
+    <editor active="true" />
     <layout>
       <window_info id="Captures" order="0" weight="0.25" />
       <window_info active="true" content_ui="combo" id="Project" order="1" visible="true" weight="0.33333334" />
@@ -225,13 +229,6 @@
     </layout>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/wormhole/README.md">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="1" selection-end-line="1" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/examples/add2app/flutter_project/lib/question/question_bloc.dart">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="180">
@@ -319,10 +316,17 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/wormhole/README.md">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="1" selection-end-line="1" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/README.md">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="10" column="97" selection-start-line="10" selection-start-column="97" selection-end-line="10" selection-end-column="97" />
+        <state relative-caret-position="465">
+          <caret line="77" column="41" selection-start-line="77" selection-start-column="41" selection-end-line="77" selection-end-column="41" />
         </state>
       </provider>
     </entry>
