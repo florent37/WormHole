@@ -151,12 +151,6 @@ class MainActivity : FlutterActivity() {
 
 ### Flutter
 
-1. Create an abstract class mirroring the Native's element
-2. Annotate it with `@WormHole()`
-3. For each Native's method, create a Dart method annotated with `@Call("methodname")`
-. For async methods, be sure they're returning a `Future<type>`
-. For observables results, be sure they're returining a `Stream<type>`
-4. Create a factory, jumping to `WormHole$yourclass(channelName);`
 
 ```dart
 @WormHole()
@@ -175,13 +169,19 @@ abstract class UserManager {
 }
 ```
 
-5. Then retrieve your native object from the WormHole
+1. Create an abstract class mirroring the Native's element
+2. Annotate it with `@WormHole()`
+3. For each Native's method, create a Dart method annotated with `@Call("methodname")`
+. For async methods, be sure they're returning a `Future<type>`
+. For observables results, be sure they're returining a `Stream<type>`
+4. Create a factory, jumping to `WormHole$yourclass(channelName);`
+
 
 ```dart
 final UserManager userManager = UserManager("user");
 ``` 
 
-And use it as an usual flutter class
+5. Then retrieve your native object from the WormHole
 
 ```dart
 StreamBuilder(
@@ -194,6 +194,8 @@ StreamBuilder(
     }
 );
 ```
+
+And use it as an usual flutter class
 
 # Flutter 
 
