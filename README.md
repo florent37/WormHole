@@ -167,6 +167,7 @@ abstract class UserManager {
 . For observables results, be sure they're returining a `Stream<type>`
 4. Create a factory, jumping to `WormHole$yourclass(channelName);`
 
+Don't forget to run build_runner with `flutter pub run build_runner build`
 
 ```dart
 final UserManager userManager = UserManager("user");
@@ -185,10 +186,6 @@ StreamBuilder(
     }
 );
 ```
-
-    final UserManager userManager = UserManager("user");
-    await userManager.saveUser(User("the name");
-    
     
 
 And use it as an usual flutter class
@@ -224,6 +221,8 @@ bloc.expose("question");
 2. Add `@Expose("name")` on your method, specifying a method name
 3. Add an expose method calling `WormHole$yourclass("channelName").expose(this)`
 4. Expose your object using `.expose(channel)`
+
+Don't forget to run build_runner with `flutter pub run build_runner build`
 
 ### Retrieve on native
 
