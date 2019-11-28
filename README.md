@@ -11,7 +11,7 @@ enabling to share platform classes to Flutter, and expose Flutter's classes to y
 
 In a flutter project, I need to access a native element, ex: a Repository (android)
 
-```
+```kotlin
 class MainRepository {
     @Expose("retrieveUser")
     suspend fun retrieveUser() : User {
@@ -25,7 +25,7 @@ expose("user", mainRepository)
 
 Can be retrieved in Flutter
 
-```
+```dart
 @WormHole
 abstract class MainRepository {
     @Call("retrieveUser")
