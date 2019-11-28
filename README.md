@@ -264,8 +264,11 @@ See [WormHole-Android](./wormhole/)
 ¯\\_(ツ)_/¯
 
 WormHole is not available yet on iOS because : 
+
     - Annotation Processor does not exists in swift or ObjectiveC
+    
     - Reflection on swift does not allow to perform needed actions
+    
     - Swift (without ReactiveSwift) does not provides Futures / Streams
     
 If someone in the community has an idea to port it, don't hesitate to make a pull request !
