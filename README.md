@@ -7,6 +7,37 @@ enabling to share platform classes to Flutter, and expose Flutter's classes to y
 
 [![screen](./medias/wormhole.jpg)](https://www.github.com/florent37/WormHole)
 
+# ShowCase
+
+In a flutter project, I need to access a native element, ex: a Repository (android)
+
+```
+class MainRepository {
+    @Expose("retrieveUser")
+    suspend fun retrieveUser() : User {
+        return myBDD.getUser()
+    }
+}
+
+val mainRepository = MainRepository()
+expose("user", mainRepository)
+```
+
+Can be retrieved in Flutter
+
+```
+@WormHole
+abstract class MainRepository {
+    @Call("retrieveUser")
+    Future<User> retrieveUser();
+    
+    factory MainRepository(channelName) => WormHole$MainRepository;
+}
+
+final mainRepository = MainRepository("user");
+User user = await mainRepository.retrieveUser();
+```
+
 # Import
 
 WormHole depends on [`json_annotation`](https://pub.dev/packages/json_annotation) and needs a dart [`build_runner`](https://pub.dev/packages/build_runner) 
