@@ -5,6 +5,10 @@ A WormHole is a speculative structure linking disparate points in spacetime.
 In a mobile universe, a WormHole is a special solution of the Einstein field equations,
 enabling to share platform classes to Flutter, and expose Flutter's classes to your native code.
 
+This library has been created to accelerate (integration of flutter on an existing app)[https://github.com/flutter/flutter/wiki/Add-Flutter-to-existing-apps]
+
+But works with an usual flutter apps, if you don't want to bridge manually your native objects using MethodChannels
+
 [![screen](./medias/wormhole_adroid_flutter.png)](https://www.github.com/florent37/WormHole)
 
 # ShowCase
