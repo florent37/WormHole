@@ -9,7 +9,10 @@ enabling to share platform classes to Flutter, and expose Flutter's classes to y
 
 # ShowCase
 
-In a flutter project, I need to access a native element, ex: a Repository (android)
+I want to add a Flutter view inside my existing Native project,
+this screen needs to retrieve an user, and I use in my project `MainRepository`
+
+I just have to expose my `MainRepository` to Flutter through a WormHole !
 
 ```kotlin
 class MainRepository {
@@ -37,6 +40,8 @@ abstract class MainRepository {
 final mainRepository = MainRepository("user");
 User user = await mainRepository.retrieveUser();
 ```
+
+[![screen](./medias/wormhole_adroid_flutter.png)](https://www.github.com/florent37/WormHole)
 
 # Import
 
@@ -111,6 +116,8 @@ questionBloc.ask(Question("what's your name"))
 4. Your can now interact with your class 
 
 ## Expose on Native, Retrieve on Flutter
+
+[![screen](./medias/android_expose.png)](https://www.github.com/florent37/WormHole)
 
 ### Native
 

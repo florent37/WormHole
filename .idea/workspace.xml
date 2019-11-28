@@ -7,8 +7,7 @@
     <list default="true" id="4f3564d0-f9fa-44a7-9567-22f2a9062418" name="Default Changelist" comment="">
       <change afterPath="$PROJECT_DIR$/examples/add2app/AndroidApp/app/src/main/java/com/github/florent37/androidapp/QuestionViewModel.kt" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/examples/add2app/AndroidApp/app/src/main/java/com/github/florent37/androidapp/core/BaseActivity.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/medias/wormhole_adroid_flutter.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/medias/wormhole_adroid_flutter.psd" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/medias/android_expose.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/examples/add2app/AndroidApp" beforeDir="false" afterPath="$PROJECT_DIR$/examples/add2app/AndroidApp" afterDir="false" />
@@ -17,6 +16,8 @@
       <change beforePath="$PROJECT_DIR$/examples/add2app/AndroidApp/app/src/main/java/com/github/florent37/androidapp/MainActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/examples/add2app/AndroidApp/app/src/main/java/com/github/florent37/androidapp/MainActivity.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/examples/add2app/AndroidApp/app/src/main/java/com/github/florent37/androidapp/SplashActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/examples/add2app/AndroidApp/app/src/main/java/com/github/florent37/androidapp/SplashActivity.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/examples/add2app/AndroidApp/app/src/main/java/com/github/florent37/androidapp/question/QuestionBridge.kt" beforeDir="false" afterPath="$PROJECT_DIR$/examples/add2app/AndroidApp/app/src/main/java/com/github/florent37/androidapp/question/QuestionBloc.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/examples/example/android/app/src/main/kotlin/com/github/florent37/wormhole_example/usermanager/UserManager.kt" beforeDir="false" afterPath="$PROJECT_DIR$/examples/example/android/app/src/main/kotlin/com/github/florent37/wormhole_example/usermanager/UserManager.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/examples/example/lib/usermanager/usermanager.dart" beforeDir="false" afterPath="$PROJECT_DIR$/examples/example/lib/usermanager/usermanager.dart" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -38,8 +39,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/examples/example/lib/usermanager/usermanager.dart">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="75">
-              <caret line="6" selection-start-line="6" selection-end-line="19" selection-end-column="1" />
+            <state relative-caret-position="315">
+              <caret line="22" selection-start-line="22" selection-end-line="22" />
             </state>
           </provider>
         </entry>
@@ -47,8 +48,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/README.md">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="285">
-              <caret line="19" column="1" lean-forward="true" selection-start-line="19" selection-start-column="1" selection-end-line="19" selection-end-column="1" />
+            <state relative-caret-position="60">
+              <caret line="119" column="34" selection-start-line="119" selection-start-column="34" selection-end-line="119" selection-end-column="34" />
             </state>
           </provider>
         </entry>
@@ -90,8 +91,12 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/examples/example/android/app/src/main/kotlin/com/github/florent37/wormhole_example/usermanager/UserManager.kt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="295">
-              <caret line="45" column="4" selection-start-line="45" selection-start-column="4" selection-end-line="45" selection-end-column="4" />
+            <state relative-caret-position="630">
+              <caret line="56" column="1" selection-start-line="56" selection-start-column="1" selection-end-line="56" selection-end-column="1" />
+              <folding>
+                <element signature="e#877#905#0" />
+                <element signature="e#936#1113#0" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -132,6 +137,8 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/wormhole/example/android/app/src/main/kotlin/com/github/florent37/wormhole_example/usermanager/UserManager.kt" />
+        <option value="$PROJECT_DIR$/examples/example/android/app/src/main/kotlin/com/github/florent37/wormhole_example/usermanager/UserManager.kt" />
+        <option value="$PROJECT_DIR$/examples/example/lib/usermanager/usermanager.dart" />
         <option value="$PROJECT_DIR$/README.md" />
       </list>
     </option>
@@ -292,22 +299,8 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/examples/example/android/app/src/main/kotlin/com/github/florent37/wormhole_example/usermanager/UserManager.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="295">
-          <caret line="45" column="4" selection-start-line="45" selection-start-column="4" selection-end-line="45" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/examples/example/lib/usermanager/usermanager.g.dart">
       <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/examples/example/lib/usermanager/usermanager.dart">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="6" selection-start-line="6" selection-end-line="19" selection-end-column="1" />
-        </state>
-      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/examples/example/lib/userscreen/userscreen.dart">
       <provider selected="true" editor-type-id="text-editor">
@@ -336,10 +329,28 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/examples/example/android/app/src/main/kotlin/com/github/florent37/wormhole_example/usermanager/UserManager.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="630">
+          <caret line="56" column="1" selection-start-line="56" selection-start-column="1" selection-end-line="56" selection-end-column="1" />
+          <folding>
+            <element signature="e#877#905#0" />
+            <element signature="e#936#1113#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/examples/example/lib/usermanager/usermanager.dart">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="315">
+          <caret line="22" selection-start-line="22" selection-end-line="22" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/README.md">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="19" column="1" lean-forward="true" selection-start-line="19" selection-start-column="1" selection-end-line="19" selection-end-column="1" />
+        <state relative-caret-position="60">
+          <caret line="119" column="34" selection-start-line="119" selection-start-column="34" selection-end-line="119" selection-end-column="34" />
         </state>
       </provider>
     </entry>
