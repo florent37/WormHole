@@ -1,6 +1,6 @@
 name: wormhole
-description: WormHole a classes depending on annotations to communicate with current platform (inspired by Retrofit)
-version: 0.0.1
+description: WormHole allows to share classes between Flutter and Native Platform (android / ios)
+version: 1.0.0
 author: Florent Champigny <champigny.florent@gmail.com>
 homepage: https://github.com/florent37/WormHole
 

@@ -523,7 +523,7 @@
         <entry key="wormhole">
           <value>
             <list>
-              <option value="$PROJECT_DIR$/../wormhole/lib" />
+              <option value="$PROJECT_DIR$/../../flutter-sdk/.pub-cache/hosted/pub.dartlang.org/wormhole-1.0.0/lib" />
             </list>
           </value>
         </entry>
@@ -608,11 +608,11 @@
       <root url="file://$PROJECT_DIR$/../../flutter-sdk/.pub-cache/hosted/pub.dartlang.org/vm_service_client-0.2.6+3/lib" />
       <root url="file://$PROJECT_DIR$/../../flutter-sdk/.pub-cache/hosted/pub.dartlang.org/watcher-0.9.7+12/lib" />
       <root url="file://$PROJECT_DIR$/../../flutter-sdk/.pub-cache/hosted/pub.dartlang.org/web_socket_channel-1.1.0/lib" />
+      <root url="file://$PROJECT_DIR$/../../flutter-sdk/.pub-cache/hosted/pub.dartlang.org/wormhole-1.0.0/lib" />
       <root url="file://$PROJECT_DIR$/../../flutter-sdk/.pub-cache/hosted/pub.dartlang.org/yaml-2.2.0/lib" />
       <root url="file://$PROJECT_DIR$/../../flutter-sdk/bin/cache/pkg/sky_engine/lib" />
       <root url="file://$PROJECT_DIR$/../../flutter-sdk/packages/flutter/lib" />
       <root url="file://$PROJECT_DIR$/../../flutter-sdk/packages/flutter_test/lib" />
-      <root url="file://$PROJECT_DIR$/../wormhole/lib" />
     </CLASSES>
     <JAVADOC />
     <SOURCES />
