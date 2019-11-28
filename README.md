@@ -64,57 +64,6 @@ dev_dependencies:
   wormhole_generator: 1.0.0
 ```
 
-## Expose on Flutter, Retrieve on Native
-
-### Expose on Flutter
-
-```dart
-@WormHole() //A WormHole will be created arount this class
-class QuestionBloc implements Bloc {
-
-  QuestionBloc() {
-    //I want to expose this object through the wormhole named "question"
-    WormHole$QuestionBloc("question").expose(this);
-  }
-
-  //this method will be exposed to native through a WormHole, using the method name "ask"
-  @Expose("ask")
-  void ask(Question question) {
-    //TODO your code here
-  }
-}
-```
-
-1. Add `@WormHole` annotation on your class
-2. Add `@Expose("name")` on your method, specifying a method name
-3. Expose your object to a named WormHole, here it's done in the constructor
-Via `WormHole$yourclass("channelName").expose(yourInstance);`
-
-### Retrieve on native
-
-```kotlin
-interface QuestionBloc {
-    @Call("ask")
-    fun question(question: Question)
-}
-```
-
-1. Create an interface, containing reflecting your Dart class `QuestionBloc`
-2. For each @Expose method in Dart, create an @Call method, containing the same method name : `ask`
-
-```kotlin
-//retrieve the Flutter's QuestionBloc, in a FlutterActivity for example
-val questionBloc = retrieve<QuestionBloc>("question")
-```
-
-3. Retrieve an object sent into the wormhole
-
-```kotlin
-questionBloc.ask(Question("what's your name"))
-```
-
-4. Your can now interact with your class 
-
 ## Expose on Native, Retrieve on Flutter
 
 [![screen](./medias/android_expose.png)](https://www.github.com/florent37/WormHole)
@@ -236,6 +185,58 @@ StreamBuilder(
 ```
 
 And use it as an usual flutter class
+
+## Expose on Flutter, Retrieve on Native
+
+### Expose on Flutter
+
+```dart
+@WormHole() //A WormHole will be created arount this class
+class QuestionBloc implements Bloc {
+
+  QuestionBloc() {
+    //I want to expose this object through the wormhole named "question"
+    WormHole$QuestionBloc("question").expose(this);
+  }
+
+  //this method will be exposed to native through a WormHole, using the method name "ask"
+  @Expose("ask")
+  void ask(Question question) {
+    //TODO your code here
+  }
+}
+```
+
+1. Add `@WormHole` annotation on your class
+2. Add `@Expose("name")` on your method, specifying a method name
+3. Expose your object to a named WormHole, here it's done in the constructor
+Via `WormHole$yourclass("channelName").expose(yourInstance);`
+
+### Retrieve on native
+
+```kotlin
+interface QuestionBloc {
+    @Call("ask")
+    fun question(question: Question)
+}
+```
+
+1. Create an interface, containing reflecting your Dart class `QuestionBloc`
+2. For each @Expose method in Dart, create an @Call method, containing the same method name : `ask`
+
+```kotlin
+//retrieve the Flutter's QuestionBloc, in a FlutterActivity for example
+val questionBloc = retrieve<QuestionBloc>("question")
+```
+
+3. Retrieve an object sent into the wormhole
+
+```kotlin
+questionBloc.ask(Question("what's your name"))
+```
+
+4. Your can now interact with your class 
+
 
 # Flutter 
 
