@@ -41,8 +41,6 @@ final mainRepository = MainRepository("user");
 User user = await mainRepository.retrieveUser();
 ```
 
-[![screen](./medias/wormhole_adroid_flutter.png)](https://www.github.com/florent37/WormHole)
-
 # Import
 
 WormHole depends on [`json_annotation`](https://pub.dev/packages/json_annotation) and needs a dart [`build_runner`](https://pub.dev/packages/build_runner) 
@@ -184,9 +182,16 @@ StreamBuilder(
 );
 ```
 
+    final UserManager userManager = UserManager("user");
+    await userManager.saveUser(User("the name");
+    
+    
+
 And use it as an usual flutter class
 
 ## Expose on Flutter, Retrieve on Native
+
+[![screen](./medias/flutter_to_android.jpg)](https://www.github.com/florent37/WormHole)
 
 ### Expose on Flutter
 
@@ -194,23 +199,27 @@ And use it as an usual flutter class
 @WormHole() //A WormHole will be created arount this class
 class QuestionBloc implements Bloc {
 
-  QuestionBloc() {
-    //I want to expose this object through the wormhole named "question"
-    WormHole$QuestionBloc("question").expose(this);
-  }
-
   //this method will be exposed to native through a WormHole, using the method name "ask"
   @Expose("ask")
   void ask(Question question) {
     //TODO your code here
   }
+  
+  expose(channelName) => WormHole$QuestionBloc(channelName).expose(this);
 }
+```
+
+I want to expose this object through the wormhole named "question"
+
+```dart
+final bloc = QuestionBloc();
+bloc.expose("question");
 ```
 
 1. Add `@WormHole` annotation on your class
 2. Add `@Expose("name")` on your method, specifying a method name
-3. Expose your object to a named WormHole, here it's done in the constructor
-Via `WormHole$yourclass("channelName").expose(yourInstance);`
+3. Add an expose method calling `WormHole$yourclass("channelName").expose(this)`
+4. Expose your object using `.expose(channel)`
 
 ### Retrieve on native
 
@@ -253,3 +262,4 @@ See [WormHole-Android](./wormhole/)
 # iOS
 
 ¯\_(ツ)_/¯
+
