@@ -261,7 +261,7 @@ See [WormHole-Android](./wormhole/)
 
 # iOS
 
-¯\\_(ツ)_/¯
+¯\\\__(ツ)\_/¯
 
 WormHole is not available yet on iOS because : 
 
